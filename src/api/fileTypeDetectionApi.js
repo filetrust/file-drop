@@ -25,6 +25,7 @@ const callFileTypeDetection = (url, raw) => {
         method: 'POST',
         body: raw,
         headers: {
+          "x-api-key" : process.env.REACT_APP_FILETYPEDETECTION_API_KEY,
           "Content-Type": "application/json"
       }})
       .then ((response) => {
