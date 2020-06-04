@@ -39,6 +39,11 @@ class App extends React.Component {
                 <button className="menu-button" onClick={this.toggleMenu}></button>
                 <button className="info-button" onClick={this.toggleModal} style={{ display: "none" }}></button>
                 <ul className="app-menu-list">
+                  <li>
+                    <a href="https://engineering.glasswallsolutions.com/docs/products/cloud-sdk/sample-files" target="_blank" rel="noopener noreferrer">
+                      Sample Files
+                    </a>
+                  </li>
                   <li><a href="https://glasswallsolutions.com/file-drop/">Product Info</a></li>
                   {/* <li><a href="https://glasswall-store.com/">Visit Store</a></li> */}
                   <li><a href="https://glasswallsolutions.com/contact">Contact</a></li>
