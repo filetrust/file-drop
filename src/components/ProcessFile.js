@@ -28,7 +28,7 @@ class ProcessFile extends React.Component {
     this.resetState();
 
     if(!fileActions.validFileSize(file[0])){
-      this.setState({validation: "Please use a file under 20MB"});
+      this.setState({validation: "Please use a file under 6MB"});
       return;
     }
 
@@ -62,6 +62,7 @@ class ProcessFile extends React.Component {
     return (
         <div className="app-body">
             <h1>Drag and drop a file to have it processed by the Glasswall d-FIRST&trade; Engine</h1>
+            <h3>This free service is currently limited to a maximum file size of 6MB</h3>
             <DragAndDrop handleDrop={this.handleDrop}>
                 <div className="loading-container">
                     <LoadingIndicator key={6} />
