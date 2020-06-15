@@ -10,7 +10,7 @@ const unsupportedTypes = [
   ];
 
 const validFileSize = file => {
-    if (file.size > 20000000) {
+    if (file.size > 6000000) {
         return false;
     }
     return true;
