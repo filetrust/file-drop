@@ -34,3 +34,15 @@ Tests can be run locally with `npm test` or  `yarn test`
 ## Deployment
 
 Deployment is handled via Azure DevOps pipelines. Upon pushing to master a Build will take place, packaging up the application with Docker and pushing the image to an Azure Container Registry. Once the CI build has been completed a Release will upload the lastest docker image to the App Service running the React App.
+
+
+## Environments
+
+### Local development
+After project cloning for correct working the API Tokens have to be added to the `.env.development.local`. Ask about it by team lead.
+
+_NOTE_ without properly set of API tokens pretty possible CORS issue!
+
+### Production deployment
+
+For production deploying, file `.env.production.local` with production API tokens have to be copied from other source to at the CI pipeline stage.
