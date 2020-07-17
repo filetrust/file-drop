@@ -64,9 +64,6 @@ class ProcessFile extends React.Component {
             <h1>Drag and drop a file to have it processed by the Glasswall d-FIRST&trade; Engine</h1>
             <h3>This free service is currently limited to a maximum file size of 6MB</h3>
             <DragAndDrop handleDrop={this.handleDrop}>
-                <div className="loading-container">
-                    <LoadingIndicator key={6} />
-                </div>
             </DragAndDrop>
             <CSSTransition in={this.state.fileProcessed} timeout={{enter: 500, exit: 500}} classNames="results">
                 <RenderResults key={5} file={this.state.file} analysisReport={this.state.analysisReport} analysisReportString={this.state.analysisReportString} validation={this.state.validation}/>

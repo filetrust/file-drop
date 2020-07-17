@@ -56,24 +56,24 @@ class App extends React.Component {
             <div className="app-footer-inner">
               <section className="app-footer-left">
                 <div className="logo"><a href="https://glasswallsolutions.com/" target="blank" ><img src={logo} alt="Logo" height="100" /></a></div>
-                <span class="copyright">© Copyright 2020 - Glasswall Solutions Ltd. All Rights Reserved</span>
-                <div class="social-menu">
+                <span className="copyright">© Copyright 2020 - Glasswall Solutions Ltd. All Rights Reserved</span>
+                <div className="social-menu">
                   <a href="https://twitter.com/GlasswallGlobal" target="_blank" rel="noopener noreferrer">
-                    <div class="social-icon twitter"></div>
+                    <div className="social-icon twitter"></div>
                   </a>
                   <a href="https://www.linkedin.com/company/glasswall-solutions-limited/" target="_blank" rel="noopener noreferrer">
-                    <div class="social-icon linkedin"></div>
+                    <div className="social-icon linkedin"></div>
                   </a>
                   <a href="https://medium.com/glasswall-engineering" target="_blank" rel="noopener noreferrer">
-                    <div class="social-icon medium"></div>
+                    <div className="social-icon medium"></div>
                   </a>
                   <a href="https://www.youtube.com/channel/UCfBGg3aM-LqawBCmbToVuCQ" target="_blank" rel="noopener noreferrer">
-                    <div class="social-icon youtube"></div>
+                    <div className="social-icon youtube"></div>
                   </a>
                 </div>
               </section>
               <div className="app-footer-menu">
-                <div class="app-footer-menu-title">
+                <div className="app-footer-menu-title">
                   <a href="https://glasswallsolutions.com/technology/">Technology</a>
                 </div>
                 <ul>
@@ -81,7 +81,7 @@ class App extends React.Component {
                 </ul>
               </div>
               <div className="app-footer-menu">
-                <div class="app-footer-menu-title">
+                <div className="app-footer-menu-title">
                   <a href="https://glasswallsolutions.com/products/">Products</a>
                 </div>
                 <ul>
@@ -93,7 +93,7 @@ class App extends React.Component {
                 </ul>
               </div>
               <div className="app-footer-menu">
-                <div class="app-footer-menu-title">
+                <div className="app-footer-menu-title">
                   <a href="https://glasswallsolutions.com/resources/">Resources</a>
                 </div>
                 <ul>
@@ -104,7 +104,7 @@ class App extends React.Component {
                 </ul>
               </div>
               <div className="app-footer-menu">
-                <div class="app-footer-menu-title">
+                <div className="app-footer-menu-title">
                   <a href="https://glasswallsolutions.com/company/">About Us</a>
                 </div>
                 <ul>
@@ -118,11 +118,11 @@ class App extends React.Component {
           </div>
           <div className="app-sub-footer">
             <a href="https://glasswallsolutions.com/privacy-policy/">
-              <span class="footer__legend__link">
+              <span className="footer__legend__link">
                 Read our Privacy Policy -
 								</span>
             </a>
-            <span class="footer__address">Continental House, Oakridge, West End, Surrey, GU24 9PJ. Tel: +44 (0) 203 814 3890<br /></span>
+            <span className="footer__address">Continental House, Oakridge, West End, Surrey, GU24 9PJ. Tel: +44 (0) 203 814 3890<br /></span>
           </div>
         </div>
         <CSSTransition in={this.state.showModal} timeout={500} classNames="modal" unmountOnExit>
