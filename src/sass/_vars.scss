@@ -1,3 +1,29 @@
+// --- Media breakpoints --- //
+// ported from oss project, have to be adjusted to what is using in https://glasswallsolutions.com/
+$xxl-breakpoint: 1920px;
+$xl-breakpoint: 1200px;
+$lg-breakpoint: 992px;
+$md-breakpoint: 768px;
+$sm-breakpoint: 576px;
+$xs-breakpoint: 400px;
+$xxs-breakpoint: 320px;
+
+$xxl-breakpoint-min: $xxl-breakpoint + 1px;
+$xl-breakpoint-min: $xl-breakpoint + 1px;
+$lg-breakpoint-min: $lg-breakpoint + 1px;
+$md-breakpoint-min: $md-breakpoint + 1px;
+$sm-breakpoint-min: $sm-breakpoint + 1px;
+$xs-breakpoint-min: $xs-breakpoint + 1px;
+$xxs-breakpoint-min: $xxs-breakpoint + 1px;
+
+$xxl-container-width: $xxl-breakpoint - 100px;
+$xl-container-width: $xl-breakpoint - 70px;
+$lg-container-width: $lg-breakpoint - 56px;
+$md-container-width: $md-breakpoint - 44px;
+$sm-container-width: $sm-breakpoint - 34px;
+$xs-container-width: $xs-breakpoint - 26px;
+$xxs-container-width: $xxs-breakpoint - 20px;
+
 // --- Palette --- //
 $white : hsl(0,0,100%);
 $black : hsl(0,0,0%);
