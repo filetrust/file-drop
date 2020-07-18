@@ -1,11 +1,14 @@
 // --- Media breakpoints --- //
 // ported from oss project, have to be adjusted to what is using in https://glasswallsolutions.com/
+// desktops and modern smartphones/tablets
 $xxl-breakpoint: 1920px;
-$xl-breakpoint: 1200px;
-$lg-breakpoint: 992px;
+$xl-breakpoint: 1366px;
+$lg-breakpoint: 1024px;
+// tablets and modern smartphones
 $md-breakpoint: 768px;
 $sm-breakpoint: 576px;
-$xs-breakpoint: 400px;
+// smartphones
+$xs-breakpoint: 414px;
 $xxs-breakpoint: 320px;
 
 $xxl-breakpoint-min: $xxl-breakpoint + 1px;
@@ -23,6 +26,24 @@ $md-container-width: $md-breakpoint - 44px;
 $sm-container-width: $sm-breakpoint - 34px;
 $xs-container-width: $xs-breakpoint - 26px;
 $xxs-container-width: $xxs-breakpoint - 20px;
+
+$xxl-header-height: 999px;
+$xl-header-height: 675px;
+$lg-header-height: 506px;
+$md-header-height: 380px;
+$sm-header-height: 285px;
+$xs-header-height: 205px;
+$xxs-header-height: 158px;
+
+$xxl-file-type-section-height: 1141px;
+$xl-file-type-section-height: 812px;
+$lg-file-type-section-height: 609px;
+$md-file-type-section-height: 456px;
+$sm-file-type-section-height: 342px;
+$xs-file-type-section-height: 246px;
+$xxs-file-type-section-height: 190px;
+
+
 
 // --- Palette --- //
 $white : hsl(0,0,100%);
@@ -54,7 +75,7 @@ $bodyFont--condensed : 'robotocondensed', sans-serif;
 $bodyFont--regular : 'robotoregular', sans-serif;
 $bodyFontSize : 1.3rem;
 
-$headerHeight : 12rem;
+//$headerHeight : 12rem;
 
 // --- Buttons --- //
 $buttonTextColour : $white;

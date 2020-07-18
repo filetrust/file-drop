@@ -1,4 +1,4 @@
-import {fileTypeDetectionApi} from "../api/fileTypeDetectionApi";
+import { fileTypeDetectionApi } from "../api";
 
 const unsupportedTypes = [
     "Unknown",
@@ -10,23 +10,17 @@ const unsupportedTypes = [
   ];
 
 const validFileSize = file => {
-    if (file.size > 6000000) {
-        return false;
-    }
-    return true;
+    return file.size <= 6000000;
+
 }
 
 async function validFileType(file) {
     var result = await fileTypeDetectionApi.getFileType(file);
-    
-    if(unsupportedTypes.includes(result.FileTypeName)) {
-        return false;
-    }
-    return true;
+    return !unsupportedTypes.includes(result.FileTypeName);
+
 }
 
-export const fileActions = {
+export {
     validFileSize,
     validFileType
   };
-  

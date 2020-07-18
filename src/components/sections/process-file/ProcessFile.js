@@ -1,12 +1,12 @@
 import React from "react";
-import "../App.css";
-import DragAndDrop from "./DragAndDrop";
-import RenderResults from "./RenderResults";
 import {trackPromise} from "react-promise-tracker";
-import {engineApi} from "../api/engineApi";
-import LoadingIndicator from "./LoadingIndicator";
 import {CSSTransition} from "react-transition-group";
-import {fileActions} from "../actions/fileActions";
+import "../../../App.css";
+
+import { DragAndDrop } from "../../widgets";
+import RenderResults from "./RenderResults";
+import {engineApi} from "../../../api";
+import {validFileSize, validFileType} from "../../../actions";
 
 const initialState = {
   file: "",
@@ -27,13 +27,13 @@ class ProcessFile extends React.Component {
   handleDrop = file => {
     this.resetState();
 
-    if(!fileActions.validFileSize(file[0])){
+    if(!validFileSize(file[0])){
       this.setState({validation: "Please use a file under 6MB"});
       return;
     }
 
     trackPromise(
-      fileActions.validFileType(file[0]).then(result => {
+      validFileType(file[0]).then(result => {
         if (!result){
           this.setState({validation: "Please use a supported file type"});
           return;
