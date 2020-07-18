@@ -494,8 +494,8 @@ th {
 }
 
 
+@media only screen and (max-width: $lg-breakpoint) {
 
-@media only screen and (max-width: 1024px) {
     
   .menu-button {
     display: block;
@@ -514,3 +514,4 @@ th {
     padding: 0;
   }
 }
+

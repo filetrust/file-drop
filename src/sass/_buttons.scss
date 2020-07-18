@@ -71,7 +71,7 @@
   }
 
 
-  @media only screen and (max-width: 640px) {
+  @media only screen and (max-width: $md-breakpoint) {
     
     .download-container {
       display: flex;
@@ -83,4 +83,3 @@
       }
     }
   }
-  
