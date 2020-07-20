@@ -1,9 +1,66 @@
 .app {
 
-  &-menu-top, &-footer-inner {
+  nav {
     display: flex;
-    width: 100%;
-    padding: 0 4rem;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &-logo {
+    img {
+      height: 11.3rem;
+    }
+  }
+
+  &-menu {
+    &-top {
+      display: flex;
+      width: 100%;
+      padding: 0 4rem;
+      margin-top: 1.3rem;
+      margin-bottom: 1.3rem;
+    }
+    &-list {
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.2s;
+      color: $white;
+      font-size: 1.5rem;
+      letter-spacing: 0.1rem;
+      a {
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+
+
+      li {
+        color: $white;
+        display: inline-block;
+
+        a {
+          padding: 1.8rem 1.6rem;
+
+        }
+      }
+    }
+    &-button {
+      height: 2rem;
+      width: 2.5rem;
+      background: transparent url('img/menu-icon.svg') center center no-repeat;
+      display: none;
+    }
+  }
+
+  .info {
+    &-button {
+      width: 10rem;
+      height: 10rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: transparent url(../src/img/info-icon.svg) center center no-repeat;
+    }
   }
 
   &.show-menu {
@@ -22,14 +79,19 @@
         }
         */
       }
-      &-menu-list {
-        display: block;
-        padding-top: 20vh;
+      &-menu {
+        &-list {
+          display: block;
+          padding-top: 20vh;
+        }
+        &-button {
+          position: absolute;
+          top: 4rem;
+          right: 8rem;
+          //noinspection CssUnknownTarget
+          background: transparent url('img/menu-icon-close.svg') center center no-repeat;
+        }
       }
-    }
-
-    .logo {
-      display: none;
     }
 
     nav {
@@ -50,61 +112,30 @@
       }
     }
 
-    .menu-button {
-      position: absolute;
-      top: 0;
-      right: 4rem;
-      height: 2rem;
-      width: 2.5rem;
-      //noinspection CssUnknownTarget
-      background: transparent url('img/menu-icon-close.svg') center center no-repeat;
-    }
   }
 
-  &-menu {
-    &-top {
-      margin-top: 1.3rem;
-      margin-bottom: 1.3rem;
-    }
-    &-list {
-      padding-top: 3.7rem;
+}
 
-      li {
-        color: $white;
-        display: inline-block;
-
-        a {
-          padding: 1.8rem 1.6rem;
-
-        }
+@media only screen and (max-width: $lg-breakpoint) {
+  .app {
+    &-logo {
+      img {
+        height: 8.5rem;
       }
     }
   }
-  nav {
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
+}
 
-
-  }
-
-  .menu-button {
-    height: 2rem;
-    width: 2.5rem;
-    background: transparent url('img/menu-icon.svg') center center no-repeat;
-    display: none;
-  }
-
-  .info {
-    &-button {
-      width: 10rem;
-      height: 10rem;
-      position: absolute;
-      right: 0;
-      top: 0;
-      background: transparent url(../src/img/info-icon.svg) center center no-repeat;
+@media only screen and (max-width: $md-breakpoint) {
+  .app {
+    &-menu {
+      &-button {
+        display: block;
+      }
+      &-list {
+        display: none;
+      }
     }
   }
-
 }
 

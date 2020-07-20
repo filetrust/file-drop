@@ -21,10 +21,12 @@
     /* Old browsers */
     background: linear-gradient(90deg, rgba(12, 52, 81, 1) 35%, rgba(24, 100, 128, 1) 100%);
     &-inner {
-      box-sizing: border-box;
-      padding-top: 4rem;
       display: flex;
+      box-sizing: border-box;
+      padding: 4rem;
+      width: 100%;
     }
+
     &-left {
       text-align: left;
       flex: 2;

@@ -4,9 +4,9 @@ import logo from '../../../logo.svg';
 export default function TopMenu({ toggleMenu, toggleModal } = { }) {
     return (
         <div className="app-menu-top">
-            <div className="logo"><a href="https://glasswallsolutions.com/" target="blank" ><img src={logo} alt="Logo" height="100" /></a></div>
+            <div className="app-logo"><a href="https://glasswallsolutions.com/" target="blank" ><img src={logo} alt="Logo" /></a></div>
             <nav>
-                <button className="menu-button" onClick={toggleMenu}></button>
+                <button className="app-menu-button" onClick={toggleMenu}></button>
                 {/*<button className="info-button" onClick={toggleModal} style={{ display: "none" }}></button>*/}
                 <ul className="app-menu-list">
                     <li>

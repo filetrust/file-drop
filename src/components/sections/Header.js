@@ -6,6 +6,7 @@ export default function Header({ toggleMenu, toggleModal } = { }) {
     return <section className="app-header">
         <div className='container app-header-container'>
             <TopMenu toggleMenu={toggleMenu}/>
+
         </div>
     </section>
 }
