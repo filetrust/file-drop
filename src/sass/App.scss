@@ -1,9 +1,25 @@
+/**
+ * Our desired *rem* size - 10px to ease using rem in scss, ie. font-size: 1.6rem equivalent to 16px
+ */
+$rem-base-font-size: 10px;
+
+
+html,
+body {
+  font-size: $rem-base-font-size;
+}
+
+
 // --- Imports --- //
 
-@import '_vars.scss';
-@import '_typography.scss';
-@import '_buttons.scss';
-@import '_modal.scss';
+@import 'rem';
+@import 'vars';
+@import 'settings';
+
+@import 'typography';
+@import 'layout';
+@import 'buttons';
+@import 'modal';
 
 
 // --- Loading Spinner Animation --- //
@@ -27,7 +43,6 @@
 
 html,
 body {
-  font-size: 62.5%;
   font-family: 'nunito_sansregular', sans-serif;
   color: $charcoalGrey;
   background: $paleGrey;
@@ -68,7 +83,7 @@ a {
     /* Modern browsers */
     background: linear-gradient(90deg, rgba(12, 52, 81, 1) 35%, rgba(24, 100, 128, 1) 100%);
     &-container {
-      height: $xxl-header-height;
+      height: $xl-header-height;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -139,8 +154,8 @@ a {
 
   &-menu {
     &-top {
-      margin-top: 13px;
-      margin-bottom: 13px;
+      margin-top: 1.3rem;
+      margin-bottom: 1.3rem;
     }
     &-list {
       padding-top: 3.7rem;
@@ -183,13 +198,13 @@ a {
     flex-direction: column;
     min-height: 71vh;
     align-items: center;
-    font-size: calc(12px);
+    font-size: calc(1.2rem);
     color: $charcoalGrey;
     padding-top: 2rem;
-    top: 10px;
+    top: 1.0rem;
 
     h1 {
-      font-size: 20px;
+      font-size: 2.0rem;
       font-family: 'montserratregular', sans-serif;
       font-weight: 400;
       margin: 5rem 1rem 3rem;
@@ -254,8 +269,8 @@ a {
     &-sub-footer {
       background: #132e42;
       color: $white;
-      font-size: 12px;
-      line-height: 15px;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
       text-align: center;
       padding: 1.4rem;
 
@@ -298,10 +313,10 @@ nav {
   }
 
   &-border {
-    border-radius: 25px;
+    border-radius: 2.5rem;
     display: inline-block;
     position: relative;
-    border: dashed #c7c7c7 2px;
+    border: dashed #c7c7c7 .2rem;
   }
 }
 
@@ -317,7 +332,7 @@ nav {
 
 /*
 .drop-border-dragging {
-  border-radius: 25px;
+  border-radius: 2.5rem;
   background: $blueGrey url('img/drop-white.svg') center center no-repeat;
   position: absolute;
   top: 0;
@@ -340,7 +355,7 @@ nav {
 .table-container {
   min-width: 30rem;
   margin: 0 1rem;
-  border: 1px solid $greyBlue;
+  border: .1rem solid $greyBlue;
   border-radius: 0.6rem;
   background-color: $white;
   overflow: hidden;
@@ -357,7 +372,7 @@ table {
 
 td,
 th {
-  padding-left: 10px;
+  padding-left: 1.0rem;
   text-align: left;
 }
 
