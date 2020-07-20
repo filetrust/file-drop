@@ -4,7 +4,7 @@ import logo from '../../logo.svg';
 export default function Header({ toggleMenu, toggleModal } = { }) {
     return (
         <div className="app-footer">
-            <div className="app-footer-inner">
+            <div className="container app-footer-inner">
                 <section className="app-footer-left">
                     <div className="logo"><a href="https://glasswallsolutions.com/" target="blank" ><img src={logo} alt="Logo" height="100" /></a></div>
                     <span className="copyright">© Copyright 2020 - Glasswall Solutions Ltd. All Rights Reserved</span>

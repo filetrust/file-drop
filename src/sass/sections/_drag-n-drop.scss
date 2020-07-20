@@ -1,0 +1,66 @@
+.app {
+  .drop {
+    &-container {
+      width: 60vw;
+      height: 40vh;
+      background: transparent url('img/drop-grey.svg') center center no-repeat;
+      outline: none;
+    }
+
+    &-border {
+      border-radius: 2.5rem;
+      display: inline-block;
+      position: relative;
+      border: dashed #c7c7c7 .2rem;
+    }
+  }
+
+  @media only screen and (min-width: $md-breakpoint-min) {
+    .drop {
+      &-border {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  /*
+  .drop-border-dragging {
+    border-radius: 2.5rem;
+    background: $blueGrey url('img/drop-white.svg') center center no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+  */
+
+  /*
+  .loading-enter {
+    transform: translateY(4rem);
+    opacity: 0;
+  }
+
+  .loading-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.5s all;
+  }
+
+  .loading-exit {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .loading-exit-active {
+    transform: translateY(4rem);
+    opacity: 0;
+    transition: 0.5s all;
+  }
+  */
+
+
+}

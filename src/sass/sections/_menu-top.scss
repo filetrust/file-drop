@@ -1,0 +1,110 @@
+.app {
+
+  &-menu-top, &-footer-inner {
+    display: flex;
+    width: 100%;
+    padding: 0 4rem;
+  }
+
+  &.show-menu {
+    .app {
+      &-header {
+        display: block;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(to left, #124163, #31536b);
+        z-index: 99;
+        /*
+        &-inner {
+          margin: 0;
+          padding: 0;
+        }
+        */
+      }
+      &-menu-list {
+        display: block;
+        padding-top: 20vh;
+      }
+    }
+
+    .logo {
+      display: none;
+    }
+
+    nav {
+      display: block;
+      position: fixed;
+      width: 100%;
+
+      z-index: 99;
+
+      li {
+        display: block;
+        margin-bottom: 4rem;
+
+        a {
+          font-size: 2.6rem;
+          line-height: 5rem;
+        }
+      }
+    }
+
+    .menu-button {
+      position: absolute;
+      top: 0;
+      right: 4rem;
+      height: 2rem;
+      width: 2.5rem;
+      //noinspection CssUnknownTarget
+      background: transparent url('img/menu-icon-close.svg') center center no-repeat;
+    }
+  }
+
+  &-menu {
+    &-top {
+      margin-top: 1.3rem;
+      margin-bottom: 1.3rem;
+    }
+    &-list {
+      padding-top: 3.7rem;
+
+      li {
+        color: $white;
+        display: inline-block;
+
+        a {
+          padding: 1.8rem 1.6rem;
+
+        }
+      }
+    }
+  }
+  nav {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+
+
+  }
+
+  .menu-button {
+    height: 2rem;
+    width: 2.5rem;
+    background: transparent url('img/menu-icon.svg') center center no-repeat;
+    display: none;
+  }
+
+  .info {
+    &-button {
+      width: 10rem;
+      height: 10rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: transparent url(../src/img/info-icon.svg) center center no-repeat;
+    }
+  }
+
+}
+

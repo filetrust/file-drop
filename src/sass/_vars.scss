@@ -1,6 +1,7 @@
 // --- Media breakpoints --- //
 // ported from oss project, have to be adjusted to what is using in https://glasswallsolutions.com/
 // desktops and modern smartphones/tablets
+
 // overall in the files are using rem size = 10px (as calcualtion of 16px * 62.5%)
 // but by media query it still calculated against default html size == 16px, then here
 //$xxl-breakpoint: em(192.0rem);
@@ -21,7 +22,7 @@ $xs-breakpoint-rem: rem($xs-breakpoint);
 $xxs-breakpoint-rem: rem($xxs-breakpoint);
 
 //$xxl-breakpoint-min: $xxl-breakpoint + .1rem;
-$xl-breakpoint-min: $xl-breakpoint + 1px;
+$xl-breakpoint-up: $xl-breakpoint + 1px;
 $lg-breakpoint-min: $lg-breakpoint + 1px;
 $md-breakpoint-min: $md-breakpoint + 1px;
 $sm-breakpoint-min: $sm-breakpoint + 1px;
@@ -71,6 +72,7 @@ $coral : hsl(357, 44%, 71%);
 $frogGreen : hsl(117, 28%, 56%);
 $warningRed : #d47779;
 $greyBlue : hsl(200, 19%, 69%);
+$oldBrowserBgColour : hsl(206, 55%, 17%);
 
 // --- Main Layout Colours --- //
 $mainTextColour : darken($charcoalGrey, 5%);
@@ -115,7 +117,7 @@ $modalHeaderFont-size : 1.8rem;
 $modalHeaderTextColour : $mediumBlue;
 $modalHeaderWarningColour : $warningRed;
 $modalHeaderBackgroundColour : lighten($backgroundColour, 3%);
-$modalFooterBackgroundColour : lighten($backgroundColour, 3%);
+$modalFooterBackgroundColour : $modalHeaderBackgroundColour;
 
 $closeIcon : 'modal-close.svg';
 

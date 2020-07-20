@@ -1,0 +1,24 @@
+
+.app {
+
+  *, *::after, *::before {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    font-family: 'nunito_sansregular', sans-serif;
+    color: $charcoalGrey;
+    background: $paleGrey;
+  }
+
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+
+  &-link {
+    color: #09d3ac;
+  }
+}
+

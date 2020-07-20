@@ -37,7 +37,7 @@ $rem-em-ratio: parse-int($rem-base-font-size) / parse-int($base-font-size);
   @return $number * 1em;
 }
 
-@function add-rem-unit($number) {
+@function cast-to-rem($number) {
   @return $number * 1rem;
 }
 
@@ -88,8 +88,9 @@ $rem-em-ratio: parse-int($rem-base-font-size) / parse-int($base-font-size);
 
 
 /**
- * Calculates em values for a given list of (px or em) values and a given em
- * base. Multiply base values for nested em structures (last @usage example).
+ * Calculates rem values for a given list of (px or em or rem) values.
+ * Multiply base values for nested structures (last @usage example).
+ *
  * @usage: rem(10px) => 1rem
  *         rem(24px) => 2.4rem
  *         rem(12px 0 7em rgba(0, 0, 0, .7), 1.75) => 1.2em 0 7em rgba(0, 0, 0, 0.7)
@@ -97,7 +98,7 @@ $rem-em-ratio: parse-int($rem-base-font-size) / parse-int($base-font-size);
  */
 
 @function rem($values) {
-  $em-base: parse-int($rem-base-font-size);
+  $rem-px-ratio: parse-int($rem-base-font-size);
   $result: ();
 
   @each $value in $values {
@@ -105,10 +106,12 @@ $rem-em-ratio: parse-int($rem-base-font-size) / parse-int($base-font-size);
       $result: append($result, $value);
     } @else {
       $unit: unit($value);
-      $value: parse-int($value);
+      $value-int: parse-int($value);
 
       @if $unit == "px" {
-        $result: append($result, add-rem-unit($value / $em-base));
+        $result: append($result, cast-to-rem($value-int / $rem-px-ratio));
+      } @else if $unit == "em" {
+        $result: append($result, cast-to-rem( $value-int ));
       } @else {
         $result: append($result, $value);
       }

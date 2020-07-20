@@ -1,0 +1,54 @@
+.app {
+  &-header {
+    color: white;
+    /* Old browsers */
+    background: $oldBrowserBgColour;
+    /* Modern browsers */
+    background: linear-gradient(90deg, rgba(12, 52, 81, 1) 35%, rgba(24, 100, 128, 1) 100%);
+    &-container {
+      height: $xl-header-height;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &-menu-list {
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    color: $white;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    padding: 2.8rem 0;
+    a {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: $md-breakpoint) {
+  .app {
+    nav {
+      align-items: center;
+    }
+
+    .menu-button {
+      display: block;
+      //margin-top: 3.5rem
+    }
+
+    .app-menu-list {
+      display: none;
+    }
+
+    .app-header-inner {
+      padding: 0;
+    }
+  }
+}
+
