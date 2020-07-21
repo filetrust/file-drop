@@ -1,7 +1,7 @@
 import React from "react";
 import Enzyme, {shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import ProcessFile from "../components/sections/process-file/ProcessFile";
+import ProcessFile from "../components/sections/body/ProcessFile";
 
 Enzyme.configure({adapter: new Adapter()});
 

@@ -20,7 +20,8 @@ function FileAttributes(props) {
           </tr>
         </tbody>
       </table>
-    </div>)
+    </div>
+  )
 }
 
 export default FileAttributes;

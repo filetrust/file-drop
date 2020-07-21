@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import "../App.css";
 import { Modal } from "./widgets";
 import { CSSTransition } from "react-transition-group";
-import { Header, Footer, ProcessFile } from './sections';
+import { Hero, Footer, ProcessFile } from './sections';
 
 const initialState = {
   showModal: false
@@ -32,7 +32,7 @@ class App extends Component {
       <React.Fragment>
         <div className={`app ${this.state.showMenu ? "show-menu" : ""}`}>
 
-          <Header toggleMenu={this.toggleMenu} toggleModal={this.toggleModal}/>
+          <Hero toggleMenu={this.toggleMenu} toggleModal={this.toggleModal}/>
           <ProcessFile toggleModal={this.toggleModal} />
           <Footer/>
           <div className="app-sub-footer">

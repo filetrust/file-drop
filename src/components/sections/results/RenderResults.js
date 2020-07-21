@@ -1,7 +1,7 @@
 import React from "react";
 import RenderAnalysis from "./RenderAnalysis";
 import DownloadFile from "./DownloadFile";
-import IssueMessage from "./IssueMessage";
+import IssueMessage from "../../widgets/IssueMessage";
 import DownloadAnalysisReport from "./DownloadAnalysisReport";
 import FileAttributes from "./FileAttributes";
 

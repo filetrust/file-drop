@@ -1,9 +1,9 @@
 import React from "react";
-import {trackPromise} from "react-promise-tracker";
-import {CSSTransition} from "react-transition-group";
-import "../../../App.css";
+import { trackPromise } from "react-promise-tracker";
+import { CSSTransition } from "react-transition-group";
+// import "../../../App.css";
 
-import RenderResults from "./RenderResults";
+import { RenderResults } from "../results";
 import {engineApi} from "../../../api";
 import {validFileSize, validFileType} from "../../../actions";
 
