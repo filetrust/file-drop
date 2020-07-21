@@ -68,6 +68,20 @@
     }
   }
 
-
+  .download-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    button {
+      margin: 2rem 1rem;
+    }
+  }
 }
 
+@media only screen and (max-width: $md-breakpoint) {
+  .app {
+    .download-container {
+      flex-direction: column;
+    }
+  }
+}

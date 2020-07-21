@@ -46,9 +46,6 @@
         opacity: 0.75;
       }
     }
-    &-button {
-      color: $white;
-    }
     .info {
       font-weight: 300;
       &-title {
@@ -73,19 +70,10 @@
       }
     }
     &-button {
-      font-size: 1.7rem;
-      font-weight: bold;
-      color: $alternativeTextColour;
-      border: 1px solid $alternativeTextColour;
-      padding: 1.7rem 2rem;
       margin-right: 2.1rem;
       margin-bottom: 2rem;
       &s {
         margin-top: 4rem;
-      }
-      &__inverse {
-        background-color: $alternativeTextColour;
-        color: $white;
       }
     }
   }
