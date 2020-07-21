@@ -5,11 +5,8 @@ import IssueMessage from "../../widgets/IssueMessage";
 import DownloadAnalysisReport from "./DownloadAnalysisReport";
 import FileAttributes from "./FileAttributes";
 
-function RenderResults(props) {
-  const file = props.file;
-  const analysisReport = props.analysisReport;
-  const analysisReportString = props.analysisReportString;
-  const validation = props.validation;
+function RenderResults( {state }) {
+    const { file, analysisReport, analysisReportString, validation} = state;
 
   if (validation !== null && validation !== undefined && validation !== "") {
     return (
