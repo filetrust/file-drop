@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Dropzone from "react-dropzone";
 import PropTypes from "prop-types";
 import LoadingIndicator from './LoadingIndicator';
 
-export default function DragAndDrop({ handleDrop } = { }) {
+export default function DragAndDrop({ handleDrop, children } = { }) {
     return (
         <Dropzone onDrop={handleDrop} maxFiles={ 1 } multiple={ false }>
             {({ getRootProps, getInputProps }) => (
@@ -11,8 +11,8 @@ export default function DragAndDrop({ handleDrop } = { }) {
                     <input {...getInputProps()} />
                     <div {...getRootProps({ className: "drop-container"})}>
                         <LoadingIndicator key={6} />
+                        { children }
                     </div>
-                    <br/>
                 </div>
             )}
         </Dropzone>

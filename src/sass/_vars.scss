@@ -37,13 +37,13 @@ $sm-container-width: $sm-breakpoint-rem - 3.4rem;
 $xs-container-width: $xs-breakpoint-rem - 2.6rem;
 $xxs-container-width: $xxs-breakpoint-rem - 2rem;
 
-//$xxl-header-height: 99.9rem;
-$xl-header-height: 67.5rem;
-$lg-header-height: 50.6rem;
-$md-header-height: 38rem;
-$sm-header-height: 28.5rem;
-$xs-header-height: 20.5rem;
-$xxs-header-height: 15.8rem;
+//$xxl-header-height:
+$xl-header-height: 99.9rem;
+$lg-header-height: 67.5rem;
+$md-header-height: 50.6rem;
+$sm-header-height: 38rem;
+$xs-header-height: 28.5rem;
+$xxs-header-height:20.5rem;
 
 //$xxl-file-type-section-height: 114.1rem;
 $xl-file-type-section-height: 81.2rem;
@@ -73,6 +73,9 @@ $frogGreen : hsl(117, 28%, 56%);
 $warningRed : #d47779;
 $greyBlue : hsl(200, 19%, 69%);
 $oldBrowserBgColour : hsl(206, 55%, 17%);
+$fileDropBgColour: hsl(264, 54%, 37%);
+$alternativeTextColour: #33bf99;
+
 
 // --- Main Layout Colours --- //
 $mainTextColour : darken($charcoalGrey, 5%);

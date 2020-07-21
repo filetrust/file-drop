@@ -3,7 +3,6 @@ import {trackPromise} from "react-promise-tracker";
 import {CSSTransition} from "react-transition-group";
 import "../../../App.css";
 
-import { DragAndDrop } from "../../widgets";
 import RenderResults from "./RenderResults";
 import {engineApi} from "../../../api";
 import {validFileSize, validFileType} from "../../../actions";
@@ -63,8 +62,6 @@ class ProcessFile extends React.Component {
         <div className="app-body">
             <h1>Drag and drop a file to have it processed by the Glasswall d-FIRST&trade; Engine</h1>
             <h3>This free service is currently limited to a maximum file size of 6MB</h3>
-            <DragAndDrop handleDrop={this.handleDrop}>
-            </DragAndDrop>
             <CSSTransition in={this.state.fileProcessed} timeout={{enter: 500, exit: 500}} classNames="results">
                 <RenderResults key={5} file={this.state.file} analysisReport={this.state.analysisReport} analysisReportString={this.state.analysisReportString} validation={this.state.validation}/>
             </CSSTransition>
