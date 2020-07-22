@@ -4,7 +4,7 @@ import { CSSTransition } from "react-transition-group";
 
 import "../App.css";
 import { Modal } from "./widgets";
-import { Header, Footer, ProcessFile, Privacy, Technology } from './sections';
+import { Header, Footer, ProcessFile, Privacy, Technology, Supporting } from './sections';
 import { validFileSize, validFileType } from '../actions';
 import { engineApi } from '../api';
 
@@ -61,8 +61,8 @@ class App extends Component {
           return engineApi.analyseFile(file[0])
         })
         .then(result => {
-          var XMLParser = require("react-xml-parser");
-          var xml = new XMLParser().parseFromString(result);
+          const XMLParser = require("react-xml-parser");
+          const xml = new XMLParser().parseFromString(result);
 
           this.setState({
             analysisReport: xml,
@@ -87,6 +87,7 @@ class App extends Component {
           <div className='app-body'>
             { fileProcessed ? <ProcessFile state={this.state}/> : null }
             <Technology/>
+            <Supporting/>
             <Privacy/>
           </div>
           <Footer/>

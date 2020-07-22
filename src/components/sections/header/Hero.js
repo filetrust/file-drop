@@ -16,7 +16,7 @@ export default function Hero({ handleDrop } = {}) {
                 <div className="info-title">Sanitise Your Files</div>
                 <div className="info-subtitle">
                     <span>WITH </span>
-                    <span className="info-highlighted">d-FIRST&trade; TECHNOLOGY</span>
+                    <span className="text-highlighted">d-FIRST&trade;</span> TECHNOLOGY
                 </div>
                 <ParagraphText context="info">Validated and deployed by governments and intelligence
                     agencies worldwide, Glasswall"s award-winning d-FIRST

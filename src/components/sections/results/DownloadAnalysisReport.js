@@ -4,7 +4,7 @@ import DownloadButton from '../../widgets/DownloadButton';
 class DownloadAnalysisReport extends React.Component {
 
     getAnalysisReport = () => {
-        var binaryData = [];
+        const binaryData = [];
         binaryData.push(this.props.report);
         let url = window.URL.createObjectURL(new Blob(binaryData, { type: "text/xml" }));
         let a = document.createElement('a');

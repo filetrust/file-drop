@@ -12,8 +12,87 @@
     }
   }
 
+  .text-highlighted {
+    color: $sectionButtonTextColour;
+  }
+
+  .supporting {
+    padding: 5rem 0 2rem 0;
+    &-paragraph {
+      margin-top: 3rem;
+    }
+    &-table {
+      padding: 5rem 0;
+      text-align: left;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        line-height: 3.2rem;
+        li {
+          position: relative;
+          padding-left: 2.7rem;
+          &:before {
+            content: '';
+            width: 1.5rem;
+            height: 1.3rem;
+            position: absolute;
+            background-image: url('img/li-check.svg');
+            background-size: cover;
+            background-position: center;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);          }
+        }
+      }
+
+      .table {
+        &-placeholder {
+          width: 100%;
+          display: table;
+          font-size: 1.8rem;
+        }
+        &-header, &-row {
+          display: table-row;
+          &-cell {
+            display: table-cell;
+            border-color: #cccccc;
+            border-style: solid;
+            border-width: 0 0 1px 1px;
+            &:not(:last-of-type) {
+              border-right-width: 0;
+            }
+            &:last-of-type {
+              //border-top-width: 1px;
+              border-right-width: 1px;
+            }
+          }
+        }
+        &-header {
+          font-size: 2.4rem;
+          background-color: $sectionTitleTextColour;
+          color: $white;
+          &-cell {
+            padding: 1rem 3.5rem;
+          }
+        }
+        &-row {
+          &-cell {
+            padding: 3.5rem 3.5rem;
+            &:first-of-type {
+              background-color: #f7fffd
+            }
+          }
+        }
+      }
+    }
+  }
+
   .technology {
     padding-top: 7rem;
+    .text-highlighted {
+      font-weight: bold;
+    }
     &-stack {
       display: flex;
       //flex-direction: row;
@@ -52,7 +131,7 @@
       margin-top: 3rem;
       margin-bottom: 5rem;
     }
-    &-text{
+    &-paragraph{
       margin-top: 3rem;
       padding-left: 4rem;
       padding-right: 4rem;
