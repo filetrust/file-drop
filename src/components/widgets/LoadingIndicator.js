@@ -1,5 +1,5 @@
-import {usePromiseTracker} from "react-promise-tracker";
 import React from "react";
+import {usePromiseTracker} from "react-promise-tracker";
 
 function LoadingIndicator() {
   const {promiseInProgress} = usePromiseTracker();

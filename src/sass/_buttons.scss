@@ -1,12 +1,14 @@
 // --- Button Icons --- //
 
 @mixin button($image) {
-    background-image: url('../img/'+ $image);
-    background-size: 3.2rem 3.2rem;
-    background-position: left center;
-    background-repeat: no-repeat;
-  }
-  
+  background-image: url('../img/'+ $image);
+  background-size: 3.2rem 3.2rem;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+.app {
+
   button {
     position: relative;
     overflow: hidden;
@@ -16,70 +18,92 @@
     user-select: none;
     outline: none;
   }
-  
+
   .button {
-    display: block;
-    min-width: 9rem;
-    height: $buttonHeight;
-    padding: 0 2rem;
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    line-height: $buttonHeight;
-    color: $white;
-    border-radius: 3px;
-    transition: all 0.3s;
-
-  
-    &:hover {
-      box-shadow: $boxShadow1;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: $alternativeTextColour;
+    border: 1px solid $alternativeTextColour;
+    padding: 1.7rem 2rem;
+    &s {
+      margin-top: 4rem;
     }
-  
-    &.center {
-      margin: 3rem auto;
-    }
-  
-    &:disabled {
-      opacity: 0.6;
-      pointer-events: none;
+    &__inverse {
+      background-color: $alternativeTextColour;
+      color: $white;
     }
   }
 
-  .button-icon {
-    background-image: url('img/download-icon-white.svg');
-    background-size: 3.2rem 3.2rem;
-    background-position: left center;
-    background-repeat: no-repeat;
-    min-width: 0;
-    padding: 0 1.4rem 0 3.4rem;
-    text-align: left;
-  }
-  
-  
-  .button-filled {
-    background-color: $buttonBGColour;
+  .analysis-results {
+    .download-button {
+      //display: block;
+      min-width: 9rem;
+      height: $buttonHeight;
+      padding: 0 2rem;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      line-height: $buttonHeight;
+      color: $white;
+      border-radius: 3px;
+      transition: all 0.3s;
 
-  }
 
-  .download-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 1rem;
+      &:hover {
+        box-shadow: $boxShadow1;
+      }
 
-    button {
-      margin: 2rem 1rem;
+      &.center {
+        margin: 3rem auto;
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        pointer-events: none;
+      }
+    }
+
+    .button-icon {
+      background-image: url('img/download-icon-white.svg');
+      background-size: 3.2rem 3.2rem;
+      background-position: left center;
+      background-repeat: no-repeat;
+      min-width: 0;
+      padding: 0 1.4rem 0 3.4rem;
+      text-align: left;
+    }
+
+
+    .button-filled {
+      background-color: $buttonBGColour;
+
     }
   }
 
+  // moved from _drop.scss
+  .hero {
+    &-drop {
+      &-button {
+        color: $white;
+        opacity: 0.5;
+        font-size: 1.7rem;
+        padding: 1.5rem 2rem;
+        border: 1px $white solid;
+      }
+    }
+    // moved from _header.scss
+  }
+  // from _results.scss
 
-  @media only screen and (max-width: $md-breakpoint) {
-    
+}
+
+@media only screen and (max-width: $md-breakpoint) {
+  /*
+  .app {
     .download-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-  
       button {
         margin: 2rem 1rem;
       }
     }
   }
+  */
+}

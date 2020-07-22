@@ -1,15 +1,12 @@
 import React from "react";
 import RenderAnalysis from "./RenderAnalysis";
 import DownloadFile from "./DownloadFile";
-import IssueMessage from "./IssueMessage";
+import IssueMessage from "../../widgets/IssueMessage";
 import DownloadAnalysisReport from "./DownloadAnalysisReport";
 import FileAttributes from "./FileAttributes";
 
-function RenderResults(props) {
-  const file = props.file;
-  const analysisReport = props.analysisReport;
-  const analysisReportString = props.analysisReportString;
-  const validation = props.validation;
+function RenderResults( {state }) {
+    const { file, analysisReport, analysisReportString, validation} = state;
 
   if (validation !== null && validation !== undefined && validation !== "") {
     return (
@@ -20,10 +17,10 @@ function RenderResults(props) {
   }
 
   if (file !== null && file !== undefined && file !== "" && analysisReport !== null && analysisReport !== undefined && analysisReport !== "") {
-    var sanitisations = analysisReport.getElementsByTagName("gw:SanitisationItem");
-    var remediations = analysisReport.getElementsByTagName("gw:RemedyItem");
-    var issues = analysisReport.getElementsByTagName("gw:IssueItem");
-    var fileType = analysisReport.getElementsByTagName("gw:FileType")[0].value;
+    const sanitisations = analysisReport.getElementsByTagName("gw:SanitisationItem");
+    const remediations = analysisReport.getElementsByTagName("gw:RemedyItem");
+    const issues = analysisReport.getElementsByTagName("gw:IssueItem");
+    const fileType = analysisReport.getElementsByTagName("gw:FileType")[0].value;
 
     if (sanitisations.length || remediations.length || issues.length) {
       return (

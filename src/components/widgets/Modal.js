@@ -1,9 +1,9 @@
 import React from "react";
 
-function Modal(props) {
+function Modal({ onClose, containerClick } = {}) {
   return (
-    <div className="modal-overlay file-details-modal" onClick={props.onClose}>
-      <section className="modal-container" onClick={props.containerClick}>
+    <div className="modal-overlay file-details-modal" onClick={onClose}>
+      <section className="modal-container" onClick={containerClick}>
         <header className="modal-header">
           <h1>Terms &amp; Conditions</h1>
         </header>
@@ -11,11 +11,11 @@ function Modal(props) {
           <p>T's and C's go here</p>
         </div>
         <footer className="modal-footer tabset-modal-file-details-footer">
-          <button tabIndex="-1" className="button button-filled" onClick={props.onClose}>
+          <button tabIndex="-1" className="button button-filled" onClick={onClose}>
             OK
           </button>
         </footer>
-        <button tabIndex="-1" className="modal-close-button close-modal" onClick={props.onClose} />
+        <button tabIndex="-1" className="modal-close-button close-modal" onClick={onClose} />
       </section>
     </div>
   );

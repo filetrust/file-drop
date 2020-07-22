@@ -1,15 +1,26 @@
-import React from "react";
+import React, {Component} from "react";
 import "../App.css";
-import logo from "../logo.svg";
-import Modal from "./Modal";
+import { Modal } from "./widgets";
 import { CSSTransition } from "react-transition-group";
-import ProcessFile from "../components/ProcessFile"
+import { Hero, Footer, ProcessFile } from './sections';
+import { Header } from './sections';
+import { validFileSize, validFileType } from '../actions';
+import { trackPromise } from 'react-promise-tracker';
+import { engineApi } from '../api';
 
 const initialState = {
-  showModal: false
+  showModal: false,
+
+  file: "",
+  analysisReport: "",
+  analysisReportString: "",
+  validation: "",
+  fileProcessed: false,
+  loading: false
 };
 
-class App extends React.Component {
+
+class App extends Component {
   state = initialState;
 
   toggleModal = () => {
@@ -28,94 +39,55 @@ class App extends React.Component {
     event.stopPropagation();
   };
 
+  resetState() {
+    this.setState(initialState);
+  }
+
+  handleDrop = file => {
+    this.resetState();
+
+    if(!validFileSize(file[0])){
+      this.setState({validation: "Please use a file under 6MB"});
+      return;
+    }
+
+    trackPromise(
+        validFileType(file[0]).then(result => {
+          if (!result){
+            this.setState({validation: "Please use a supported file type"});
+            return;
+          }
+
+          return engineApi.analyseFile(file[0])
+        })
+        .then(result => {
+          var XMLParser = require("react-xml-parser");
+          var xml = new XMLParser().parseFromString(result);
+
+          this.setState({
+            analysisReport: xml,
+            analysisReportString: result,
+            file: file[0],
+            fileProcessed: true
+          });
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    );
+  };
+
   render() {
+    const { showMenu, showModal, fileProcessed } = this.state
     return (
       <React.Fragment>
-        <div className={`app ${this.state.showMenu ? "show-menu" : ""}`}>
-          <div className="app-header">
-            <div className="app-header-inner">
-              <div className="logo"><a href="https://glasswallsolutions.com/" target="blank" ><img src={logo} alt="Logo" height="100" /></a></div>
-              <nav>
-                <button className="menu-button" onClick={this.toggleMenu}></button>
-                <button className="info-button" onClick={this.toggleModal} style={{ display: "none" }}></button>
-                <ul className="app-menu-list">
-                  <li>
-                    <a href="https://engineering.glasswallsolutions.com/docs/products/cloud-sdk/sample-files" target="_blank" rel="noopener noreferrer">
-                      Sample Files
-                    </a>
-                  </li>
-                  <li><a href="https://glasswallsolutions.com/file-drop/">Product Info</a></li>
-                  {/* <li><a href="https://glasswall-store.com/">Visit Store</a></li> */}
-                  <li><a href="https://glasswallsolutions.com/contact">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
+        <div className={`app ${showMenu ? "show-menu" : ""}`}>
+
+          <Header toggleMenu={this.toggleMenu} handleDrop={this.handleDrop}/>
+          <div className='app-body'>
+            { fileProcessed ? <ProcessFile state={this.state}/> : null }
           </div>
-          <ProcessFile toggleModal={this.toggleModal} />
-          <div className="app-footer">
-            <div className="app-footer-inner">
-              <section className="app-footer-left">
-                <div className="logo"><a href="https://glasswallsolutions.com/" target="blank" ><img src={logo} alt="Logo" height="100" /></a></div>
-                <span className="copyright">© Copyright 2020 - Glasswall Solutions Ltd. All Rights Reserved</span>
-                <div className="social-menu">
-                  <a href="https://twitter.com/GlasswallGlobal" target="_blank" rel="noopener noreferrer">
-                    <div className="social-icon twitter"></div>
-                  </a>
-                  <a href="https://www.linkedin.com/company/glasswall-solutions-limited/" target="_blank" rel="noopener noreferrer">
-                    <div className="social-icon linkedin"></div>
-                  </a>
-                  <a href="https://medium.com/glasswall-engineering" target="_blank" rel="noopener noreferrer">
-                    <div className="social-icon medium"></div>
-                  </a>
-                  <a href="https://www.youtube.com/channel/UCfBGg3aM-LqawBCmbToVuCQ" target="_blank" rel="noopener noreferrer">
-                    <div className="social-icon youtube"></div>
-                  </a>
-                </div>
-              </section>
-              <div className="app-footer-menu">
-                <div className="app-footer-menu-title">
-                  <a href="https://glasswallsolutions.com/technology/">Technology</a>
-                </div>
-                <ul>
-                  <li><a href="https://glasswallsolutions.com/technology/">d-FIRST</a></li>
-                </ul>
-              </div>
-              <div className="app-footer-menu">
-                <div className="app-footer-menu-title">
-                  <a href="https://glasswallsolutions.com/products/">Products</a>
-                </div>
-                <ul>
-                  <li><a href="https://glasswallsolutions.com/products/#sdk">SDK</a></li>
-                  <li><a href="https://glasswallsolutions.com/products/#email">Email</a></li>
-                  <li><a href="https://glasswallsolutions.com/products/#cloud">Cloud</a></li>
-                  <li><a href="https://glasswallsolutions.com/products/#appliances">Appliances</a></li>
-                  <li><a href="https://glasswallsolutions.com/pricing">Pricing</a></li>
-                </ul>
-              </div>
-              <div className="app-footer-menu">
-                <div className="app-footer-menu-title">
-                  <a href="https://glasswallsolutions.com/resources/">Resources</a>
-                </div>
-                <ul>
-                  <li><a href="https://glasswallsolutions.com/ceo-blog/">CEO BLog</a></li>
-                  <li><a href="https://glasswallsolutions.com/customer-success-stories/">Success Stories</a></li>
-                  <li><a href="https://glasswallsolutions.com/threat-intelligence/">Threat Intelligence</a></li>
-                  <li><a href="https://medium.com/glasswall-engineering">Tech Blog</a></li>
-                </ul>
-              </div>
-              <div className="app-footer-menu">
-                <div className="app-footer-menu-title">
-                  <a href="https://glasswallsolutions.com/company/">About Us</a>
-                </div>
-                <ul>
-                  <li><a href="https://glasswallsolutions.com/company/">Company</a></li>
-                  <li><a href="https://glasswallsolutions.com/partners/">Partners</a></li>
-                  <li><a href="https://glasswallsolutions.com/contact/">Contact</a></li>
-                  <li><a href="https://support.glasswallsolutions.com/support/login">Support</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <Footer/>
           <div className="app-sub-footer">
             <a href="https://glasswallsolutions.com/privacy-policy/">
               <span className="footer__legend__link">
@@ -125,7 +97,7 @@ class App extends React.Component {
             <span className="footer__address">Continental House, Oakridge, West End, Surrey, GU24 9PJ. Tel: +44 (0) 203 814 3890<br /></span>
           </div>
         </div>
-        <CSSTransition in={this.state.showModal} timeout={500} classNames="modal" unmountOnExit>
+        <CSSTransition in={showModal} timeout={500} classNames="modal" unmountOnExit>
           <Modal onClose={this.toggleModal} containerClick={this.handleContainerClick} key={7} />
         </CSSTransition>
       </React.Fragment>

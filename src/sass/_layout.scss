@@ -1,0 +1,49 @@
+.app {
+  .container {
+    max-width: $xl-container-width;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: $xl-breakpoint) {
+  .app {
+    .container {
+      max-width: $xl-container-width;
+    }
+  }
+}
+@media only screen and (max-width: $lg-breakpoint) {
+  .app {
+    .container {
+      max-width: $lg-container-width;
+    }
+  }
+}
+@media only screen and (max-width: $md-breakpoint) {
+  .app {
+    .container {
+      max-width: $md-container-width;
+    }
+  }
+}
+@media only screen and (max-width: $sm-breakpoint) {
+  .app {
+    .container {
+      max-width: $sm-container-width;
+    }
+  }
+}
+@media only screen and (max-width: $xs-breakpoint) {
+  .app {
+    .container {
+      max-width: $xs-container-width;
+    }
+  }
+}
+@media only screen and (max-width: $xxs-breakpoint) {
+  .app {
+    .container {
+      max-width: $xxs-container-width;
+    }
+  }
+}

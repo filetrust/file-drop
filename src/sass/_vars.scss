@@ -1,28 +1,59 @@
 // --- Media breakpoints --- //
 // ported from oss project, have to be adjusted to what is using in https://glasswallsolutions.com/
-$xxl-breakpoint: 1920px;
-$xl-breakpoint: 1200px;
-$lg-breakpoint: 992px;
+// desktops and modern smartphones/tablets
+
+// overall in the files are using rem size = 10px (as calcualtion of 16px * 62.5%)
+// but by media query it still calculated against default html size == 16px, then here
+//$xxl-breakpoint: em(192.0rem);
+// tablets and modern smartphones
+// smartphones
+$xl-breakpoint: 1366px;
+$lg-breakpoint: 1024px;
 $md-breakpoint: 768px;
 $sm-breakpoint: 576px;
-$xs-breakpoint: 400px;
+$xs-breakpoint: 414px;
 $xxs-breakpoint: 320px;
 
-$xxl-breakpoint-min: $xxl-breakpoint + 1px;
-$xl-breakpoint-min: $xl-breakpoint + 1px;
+$xl-breakpoint-rem: rem($xl-breakpoint);
+$lg-breakpoint-rem: rem($lg-breakpoint);
+$md-breakpoint-rem: rem($md-breakpoint);
+$sm-breakpoint-rem: rem($sm-breakpoint);
+$xs-breakpoint-rem: rem($xs-breakpoint);
+$xxs-breakpoint-rem: rem($xxs-breakpoint);
+
+//$xxl-breakpoint-min: $xxl-breakpoint + .1rem;
+$xl-breakpoint-up: $xl-breakpoint + 1px;
 $lg-breakpoint-min: $lg-breakpoint + 1px;
 $md-breakpoint-min: $md-breakpoint + 1px;
 $sm-breakpoint-min: $sm-breakpoint + 1px;
 $xs-breakpoint-min: $xs-breakpoint + 1px;
 $xxs-breakpoint-min: $xxs-breakpoint + 1px;
 
-$xxl-container-width: $xxl-breakpoint - 100px;
-$xl-container-width: $xl-breakpoint - 70px;
-$lg-container-width: $lg-breakpoint - 56px;
-$md-container-width: $md-breakpoint - 44px;
-$sm-container-width: $sm-breakpoint - 34px;
-$xs-container-width: $xs-breakpoint - 26px;
-$xxs-container-width: $xxs-breakpoint - 20px;
+//$xxl-container-width: $xxl-breakpoint - 10rem;
+$xl-container-width: 124rem;
+$lg-container-width: $lg-breakpoint-rem - 5.6rem;
+$md-container-width: $md-breakpoint-rem - 4.4rem;
+$sm-container-width: $sm-breakpoint-rem - 3.4rem;
+$xs-container-width: $xs-breakpoint-rem - 2.6rem;
+$xxs-container-width: $xxs-breakpoint-rem - 2rem;
+
+//$xxl-header-height:
+$xl-header-height: 99.9rem;
+$lg-header-height: 67.5rem;
+$md-header-height: 50.6rem;
+$sm-header-height: 38rem;
+$xs-header-height: 28.5rem;
+$xxs-header-height:20.5rem;
+
+//$xxl-file-type-section-height: 114.1rem;
+$xl-file-type-section-height: 81.2rem;
+$lg-file-type-section-height: 60.9rem;
+$md-file-type-section-height: 45.6rem;
+$sm-file-type-section-height: 34.2rem;
+$xs-file-type-section-height: 24.6rem;
+$xxs-file-type-section-height: 19rem;
+
+
 
 // --- Palette --- //
 $white : hsl(0,0,100%);
@@ -41,6 +72,10 @@ $coral : hsl(357, 44%, 71%);
 $frogGreen : hsl(117, 28%, 56%);
 $warningRed : #d47779;
 $greyBlue : hsl(200, 19%, 69%);
+$oldBrowserBgColour : hsl(206, 55%, 17%);
+$fileDropBgColour: hsl(264, 54%, 37%);
+$alternativeTextColour: #33bf99;
+
 
 // --- Main Layout Colours --- //
 $mainTextColour : darken($charcoalGrey, 5%);
@@ -54,7 +89,7 @@ $bodyFont--condensed : 'robotocondensed', sans-serif;
 $bodyFont--regular : 'robotoregular', sans-serif;
 $bodyFontSize : 1.3rem;
 
-$headerHeight : 12rem;
+//$headerHeight : 12rem;
 
 // --- Buttons --- //
 $buttonTextColour : $white;
@@ -63,7 +98,7 @@ $buttonHeight : 3.6rem;
 $buttonHoverBackgroundColour : lighten($seaBlue, 45%);
 
 // --- Shadows --- //
-$boxShadow1 : 0px 2px 5px 0px rgba(0,0,0,0.15);
+$boxShadow1 : 0 .2rem .5rem 0 rgba(0,0,0,0.15);
 
 // --- Transitions --- //
 $transition1 : all 0.3s ease-in-out;
@@ -85,7 +120,7 @@ $modalHeaderFont-size : 1.8rem;
 $modalHeaderTextColour : $mediumBlue;
 $modalHeaderWarningColour : $warningRed;
 $modalHeaderBackgroundColour : lighten($backgroundColour, 3%);
-$modalFooterBackgroundColour : lighten($backgroundColour, 3%);
+$modalFooterBackgroundColour : $modalHeaderBackgroundColour;
 
 $closeIcon : 'modal-close.svg';
 

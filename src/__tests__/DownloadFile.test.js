@@ -1,7 +1,7 @@
 import React from "react";
 import Enzyme, {shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import DownloadFile from "../components/DownloadFile";
+import DownloadFile from "../components/sections/results/DownloadFile";
 
 Enzyme.configure({adapter: new Adapter()});
 
