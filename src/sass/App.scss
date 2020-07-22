@@ -66,7 +66,7 @@ a {
       position: fixed;
       width: 100vw;
       height: 100vh;
-      background-image: linear-gradient(to left,#124163,#31536b)!important;
+      background-image: linear-gradient(to left, #124163, #31536b) !important;
       z-index: 99;
     }
 
@@ -129,7 +129,7 @@ a {
   color: white;
   background: #1b5c7e;
   /* Old browsers */
-  background: linear-gradient(90deg, rgba(12,52,81,1) 35%, rgba(24,100,128,1) 100%);
+  background: linear-gradient(90deg, rgba(12, 52, 81, 1) 35%, rgba(24, 100, 128, 1) 100%);
 }
 
 .app-header-inner, .app-footer-inner {
@@ -192,7 +192,7 @@ nav {
 
   h1 {
     font-size: 20px;
-    font-family: 'montserratregular';
+    font-family: 'montserratregular', sans-serif;
     font-weight: 400;
     margin: 5rem 1rem 3rem;
     line-height: 2.4rem;
@@ -214,17 +214,30 @@ nav {
   color: #09d3ac;
 }
 
-.loading-container {
-  width: 60vw;
-  height: 40vh;
-  background: transparent url('img/drop-grey.svg') center center no-repeat;
+.drop {
+  &-container {
+    width: 60vw;
+    height: 40vh;
+    background: transparent url('img/drop-grey.svg') center center no-repeat;
+    outline: none;
+  }
+
+  &-border {
+    border-radius: 25px;
+    display: inline-block;
+    position: relative;
+    border: dashed #c7c7c7 2px;
+  }
 }
 
-.drop-border {
-  border-radius: 25px;
-  display: inline-block;
-  position: relative;
-  border: dashed #c7c7c7 2px;
+@media only screen and (min-width: $lg-breakpoint-min) {
+  .drop {
+    &-border {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 .drop-border-dragging {
@@ -385,7 +398,7 @@ th {
   height: 33rem;
   background: #1b5c7e;
   /* Old browsers */
-  background: linear-gradient(90deg, rgba(12,52,81,1) 35%, rgba(24,100,128,1) 100%);
+  background: linear-gradient(90deg, rgba(12, 52, 81, 1) 35%, rgba(24, 100, 128, 1) 100%);
 }
 
 .app-footer-inner {
@@ -422,11 +435,11 @@ th {
 
     a {
       transition: all 0.2s;
-     
+
       &:hover {
         color: #1a919a;
       }
-  }
+    }
   }
 }
 
@@ -454,49 +467,48 @@ th {
 }
 
 .app-footer-menu-title {
-    color: $white;
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: 0.1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 2.8rem 0;
+  color: $white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 2.8rem 0;
 }
 
 .copyright {
-    display: inline-block;
-    font-size: 1.1rem;
-    line-height: 2.4rem;
-    width: 72%;
-    margin-top: 1rem;
-    text-align: left;
-    color: $white;
+  display: inline-block;
+  font-size: 1.1rem;
+  line-height: 2.4rem;
+  width: 72%;
+  margin-top: 1rem;
+  text-align: left;
+  color: $white;
 }
 
 .app-sub-footer {
-    background: #132e42;
-    color: $white;
-    font-size: 12px;
-    line-height:15px;
-    text-align: center;
-    padding: 1.4rem;
+  background: #132e42;
+  color: $white;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  padding: 1.4rem;
 
-    a {
-      display: inline-block;
-      color: #fff;
-      text-decoration: none;
-      transition: all 0.2s;
+  a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s;
 
-      &:hover {
-        opacity: 0.7;
-      }
+    &:hover {
+      opacity: 0.7;
     }
+  }
 }
 
 
+@media only screen and (max-width: $lg-breakpoint) {
 
-@media only screen and (max-width: 1024px) {
-    
   .menu-button {
     display: block;
     margin-top: 3.5rem
@@ -514,3 +526,4 @@ th {
     padding: 0;
   }
 }
+
