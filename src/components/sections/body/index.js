@@ -1,2 +1,3 @@
 import ProcessFile from './ProcessFile'
-export default ProcessFile
+import Privacy from './Pirvacy';
+export {ProcessFile, Privacy}

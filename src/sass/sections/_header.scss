@@ -6,7 +6,7 @@
     /* Modern browsers */
     background: linear-gradient(90deg, rgba(12, 52, 81, 1) 35%, rgba(24, 100, 128, 1) 100%);
     &-container {
-      height: $xl-header-height;
+      min-height: $xl-header-height;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -62,19 +62,12 @@
         color: $alternativeTextColour;
       }
       &-text {
-        font-size: 1.8rem;
-        line-height: 2.9rem;
-        font-weight: 300;
         margin-top: 3rem;
         padding-right: 0.3rem;
       }
     }
-    &-button {
-      margin-right: 2.1rem;
-      margin-bottom: 2rem;
-      &s {
-        margin-top: 4rem;
-      }
+    &-buttons {
+      margin-top: 4rem;
     }
   }
 }

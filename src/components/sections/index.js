@@ -1,4 +1,4 @@
 import { Header } from './header'
 import Footer from './Footer'
-import ProcessFile from './body'
-export { Header, Footer, ProcessFile }
+import { ProcessFile, Privacy } from './body'
+export { Header, Footer, ProcessFile, Privacy }

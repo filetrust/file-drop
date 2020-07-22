@@ -3,4 +3,5 @@ import LoadingIndicator from './LoadingIndicator'
 import Modal from './Modal'
 import Button from './Button'
 import DownloadButton from './DownloadButton'
-export { Button, DownloadButton, DragAndDrop, LoadingIndicator, Modal }
+import ParagraphText from './ParagraphText';
+export { Button, DownloadButton, DragAndDrop, LoadingIndicator, Modal, ParagraphText }

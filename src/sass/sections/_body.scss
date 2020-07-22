@@ -4,6 +4,32 @@
 
   }
 
+  .paragraph {
+    &-text {
+      font-size: 1.8rem;
+      line-height: 2.9rem;
+      font-weight: 300;
+    }
+  }
+
+  .privacy {
+
+    color: #191919;
+    padding-bottom: 7rem;
+    padding-top: 5rem;
+    &-container {
+    }
+    &-statement {
+      margin-top: 3rem;
+      margin-bottom: 5rem;
+    }
+    &-text{
+      margin-top: 3rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
   .process-file {
     position: relative;
     display: flex;

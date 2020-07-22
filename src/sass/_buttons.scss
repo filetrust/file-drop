@@ -23,8 +23,11 @@
     font-size: 1.7rem;
     font-weight: bold;
     color: $alternativeTextColour;
-    border: 1px solid $alternativeTextColour;
+    border: 2px solid $alternativeTextColour;
     padding: 1.7rem 2rem;
+    // experimental
+    margin-right: 2.1rem;
+    margin-bottom: 2rem;
     &s {
       margin-top: 4rem;
     }
