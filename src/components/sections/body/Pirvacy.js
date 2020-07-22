@@ -4,7 +4,7 @@ import { Button, ParagraphText } from '../../widgets';
 function Privacy() {
     return (
         <section className="privacy">
-            <div className="privacy-container container">
+            <div className="container">
                 <div className="section-title">We Don't Store Your Files</div>
                 <div className="privacy-statement">
                     <ParagraphText>File Drop was developed to demonstrate our technology, but we treat your privacy seriously.</ParagraphText>

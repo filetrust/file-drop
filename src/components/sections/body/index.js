@@ -1,3 +1,4 @@
 import ProcessFile from './ProcessFile'
 import Privacy from './Pirvacy';
-export {ProcessFile, Privacy}
+import Technology from './Technology';
+export {ProcessFile, Privacy, Technology}

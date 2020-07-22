@@ -1,11 +1,11 @@
 import React, {Component} from "react";
+import { trackPromise } from 'react-promise-tracker';
+import { CSSTransition } from "react-transition-group";
 
 import "../App.css";
 import { Modal } from "./widgets";
-import { CSSTransition } from "react-transition-group";
-import { Header, Footer, ProcessFile, Privacy } from './sections';
+import { Header, Footer, ProcessFile, Privacy, Technology } from './sections';
 import { validFileSize, validFileType } from '../actions';
-import { trackPromise } from 'react-promise-tracker';
 import { engineApi } from '../api';
 
 const initialState = {
@@ -86,6 +86,7 @@ class App extends Component {
           <Header toggleMenu={this.toggleMenu} handleDrop={this.handleDrop}/>
           <div className='app-body'>
             { fileProcessed ? <ProcessFile state={this.state}/> : null }
+            <Technology/>
             <Privacy/>
           </div>
           <Footer/>
