@@ -1,6 +1,7 @@
 import React from 'react';
 
-function FileAttributes(props) {
+function FileAttributes({ file, fileType } = {}) {
+  const {name, size} = file;
   return(
     <div className="file-attributes table-container">
       <h1 className="table-header">File Attributes</h1>
@@ -8,15 +9,15 @@ function FileAttributes(props) {
         <tbody>
           <tr>
             <td>File Name: </td>
-            <td>{props.file.name}</td>
+            <td>{name}</td>
           </tr>
           <tr>
             <td>File Size: </td>
-            <td>{props.file.size}</td>
+            <td>{size}</td>
           </tr>
           <tr>
             <td>Type: </td>
-            <td>{props.fileType}</td>
+            <td>{fileType}</td>
           </tr>
         </tbody>
       </table>

@@ -15,7 +15,7 @@ const validFileSize = file => {
 }
 
 async function validFileType(file) {
-    var result = await fileTypeDetectionApi.getFileType(file);
+    const result = await fileTypeDetectionApi.getFileType(file);
     return !unsupportedTypes.includes(result.FileTypeName);
 
 }

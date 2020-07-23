@@ -1,7 +1,7 @@
 import React from 'react';
 import { trackPromise } from 'react-promise-tracker';
 import { engineApi } from '../../../api';
-import { DownloadButton } from '../../widgets';
+import { Button } from '../../widgets';
 
 class DownloadFile extends React.Component {
     getProtectedFile = () => {
@@ -21,10 +21,9 @@ class DownloadFile extends React.Component {
 
     render() {
         if ( !this.props.hasIssues ) {
-            return <DownloadButton onClick={this.getProtectedFile}>Download Protected File</DownloadButton>
+            return <Button inverse onClick={this.getProtectedFile}>Download Protected File</Button>
         }
         return null
-
     }
 }
 

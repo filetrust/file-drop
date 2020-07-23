@@ -1,11 +1,11 @@
 import React, {Component} from "react";
+import { trackPromise } from 'react-promise-tracker';
+import { CSSTransition } from "react-transition-group";
+
 import "../App.css";
 import { Modal } from "./widgets";
-import { CSSTransition } from "react-transition-group";
-import { Hero, Footer, ProcessFile } from './sections';
-import { Header } from './sections';
+import { Header, Footer, ProcessFile, Privacy, Technology, Supporting } from './sections';
 import { validFileSize, validFileType } from '../actions';
-import { trackPromise } from 'react-promise-tracker';
 import { engineApi } from '../api';
 
 const initialState = {
@@ -61,8 +61,8 @@ class App extends Component {
           return engineApi.analyseFile(file[0])
         })
         .then(result => {
-          var XMLParser = require("react-xml-parser");
-          var xml = new XMLParser().parseFromString(result);
+          const XMLParser = require("react-xml-parser");
+          const xml = new XMLParser().parseFromString(result);
 
           this.setState({
             analysisReport: xml,
@@ -86,6 +86,9 @@ class App extends Component {
           <Header toggleMenu={this.toggleMenu} handleDrop={this.handleDrop}/>
           <div className='app-body'>
             { fileProcessed ? <ProcessFile state={this.state}/> : null }
+            <Technology/>
+            <Supporting/>
+            <Privacy/>
           </div>
           <Footer/>
           <div className="app-sub-footer">

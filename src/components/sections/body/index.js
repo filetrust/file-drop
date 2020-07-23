@@ -1,2 +1,5 @@
 import ProcessFile from './ProcessFile'
-export default ProcessFile
+import Privacy from './Pirvacy';
+import Technology from './Technology';
+import Supporting from './Supporting';
+export {ProcessFile, Privacy, Technology, Supporting}

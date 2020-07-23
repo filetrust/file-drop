@@ -5,7 +5,7 @@ import socialMenu from '../../data/socialMenu.json';
 import links from '../../data/links.json';
 
 
-export default function Footer() {
+export default function SubFooter() {
     return <div className="app-footer">
         <div className="container app-footer-inner">
             <section className="app-footer-left">

@@ -22,14 +22,18 @@
   .button {
     font-size: 1.7rem;
     font-weight: bold;
-    color: $alternativeTextColour;
-    border: 1px solid $alternativeTextColour;
+    color: $sectionButtonTextColour;
+    border: 2px solid $sectionButtonTextColour;
     padding: 1.7rem 2rem;
+    // experimental
+    margin-right: 2.1rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
     &s {
       margin-top: 4rem;
     }
     &__inverse {
-      background-color: $alternativeTextColour;
+      background-color: $sectionButtonTextColour;
       color: $white;
     }
   }
