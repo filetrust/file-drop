@@ -10,7 +10,7 @@ function Technology() {
                     <div className="brick">
                         <div className="brick-picture"><img src='/img/deepfile-340.png' alt="deep-File Inspection Icon"/></div>
                         <div className="brick-abstract"><span className="text-highlighted">d</span>eep-<span className="text-highlighted">F</span>ile <span className="text-highlighted">I</span>nspection</div>
-                        <ParagraphText context="technology">deep-File Insperction breaks down the entire file and validates it
+                        <ParagraphText context="technology">deep-File Inspection breaks down the entire file and validates it
                             against the format's specification.</ParagraphText>
                     </div>
                     <div className="brick">
