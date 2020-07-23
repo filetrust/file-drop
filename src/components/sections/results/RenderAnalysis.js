@@ -14,7 +14,7 @@ function RenderAnalysis(props) {
           </tbody>
         </table>
       </div>
-      <br />
+
       <div className="remediationsTable table-container">
         <h1 className="table-header">
           Objects & Structures that have been repaired
@@ -25,7 +25,7 @@ function RenderAnalysis(props) {
           </tbody>
         </table>
       </div>
-      <br />
+
       <div className="issuesTable table-container">
         <h1 className="table-header">
           Objects & Structures that are unable to be repaired

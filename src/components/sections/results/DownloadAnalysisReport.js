@@ -1,5 +1,5 @@
 import React from 'react';
-import DownloadButton from '../../widgets/DownloadButton';
+import { Button } from '../../widgets';
 
 class DownloadAnalysisReport extends React.Component {
 
@@ -15,7 +15,7 @@ class DownloadAnalysisReport extends React.Component {
 
     render() {
         return (
-            <DownloadButton alignLeft={false} onClick={this.getAnalysisReport}>Download Analysis Report</DownloadButton>
+            <Button inverse onClick={this.getAnalysisReport}>Download Analysis Report</Button>
         )
     }
 }
