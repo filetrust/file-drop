@@ -82,7 +82,6 @@ class App extends Component {
     return (
       <React.Fragment>
         <div className={`app ${showMenu ? "show-menu" : ""}`}>
-
           <Header toggleMenu={this.toggleMenu} handleDrop={this.handleDrop}/>
           <div className='app-body'>
             { fileProcessed ? <ProcessFile state={this.state}/> : null }

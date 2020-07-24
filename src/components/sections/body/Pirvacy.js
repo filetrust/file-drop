@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button, ParagraphText } from '../../widgets';
+import { Button, ParagraphText, SectionTitle } from '../../widgets';
 
 function Privacy() {
     return (
         <section className="privacy">
             <div className="container">
-                <div className="section-title">We Don't Store Your Files</div>
+                <SectionTitle>We Don't Store Your Files</SectionTitle>
                 <div className="privacy-statement">
                     <ParagraphText>File Drop was developed to demonstrate our technology, but we treat your privacy seriously.</ParagraphText>
                     <ParagraphText> We do not read or store your files, or capture any of your personal information.</ParagraphText>

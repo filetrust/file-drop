@@ -17,7 +17,14 @@
   }
 
   .supporting {
-    padding: 5rem 0 2rem 0;
+    &-triangle {
+      background-color: #fafbfb;
+      clip-path: polygon(0 $bevel-side-difference, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short);
+    }
+    clip-path: polygon(0 $bevel-side-difference + $bevel-triangle-short, 100% $bevel-triangle-long,
+      100% $bevel-side-long - $bevel-triangle-short, 0 $bevel-side-short - $bevel-triangle-long);
+    background-color: #eef3f1;
+    padding: 15rem 0 12rem 0;
     &-paragraph {
       margin-top: 3rem;
     }
@@ -51,6 +58,7 @@
           width: 100%;
           display: table;
           font-size: 1.8rem;
+          background-color: $white;
         }
         &-header, &-row {
           display: table-row;
@@ -124,7 +132,7 @@
   .privacy {
     color: $sectionParagraphTextColour;
     padding-bottom: 7rem;
-    padding-top: 5rem;
+    padding-top: 2rem;
     &-container {
     }
     &-statement {
@@ -167,5 +175,24 @@
         margin: 0;
       }
     }
+  }
+}
+
+@media only screen and (max-width: $md-breakpoint) {
+  .app {
+    .supporting {
+      &-triangle {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    &-header {
+      &-triangle {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+      height: 100vh;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
   }
 }

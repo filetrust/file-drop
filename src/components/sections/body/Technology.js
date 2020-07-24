@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button, ParagraphText } from '../../widgets';
+import { Button, ParagraphText, SectionTitle } from '../../widgets';
 
 function Technology() {
     return (
         <section className="technology">
             <div className="technology-container container">
-                <div className="section-title">Introducing d-FIRST&trade;</div>
+                <SectionTitle>Introducing d-FIRST&trade;</SectionTitle>
                 <div className="technology-stack">
                     <div className="brick">
                         <div className="brick-picture"><img src='/img/deepfile-340.png' alt="deep-File Inspection Icon"/></div>

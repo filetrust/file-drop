@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, ParagraphText } from '../../widgets';
-import { typeName } from 'enzyme/src/Debug';
+import { Button, ParagraphText, SectionTitle } from '../../widgets';
 
 const supporting = [
     {
@@ -72,26 +71,29 @@ function Supporting() {
         </div>
     })
 
-    return <section className="supporting">
-        <div className="container">
-            <div className="section-title">Glasswall Supports the Following Files Types</div>
-            <ParagraphText context="supporting">The Glasswall process can be applied the following <span className="text-highlighted">{supports}</span> File types.</ParagraphText>
-            <div className='supporting-table'>
-                <div className="table-placeholder">
-                    <div className='table-header'>
-                        <div className='table-header-cell'>Category</div>
-                        <div className='table-header-cell'>File Type</div>
-                        <div className='table-header-cell'>Extensions</div>
+    return <div className='supporting-triangle'>
+        <section className="supporting">
+            <div className="container">
+                <SectionTitle>Glasswall Supports the Following Files Types</SectionTitle>
+                <ParagraphText context="supporting">The Glasswall process can be applied the following <span
+                    className="text-highlighted">{supports}</span> File types.</ParagraphText>
+                <div className='supporting-table'>
+                    <div className="table-placeholder">
+                        <div className='table-header'>
+                            <div className='table-header-cell'>Category</div>
+                            <div className='table-header-cell'>File Type</div>
+                            <div className='table-header-cell'>Extensions</div>
+                        </div>
+                        {rows}
                     </div>
-                    {rows}
                 </div>
-            </div>
-            <div className="supporting-buttons">
-                <Button inverse>LEARN MORE</Button>
-            </div>
+                <div className="supporting-buttons">
+                    <Button inverse>LEARN MORE</Button>
+                </div>
 
-        </div>
-    </section>
+            </div>
+        </section>
+    </div>
 }
 
 export default Supporting
