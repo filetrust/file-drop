@@ -45,6 +45,7 @@ class App extends Component {
 
   handleDrop = file => {
     this.resetState();
+    debugger;
 
     if(!validFileSize(file[0])){
       this.setState({validation: "Please use a file under 6MB"});

@@ -1,13 +1,12 @@
 import React from 'react'
-import icon from '../../../img/drag-drop-icon.png';
-import { DragAndDrop } from '../../widgets';
 import { Button, ParagraphText } from '../../widgets';
+import { StyledDropzone } from '../../widgets';
 
 export default function Hero({ handleDrop } = {}) {
     return <div className='hero'>
         <div className="hero-title">
             <div className="hero-icon">
-                <img src={icon} alt="file drop icon"/>
+                <img src='/img/drag-drop-icon.png' alt="file drop icon"/>
             </div>
             <div className="hero-file-drop">File Drop</div>
         </div>
@@ -32,10 +31,10 @@ export default function Hero({ handleDrop } = {}) {
                 </div>
 
             </div>
-            <DragAndDrop handleDrop={handleDrop}>
+            <StyledDropzone onDrop={handleDrop}>
                 <div className="hero-drop-message">Drop a file here</div>
                 <button className="hero-drop-button">SELECT A FILE</button>
-            </DragAndDrop>
+            </StyledDropzone>
         </div>
     </div>
 }
