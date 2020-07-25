@@ -91,6 +91,12 @@ $sectionSubTitleTextColour: hsl(248, 13%, 36%); //#535068;
 $sectionParagraphTextColour: hsl(163, 11%, 13%); //#191919
 $sectionButtonTextColour: hsl(164, 58%, 47%); //#33bf99
 
+$header-bg-gradient-start: hsl(205, 74%, 18%);
+$header-bg-gradient-end: hsl(196, 68%, 30%);
+$button-hover-on-deep-blue: darken($header-bg-gradient-end, 5%);// lighten($header-bg-gradient-start, 5%);
+$button-hover-on-inverse:  lighten($sectionButtonTextColour, 6%);
+$button-bg-hover: lighten($sectionButtonTextColour, 47%);
+
 // --- Main Layout Colours --- //
 $mainTextColour : darken($charcoalGrey, 5%);
 $backgroundColour : $paleGrey;

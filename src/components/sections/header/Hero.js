@@ -51,17 +51,17 @@ export default function Hero({ handleDrop, loading } = {}) {
                     to download along with a report detailing how Glasswall made it safe.
                 </ParagraphText>
                 <div className="hero-buttons">
-                    <Button section="hero">HOW IT WORKS</Button>
-                    <Button section="hero">SUPPORTED FILE TYPES</Button>
-                    <Button section="hero">PRIVACY</Button>
-                    <Button section="hero" inverse>CONTACT US</Button>
+                    <Button context="hero" href="#footer">HOW IT WORKS</Button>
+                    <Button context="hero">SUPPORTED FILE TYPES</Button>
+                    <Button context="hero">PRIVACY</Button>
+                    <Button context="hero" inverse href="Contact">CONTACT US</Button>
                 </div>
 
             </div>
             <StyledDropzone onDrop={handleDrop} accept={accept}  loading={loading}>
                 <div className="hero-drop-message">Drop a file here</div>
                 <img src="/img/drag-drop-area.svg" alt="Drop Zone Area" />
-                <Button inverse section="drop">SELECT A FILE</Button>
+                <Button inverse context="drop">SELECT A FILE</Button>
             </StyledDropzone>
         </div>
     </div>

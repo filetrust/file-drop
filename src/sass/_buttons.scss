@@ -1,5 +1,4 @@
 // --- Button Icons --- //
-
 @mixin button($image) {
   background-image: url('../img/'+ $image);
   background-size: 3.2rem 3.2rem;
@@ -8,7 +7,6 @@
 }
 
 .app {
-
   button {
     position: relative;
     overflow: hidden;
@@ -29,6 +27,7 @@
     margin-right: 2.1rem;
     margin-bottom: 2rem;
     text-transform: uppercase;
+    transition: 0.3s;
     &s {
       margin-top: 4rem;
     }
@@ -37,70 +36,35 @@
       color: $white;
     }
   }
-
-  /*
-  TODO remove after testing
-  .analysis-results {
-    .download-button {
-      //display: block;
-      min-width: 9rem;
-      height: $buttonHeight;
-      padding: 0 2rem;
-      font-size: 1.6rem;
-      text-transform: uppercase;
-      line-height: $buttonHeight;
-      color: $white;
-      border-radius: 3px;
-      transition: all 0.3s;
+}
 
 
+@media only screen and (min-width: $max-touch-breakpoint) {
+  .app {
+    .button {
       &:hover {
-        box-shadow: $boxShadow1;
+        background-color: $button-bg-hover;
       }
-
-      &.center {
-        margin: 3rem auto;
-      }
-
-      &:disabled {
-        opacity: 0.6;
-        pointer-events: none;
+      &__inverse {
+        &:hover {
+          background-color: $button-hover-on-inverse;
+        }
       }
     }
 
-    .button-icon {
-      background-image: url('img/download-icon-white.svg');
-      background-size: 3.2rem 3.2rem;
-      background-position: left center;
-      background-repeat: no-repeat;
-      min-width: 0;
-      padding: 0 1.4rem 0 3.4rem;
-      text-align: left;
-    }
-
-
-    .button-filled {
-      background-color: $buttonBGColour;
-
+    &-header {
+      .button {
+        &:hover {
+          background-color: $button-hover-on-deep-blue;
+        }
+        &__inverse {
+          &:hover {
+            background-color: $button-hover-on-inverse;
+          }
+        }
+      }
     }
   }
-  */
-
-  // moved from _drop.scss
-  .hero {
-    &-drop {
-      &-button {
-        color: $white;
-        opacity: 0.5;
-        font-size: 1.7rem;
-        padding: 1.5rem 2rem;
-        border: 1px $white solid;
-      }
-    }
-    // moved from _header.scss
-  }
-  // from _results.scss
-
 }
 
 @media only screen and (max-width: $md-breakpoint) {

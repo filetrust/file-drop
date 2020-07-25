@@ -3,7 +3,7 @@ import { Button, ParagraphText, SectionTitle } from '../../widgets';
 
 function Technology() {
     return (
-        <section className="technology">
+        <section className="technology" id="technology">
             <div className="technology-container container">
                 <SectionTitle>Introducing d-FIRST&trade;</SectionTitle>
                 <div className="technology-stack">
@@ -27,7 +27,7 @@ function Technology() {
                     </div>
                 </div>
                 <div className="technology-buttons">
-                    <Button inverse>LEARN MORE</Button>
+                    <Button inverse href="d-FIRST">LEARN MORE</Button>
                 </div>
             </div>
         </section>

@@ -44,7 +44,7 @@ function Supporting() {
     })
 
     return <div className='supporting-triangle'>
-        <section className="supporting">
+        <section className="supporting" id="supporting">
             <div className="container">
                 <SectionTitle>Glasswall Supports the Following Files Types</SectionTitle>
                 <ParagraphText context="supporting">The Glasswall process can be applied the following <span
@@ -60,7 +60,7 @@ function Supporting() {
                     </div>
                 </div>
                 <div className="supporting-buttons">
-                    <Button inverse>LEARN MORE</Button>
+                    <Button inverse href="SupportedTypesLearnMore">LEARN MORE</Button>
                 </div>
 
             </div>

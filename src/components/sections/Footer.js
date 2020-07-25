@@ -6,7 +6,7 @@ import links from '../../data/links.json';
 
 
 export default function Footer() {
-    return <div className="app-footer">
+    return <div className="app-footer" id="footer">
         <div className="container app-footer-inner">
             <section className="app-footer-left">
                 <div className="logo">
