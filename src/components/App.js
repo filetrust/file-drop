@@ -102,11 +102,10 @@ class App extends Component {
           </div>
           <Footer/>
           <div className="app-sub-footer">
-            <a href="https://glasswallsolutions.com/privacy-policy/">
-              <span className="footer__legend__link">Read our Privacy Policy -</span>
-            </a>
+            <a className="footer__legend__link" href="https://glasswallsolutions.com/privacy-policy/">Read our Privacy Policy -</a>
             <span className="footer__address">Continental House, Oakridge, West End, Surrey, GU24 9PJ. Tel: +44 (0) 203 814 3890<br /></span>
           </div>
+          {/*{showMenu ? <div className="app-menu-mask"/> : null}*/}
         </div>
         <CSSTransition in={showModal} timeout={500} classNames="modal" unmountOnExit>
           <Modal onClose={this.toggleModal} containerClick={this.handleContainerClick} key={7} />

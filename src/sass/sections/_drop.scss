@@ -26,9 +26,6 @@ $drop-area-border-radius: 2.5rem;
       outline: none;
       transition: border .24s ease-in-out;
       flex: 1;
-      &:hover {
-        cursor: no-drop;
-      }
       .drop-button {
         margin: 0;
         z-index: -1;
@@ -67,6 +64,10 @@ $drop-area-border-radius: 2.5rem;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        .button {
+          margin: 0;
+          z-index: -1;
+        }
       }
     }
   }
