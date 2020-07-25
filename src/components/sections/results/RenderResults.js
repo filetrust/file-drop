@@ -48,8 +48,8 @@ function RenderResults({ state }) {
         } else {
             return (
                 <section className="is-clean analysis-results">
-                    <DownloadAnalysisReport report={analysisReportString} filename={fileName}/>
                     <SectionTitle context='clean'>File is clean!</SectionTitle>
+                    <DownloadAnalysisReport report={analysisReportString} filename={fileName}/>
                     <FileAttributes file={file} fileType={fileType}/>
                 </section>
             );
