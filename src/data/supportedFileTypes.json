@@ -1,0 +1,28 @@
+[
+  {
+    "Microsoft Office (Legacy)": [
+      { "Microsoft Word": [ "doc", "dot" ] },
+      { "Microsoft Excel": [ "xls", "xlt", "xlm" ] },
+      { "Microsoft PowerPoint": [ "ppt", "pot", "pps" ] }
+    ]
+  },
+  {
+    "Microsoft Office (2007+)": [
+      { "Microsoft Word": [ "docx", "dotx", "docm", "dotm" ] },
+      { "Microsoft Excel": [ "xlsx", "xltx", "xlsm", "xltm" ] },
+      { "Microsoft PowerPoint": [ "pptx", "potx", "ppsx", "pptm", "potm", "ppsm" ] }
+    ]
+  },
+  {
+    "PDF": [
+      { "Adobe PDF": [ "pdf" ] }
+    ]
+  },
+  {
+    "Images": [
+      { "JPEG": [ "jpeg", "jpg", "jpe" ] },
+      { "PNG": [ "png" ] },
+      { "GIF": [ "gif" ] }
+    ]
+  }
+]

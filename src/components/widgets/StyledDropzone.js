@@ -1,58 +1,80 @@
-import React from 'react';
-import {useDropzone} from 'react-dropzone';
-import styled from 'styled-components';
+import React, { useMemo } from 'react';
+import { usePromiseTracker } from "react-promise-tracker";
+import { useDropzone } from 'react-dropzone';
+
+import mimeTypes from '../../data/mimeTypes.json';
+import supporting from '../../data/supportedFileTypes.json';
+
 import LoadingIndicator from './LoadingIndicator';
 
-const getColor = (props) => {
-    if (props.isDragAccept) {
-        return '#00e676';
-    }
-    if (props.isDragReject) {
-        return '#ff1744';
-    }
-    if (props.isDragActive) {
-        return '#2196f3';
-    }
-    return '#eeeeee';
-}
+const acceptableExtensions = {};
 
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 5rem 0;
-  align-items: center;
-  border-width: 2px;
-  border-radius: 2.5rem;
-  border-color: ${props => getColor(props)};
-  border-style: dashed;
-  outline: none;
-  transition: border .24s ease-in-out;
-`;
+supporting.forEach((vendor, vIndex) => {
+    const vendorName = Object.keys(vendor)[0];
+    const vendorTypes = vendor[vendorName];
 
-export default function StyledDropzone({ onDrop, children }) {
+    vendorTypes.forEach((type, tIndex) => {
+        const typeName = Object.keys(type)[0]
+        const extensions = type[typeName];
+
+        extensions.forEach((extension, eIndex) => {
+            acceptableExtensions[extension] = mimeTypes[extension]
+        })
+    })
+});
+
+const uniqueMimeTypes = {};
+
+Object.values(acceptableExtensions).forEach((mimeTypesByExt) => {
+    mimeTypesByExt && mimeTypesByExt.forEach((mimeType) => {
+        uniqueMimeTypes[mimeType] = true;
+    })
+})
+const accept = Object.keys(uniqueMimeTypes).join(',');
+
+export default function StyledDropzone({ onDrop, children, loading }) {
     const {
         getRootProps,
         getInputProps,
         isDragActive,
         isDragAccept,
-        isDragReject
+        isDragReject,
     } = useDropzone({
-        accept: 'image/*',
-        onDrop
+        accept: accept,
+        onDrop,
+        noClick: loading,
+        noDrag: loading,
+        maxSize: 6E6
     });
 
+    const { promiseInProgress } = usePromiseTracker();
+
+    let classes = useMemo(() => ( [
+        "drop-border",
+        isDragActive ? "active" : "",
+        isDragAccept ? "accept" : "",
+        isDragReject ? "reject" : "",
+        promiseInProgress ? "progress" : "",
+        loading ? "reject" : "",
+    ] ), [
+        isDragActive,
+        isDragReject,
+        isDragAccept,
+        promiseInProgress,
+        loading,
+    ]);
+    if ( classes.includes("reject") ) {
+        classes = classes.filter(( item => item !== "accept" ))
+    }
+    const className = classes.join(' ');
+
     return (
-        <div className="drop-container">
-            <Container {...getRootProps({isDragActive, isDragAccept, isDragReject})}>
+        <div className={"drop-container"}>
+            <div className={className} {...getRootProps()}>
                 <input {...getInputProps()} />
-                <LoadingIndicator key={6} />
-                { children }
-            </Container>
+                <LoadingIndicator key={6}/>
+                {children}
+            </div>
         </div>
     );
 }
-

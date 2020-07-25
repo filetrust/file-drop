@@ -1,37 +1,9 @@
 import React from 'react';
 import { Button, ParagraphText, SectionTitle } from '../../widgets';
-
-const supporting = [
-    {
-        "Microsoft Office (Legacy)": [
-            { "Microsoft Word": [ 'doc', 'dot' ] },
-            { "Microsoft Excel": [ 'xls', 'xlt', 'xlm' ] },
-            { "Microsoft PowerPoint": [ 'ppt', 'pot', 'pps' ] },
-        ],
-    },
-    {
-        "Microsoft Office (2007+)": [
-            { "Microsoft Word": [ 'docx', 'dotz', 'docm', 'dotm' ] },
-            { "Microsoft Excel": [ 'xlsx', 'xltx', 'xlsm', 'xltm' ] },
-            { "Microsoft PowerPoint": [ 'pptx', 'potx', 'ppsx', 'pptm', 'potm', 'ppsm' ] },
-        ],
-    },
-    {
-        "Adobe": [
-            { "Adobe PDF": [ 'pdf' ] },
-        ],
-    },
-    {
-        "Images": [
-            { "JPEG": [ 'jpeg', 'jpg', 'jpe' ] },
-            { "PNG": [ 'png' ] },
-            { "GIF": [ 'gif' ] },
-        ],
-    },
-]
+import supporting from '../../../data/supportedFileTypes.json';
 
 function Supporting() {
-    let supports = 0;
+    let totalSupports = 0;
     const vendors = [];
     const fileTypes = [];
     const extByTypes = {};
@@ -49,7 +21,7 @@ function Supporting() {
             extByTypes[vendorName + '-' + typeName] = extensions;
 
             extensions.forEach((extension, eIndex) => {
-                supports++;
+                totalSupports++;
             })
         })
     });
@@ -76,7 +48,7 @@ function Supporting() {
             <div className="container">
                 <SectionTitle>Glasswall Supports the Following Files Types</SectionTitle>
                 <ParagraphText context="supporting">The Glasswall process can be applied the following <span
-                    className="text-highlighted">{supports}</span> File types.</ParagraphText>
+                    className="text-highlighted">{totalSupports}</span> File types.</ParagraphText>
                 <div className='supporting-table'>
                     <div className="table-placeholder">
                         <div className='table-header'>

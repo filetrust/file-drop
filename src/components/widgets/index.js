@@ -1,4 +1,3 @@
-import _DragAndDrop from './_DragAndDrop'
 import LoadingIndicator from './LoadingIndicator'
 import Modal from './Modal'
 import Button from './Button'
