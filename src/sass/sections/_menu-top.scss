@@ -1,16 +1,17 @@
-.app {
+nav {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
 
-  nav {
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-    align-items: center;
-  }
+.app {
   &-logo {
     img {
       height: 10rem;
     }
   }
+
   &-menu {
     &-top {
       display: flex;

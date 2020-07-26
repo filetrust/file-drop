@@ -1,57 +1,48 @@
 // --- Button Icons --- //
-@mixin button($image) {
-  background-image: url('../img/'+ $image);
-  background-size: 3.2rem 3.2rem;
-  background-position: left center;
-  background-repeat: no-repeat;
+button {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
 }
 
-.app {
-  button {
-    position: relative;
-    overflow: hidden;
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-    user-select: none;
-    outline: none;
+.button {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: $sectionButtonTextColour;
+  border: 2px solid $sectionButtonTextColour;
+  padding: 1.7rem 2rem;
+  // experimental
+  margin-right: 2.1rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  transition: 0.3s;
+  &s {
+    margin-top: 4rem;
   }
-
-  .button {
-    font-size: 1.7rem;
-    font-weight: bold;
-    color: $sectionButtonTextColour;
-    border: 2px solid $sectionButtonTextColour;
-    padding: 1.7rem 2rem;
-    // experimental
-    margin-right: 2.1rem;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    transition: 0.3s;
-    &s {
-      margin-top: 4rem;
-    }
-    &__inverse {
-      background-color: $sectionButtonTextColour;
-      color: $white;
-    }
+  &__inverse {
+    background-color: $sectionButtonTextColour;
+    color: $white;
   }
 }
 
 
 @media only screen and (min-width: $max-touch-breakpoint) {
-  .app {
-    .button {
+  .button {
+    &:hover {
+      background-color: $button-bg-hover;
+    }
+    &__inverse {
       &:hover {
-        background-color: $button-bg-hover;
-      }
-      &__inverse {
-        &:hover {
-          background-color: $button-hover-on-inverse;
-        }
+        background-color: $button-hover-on-inverse;
       }
     }
+  }
 
+  .app {
     &-header {
       .button {
         &:hover {

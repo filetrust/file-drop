@@ -81,15 +81,16 @@
       }
     }
   }
-  .copyright {
-    display: inline-block;
-    font-size: 1.1rem;
-    line-height: 2.4rem;
-    width: 72%;
-    margin-top: 1rem;
-    text-align: left;
-    color: $white;
-  }
+}
+
+.copyright {
+  display: inline-block;
+  font-size: 1.1rem;
+  line-height: 2.4rem;
+  width: 72%;
+  margin-top: 1rem;
+  text-align: left;
+  color: $white;
 }
 
 @media only screen and (max-width: $lg-breakpoint) {
@@ -100,13 +101,12 @@
 }
 
 @media only screen and (max-width: $md-breakpoint) {
-  .app {
 
-    .app-footer-menu {
+  .app-footer {
+    &-menu {
       display: none;
     }
-
-    .app-footer-inner {
+    &-inner {
       padding: 0;
     }
   }

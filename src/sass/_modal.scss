@@ -1,155 +1,128 @@
-.app {
+.modal {
+  &-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $modalOverlayBGColour;
+    opacity: 0;
+    transition: all 0.5s;
+    z-index: z(modal);
+  }
 
-  .modal {
-    &-overlay {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: $modalOverlayBGColour;
-      opacity: 0;
-      transition: all 0.5s;
-      z-index: z(modal);
+  &-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -20%);
+    width: $modalContainerWidth;
+    height: 56vh;
+    max-width: $modalContainerMaxWidth;
+    min-height: $modalContainerMinHeight;
+    overflow: hidden;
+    background-color: $modalBackgroundColor;
+    border-radius: $borderRadius1;
+    box-shadow: $boxShadow1;
+    transition: opacity 0.3s, transform 0.3s, width 0.1s;
+
+    form {
+      height: 100%;
     }
 
-    &-container {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -20%);
-      width: $modalContainerWidth;
-      height: 56vh;
-      max-width: $modalContainerMaxWidth;
-      min-height: $modalContainerMinHeight;
-      overflow: hidden;
-      background-color: $modalBackgroundColor;
-      border-radius: $borderRadius1;
-      box-shadow: $boxShadow1;
-      transition: opacity 0.3s, transform 0.3s, width 0.1s;
-
-      form {
-        height: 100%;
-      }
-
-      .form-elements-container {
-        width: $modalFormElementsContainerWidth--0-plus;
-        padding-top: 3rem;
-        margin: 0 auto;
-      }
+    .form-elements-container {
+      width: $modalFormElementsContainerWidth--0-plus;
+      padding-top: 3rem;
+      margin: 0 auto;
     }
+  }
 
-    &-header {
-      height: $modalHeaderHeight;
-      background-color: $modalHeaderBackgroundColour;
-      color: $modalHeaderTextColour;
-      border-radius: $borderRadius1;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      padding: 0 2rem;
+  &-header {
+    height: $modalHeaderHeight;
+    background-color: $modalHeaderBackgroundColour;
+    color: $modalHeaderTextColour;
+    border-radius: $borderRadius1;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 0 2rem;
 
-      h1 {
-        float: left;
-        width: calc(100% - 14rem);
-        margin: 0;
-        padding: 0;
-        font-weight: normal;
-        font-size: 1.8rem;
-        line-height: $modalHeaderHeight;
-        font-family: $headerFont--regular;
-      }
+    h1 {
+      float: left;
+      width: calc(100% - 14rem);
+      margin: 0;
+      padding: 0;
+      font-weight: normal;
+      font-size: 1.8rem;
+      line-height: $modalHeaderHeight;
+      font-family: $headerFont--regular;
     }
+  }
 
-    &-enter {
-      &-active {
-        .modal-container {
-          transform: translate(-50%, -50%);
-          transition: all 0.5s;
-          opacity: 1;
-        }
-      }
-      &-done {
-        .modal-container {
-          transform: translate(-50%, -50%);
-        }
-      }
-      opacity: 0;
-      &-active {
-        opacity: 1;
-        transition: 0.5s all;
-      }
-      &-done {
+  &-enter {
+    &-active {
+      .modal-container {
+        transform: translate(-50%, -50%);
+        transition: all 0.5s;
         opacity: 1;
       }
     }
-
-    &-contents {
-      position: relative;
-      height: calc(100% - #{$modalHeaderHeight} - #{$modalFooterHeight} - 4rem);
-      padding: 2rem 4rem;
-      font-size: 1.4rem;
-      overflow-y: auto;
-      overflow-x: hidden;
-      transition: all 0.3s ease-out;
-    }
-
-    &-footer {
-      display: flex;
-      justify-content: flex-end;
-      height: $modalFooterHeight;
-      padding: 2rem 2rem 0;
-      background-color: $modalFooterBackgroundColour;
-      transition: all 0.2s 0.2s;
-
-      &.single-central-button {
-        justify-content: space-around;
-        align-items: center;
-        height: auto;
-        padding: 0;
+    &-done {
+      .modal-container {
+        transform: translate(-50%, -50%);
       }
     }
-
-    &-exit {
+    opacity: 0;
+    &-active {
       opacity: 1;
-      &-active {
-        opacity: 0;
-        transition: 0.5s all;
-      }
+      transition: 0.5s all;
     }
+    &-done {
+      opacity: 1;
+    }
+  }
 
-    &-close-button {
-      width: $modalHeaderHeight;
-      height: $modalHeaderHeight;
-      position: absolute;
-      right: 0;
-      top: 0;
-      filter: blur(0);
-      background: transparent url('../src/img/'+ $closeIcon + '') center center no-repeat;
-      background-size: 1.7rem 1.7rem;
+  &-contents {
+    position: relative;
+    height: calc(100% - #{$modalHeaderHeight} - #{$modalFooterHeight} - 4rem);
+    padding: 2rem 4rem;
+    font-size: 1.4rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.3s ease-out;
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: flex-end;
+    height: $modalFooterHeight;
+    padding: 2rem 2rem 0;
+    background-color: $modalFooterBackgroundColour;
+    transition: all 0.2s 0.2s;
+
+    &.single-central-button {
+      justify-content: space-around;
+      align-items: center;
+      height: auto;
+      padding: 0;
     }
+  }
+
+  &-exit {
+    opacity: 1;
+    &-active {
+      opacity: 0;
+      transition: 0.5s all;
+    }
+  }
+
+  &-close-button {
+    width: $modalHeaderHeight;
+    height: $modalHeaderHeight;
+    position: absolute;
+    right: 0;
+    top: 0;
+    filter: blur(0);
+    background: transparent url('../src/img/'+ $closeIcon + '') center center no-repeat;
+    background-size: 1.7rem 1.7rem;
   }
 }
-
-  
-  /*
-  .file-details-title {
-    display: none;
-  }
-
-  .popup-close-button {
-    width: 4.2rem;
-    height: 4.2rem;
-    background-size: 1.4rem 1.4rem;
-  }
-  */
-
-  /*
-  .working {
-    .action-contents-wrapper,
-    .cancel-button,
-    .modal-header {
-      opacity: 0.5;
-    }
-  }
-  */
-

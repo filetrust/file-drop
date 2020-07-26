@@ -1,22 +1,20 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  color: $charcoalGrey;
+  background: $paleGrey;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
 
 .app {
-
-  *, *::after, *::before {
-    box-sizing: border-box;
-  }
-
-  html, body {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 400;
-    color: $charcoalGrey;
-    background: $paleGrey;
-  }
-
-  a {
-    text-decoration: none;
-    color: $white;
-  }
-
   &-link {
     color: #09d3ac;
   }
