@@ -114,7 +114,7 @@
         &-row.bottom-border {
           .table-row-cell {
             border-bottom-width: 1px;
-            padding-bottom: 3.5rem ;
+            padding-bottom: 3.5rem;
           }
         }
         &-row {
@@ -127,25 +127,6 @@
       }
     }
   }
-}
-
-@media only screen and (max-width: $md-breakpoint) {
-  .supporting {
-    &-triangle {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
-    &-table {
-      &.browser {
-        display: none;
-      }
-      &.mobile {
-        display: block;
-      }
-    }
-  }
-
 }
 
 // ---- Introducing d-FIRST ----- //
@@ -205,12 +186,12 @@
   flex-direction: column;
   //min-height: 71vh;
   align-items: center;
-  font-size: calc(1.2rem);
+  font-size: 1.6rem;
   color: $charcoalGrey;
-  padding-top: 2rem;
-  top: 1.0rem;
+  padding-top: 5rem;
+  //top: 1.0rem;
 
-  h1 {
+  .h1 {
     font-size: 2.0rem;
     font-family: 'montserratregular', sans-serif;
     font-weight: 400;
@@ -231,23 +212,103 @@
 }
 
 
-@media only screen and (max-width: $md-breakpoint) {
+@media only screen and (max-width: $xl-breakpoint) {
   .supporting {
+
     &-triangle {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 $bevel-side-difference-xl, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-xl);
     }
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 $bevel-side-difference-xl + $bevel-triangle-short, 100% $bevel-triangle-long, 100% $bevel-side-long - $bevel-triangle-short, 0 $bevel-side-short-xl - $bevel-triangle-long);
   }
+}
+
+
+@media only screen and (max-width: $lg-breakpoint) {
+
+  .paragraph {
+    &-text {
+      font-size: 1.7rem;
+      line-height: 2.7rem;
+    }
+  }
+
+  .technology {
+    padding-top: 5rem;
+    .brick {
+      padding: 1.5rem;
+    }
+    &-buttons {
+      .button {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .supporting {
+    padding: 10rem 0 7.5rem 0;
+    &-triangle {
+      clip-path: polygon(0 $bevel-side-difference-lg, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-lg);
+    }
+    clip-path: polygon(0 $bevel-side-difference-lg + $bevel-triangle-short, 100% $bevel-triangle-long, 100% $bevel-side-long - $bevel-triangle-short, 0 $bevel-side-short-lg - $bevel-triangle-long);
+    &-paragraph {
+      margin-top: 2rem;
+    }
+    &-table {
+      padding: 3rem 0;
+      .table {
+        &-placeholder {
+          font-size: 1.5rem;
+        }
+      }
+      &.browser, &.mobile {
+        .table-row-cell {
+          padding: 2rem;
+        }
+      }
+
+    }
+  }
+  .privacy {
+    padding-top: 0;
+    padding-bottom: 2rem;
+    &-statement {
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: $max-touch-breakpoint) {
 
   .app {
     &-header {
       &-triangle {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
       }
-      height: 100vh;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
   }
+
+  .supporting {
+    &-triangle {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+    &-table {
+      &.browser {
+        display: none;
+      }
+      &.mobile {
+        display: block;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $md-breakpoint) {
 
   .technology {
     &-stack {
@@ -273,3 +334,14 @@
     }
   }
 }
+
+@media only screen and (max-width: $xs-breakpoint) {
+  .paragraph {
+    &-text {
+      font-size: 1.5rem;
+      line-height: 2.3rem;
+    }
+  }
+}
+
+

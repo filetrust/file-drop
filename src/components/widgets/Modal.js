@@ -5,7 +5,7 @@ function Modal({ onClose, containerClick } = {}) {
     <div className="modal-overlay file-details-modal" onClick={onClose}>
       <section className="modal-container" onClick={containerClick}>
         <header className="modal-header">
-          <h1>Terms &amp; Conditions</h1>
+          <div className="h1" >Terms &amp; Conditions</div>
         </header>
         <div className="modal-contents">
           <p>T's and C's go here</p>

@@ -8,7 +8,7 @@ export default function ProcessFile({ state } ) {
     return (
         <section className="process-file">
 {/*
-            <h1>Drag and drop a file to have it processed by the Glasswall d-FIRST&trade; Engine</h1>
+            <div className="h1" >Drag and drop a file to have it processed by the Glasswall d-FIRST&trade; Engine</div>
             <h3>This free service is currently limited to a maximum file size of 6MB</h3>
 */}
             <CSSTransition in={fileProcessed} timeout={{enter: 500, exit: 500}} classNames="results">

@@ -1,23 +1,22 @@
 // --- Button Icons --- //
 button {
-  position: relative;
-  overflow: hidden;
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  user-select: none;
   outline: none;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
 }
 
 .button {
+  border: 2px solid $sectionButtonTextColour;
+  color: $sectionButtonTextColour;
   font-size: 1.7rem;
   font-weight: bold;
-  color: $sectionButtonTextColour;
-  border: 2px solid $sectionButtonTextColour;
-  padding: 1.7rem 2rem;
-  // experimental
-  margin-right: 2.1rem;
   margin-bottom: 2rem;
+  margin-right: 2.1rem;
+  padding: 1.7rem 2rem;
   text-transform: uppercase;
   transition: 0.3s;
   &s {
@@ -68,4 +67,10 @@ button {
     }
   }
   */
+
+  .button {
+    margin-right: 0;
+    margin-top: 0;
+    width: 100%;
+  }
 }

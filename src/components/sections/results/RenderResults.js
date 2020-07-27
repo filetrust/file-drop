@@ -28,7 +28,7 @@ function RenderResults({ state }) {
         const hasIssues = issues.length;
         if ( sanitisations.length || remediations.length || hasIssues ) {
             return (
-                <div className="analysis-results">
+                <div className="analysis">
                     <IssueMessage hasIssues={hasIssues}/>
                     <SectionTitle context='regenerated'>Your Safe, Regenerated File Is Ready</SectionTitle>
                     <div className="download-container">

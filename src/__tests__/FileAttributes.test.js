@@ -62,7 +62,7 @@ describe("FileAttributes", () => {
     const wrapper = shallow(<FileAttributes file={mockFile} fileType={fileType}/>);
     expect(
       wrapper.contains(
-        <h1 className="table-header">File Attributes</h1>
+        <div className="h1 table-header">File Attributes</div>
       )
     ).toBe(true);
   });

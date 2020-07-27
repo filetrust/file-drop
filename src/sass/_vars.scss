@@ -12,8 +12,8 @@ $lg-breakpoint: 1024px;
 $md-breakpoint: 768px;
 $sm-breakpoint: 576px;
 // TODO remove after debugging
-$xs-breakpoint: 500px;
-//$xs-breakpoint: 414px;
+//$xs-breakpoint: 500px;
+$xs-breakpoint: 414px;
 //$xxs-breakpoint: 320px;
 
 $max-touch-breakpoint: $md-breakpoint;
@@ -34,21 +34,22 @@ $xs-breakpoint-min: $xs-breakpoint + 1px;
 //$xxs-breakpoint-min: $xxs-breakpoint + 1px;
 
 //$xxl-container-width: $xxl-breakpoint - 10rem;
-$xl-container-width: 124rem;
-$lg-container-width: $lg-breakpoint-rem - 5.6rem;
-$md-container-width: $md-breakpoint-rem - 4.4rem;
-$sm-container-width: $sm-breakpoint-rem - 3.4rem;
-$xs-container-width: 35.6rem - 4rem;
+$xxl-container-width: 124rem;
+$xl-container-width: $lg-breakpoint-rem - 1rem;
+$lg-container-width: $md-breakpoint-rem - 2.5rem;
+$md-container-width: $sm-breakpoint-rem - 20rem ;
+$sm-container-width: 31.5rem; //$md-container-width - 10rem ;
+$xs-container-width: 30rem;
 //$xs-container-width: $xs-breakpoint-rem - 2.6rem;
 //$xxs-container-width: $xxs-breakpoint-rem - 2rem;
 
-//$xxl-header-height:
-$xl-header-height: 93rem;
-$lg-header-height: 67.5rem;
-$md-header-height: 50.6rem;
-$sm-header-height: 38rem;
-$xs-header-height: 28.5rem;
-$xxs-header-height:20.5rem;
+$xxl-header-min-height: 82rem;
+$xl-header-min-height: 79rem;
+$lg-header-min-height: 63rem;
+$md-header-min-height: 50.6rem;
+$sm-header-min-height: 38rem;
+$xs-header-min-height: 28.5rem;
+$xxs-header-min-height:20.5rem;
 
 //$xxl-file-type-section-height: 114.1rem;
 $xl-file-type-section-height: 81.2rem;
@@ -60,8 +61,14 @@ $xxs-file-type-section-height: 19rem;
 
 // --- Bevel constants --- //
 $bevel-side-short: 90%;
+$bevel-side-short-xl: 92.7%;
+$bevel-side-short-lg: 95%;
+
 $bevel-side-long: 100%;
+
 $bevel-side-difference: $bevel-side-long - $bevel-side-short;
+$bevel-side-difference-xl: $bevel-side-long - $bevel-side-short-xl;
+$bevel-side-difference-lg: $bevel-side-long - $bevel-side-short-lg;
 
 $bevel-triangle-short: 2.5%;
 $bevel-triangle-long: 1%;
@@ -94,8 +101,9 @@ $sectionSubTitleTextColour: hsl(248, 13%, 36%); //#535068;
 $sectionParagraphTextColour: hsl(163, 11%, 13%); //#191919
 $sectionButtonTextColour: hsl(164, 58%, 47%); //#33bf99
 
-$header-bg-gradient-start: hsl(205, 74%, 18%);
-$header-bg-gradient-end: hsl(196, 68%, 30%);
+$header-bg-gradient-start: hsl(212, 92%, 20%);
+//$header-bg-gradient-start: hsl(205, 74%, 18%);
+$header-bg-gradient-end: hsl(196, 68%, 33%);
 $button-hover-on-deep-blue: darken($header-bg-gradient-end, 5%);// lighten($header-bg-gradient-start, 5%);
 $button-hover-on-inverse:  lighten($sectionButtonTextColour, 6%);
 $button-bg-hover: lighten($sectionButtonTextColour, 47%);

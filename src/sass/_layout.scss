@@ -1,5 +1,5 @@
 .container {
-  max-width: $xl-container-width;
+  max-width: $xxl-container-width;
   margin: 0 auto;
 }
 
@@ -13,6 +13,9 @@
 
 
 @media only screen and (max-width: $xl-breakpoint) {
+  .container {
+    max-width: $xl-container-width;
+  }
 }
 
 @media only screen and (max-width: $lg-breakpoint) {
@@ -37,4 +40,11 @@
   .container {
     max-width: $xs-container-width;
   }
+  .section {
+    &-title {
+      font-size: 3rem;
+      line-height: 3.5rem;
+    }
+  }
+
 }

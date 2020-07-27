@@ -67,7 +67,7 @@ th {
 
 .is-clean {
 
-  h1 {
+  .h1 {
     color: $frogGreen;
   }
 }
@@ -81,8 +81,19 @@ th {
   }
 }
 
-@media only screen and (max-width: $md-breakpoint) {
+@media only screen and (max-width: $max-touch-breakpoint) {
   .download-container {
     flex-direction: column;
+  }
+  .analysis {
+    &-results {
+      display: none;
+    }
+    .file-attributes {
+      display: none;
+    }
+    .regenerated-title {
+      padding: 0 8rem;
+    }
   }
 }

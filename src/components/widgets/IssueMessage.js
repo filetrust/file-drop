@@ -3,7 +3,7 @@ import React from 'react';
 class IssueMessage extends React.Component {
     render() {
         if ( this.props.hasIssues ) {
-            return <div className="has-issues"><h1>Unable to protect file due to structural issues</h1></div>
+            return <div className="has-issues"><div className="h1" >Unable to protect file due to structural issues</div></div>
         } else {
             return null
         }
