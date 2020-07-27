@@ -17,6 +17,9 @@
   color: $sectionButtonTextColour;
 }
 
+
+// ----- Supports the Following Files Types ----- //
+
 .supporting {
   &-triangle {
     background-color: #fafbfb;
@@ -45,6 +48,7 @@
           width: 1.5rem;
           height: 1.3rem;
           position: absolute;
+          //noinspection CssUnknownTarget
           background-image: url('img/li-check.svg');
           background-size: cover;
           background-position: center;
@@ -68,7 +72,7 @@
           display: table-cell;
           border-color: #cccccc;
           border-style: solid;
-          border-width: 0 0 1px 1px;
+          border-width: 0 0 0 1px;
           &:not(:last-of-type) {
             border-right-width: 0;
           }
@@ -88,9 +92,36 @@
       }
       &-row {
         &-cell {
-          padding: 3.5rem 3.5rem;
-          &:first-of-type {
-            background-color: #f7fffd
+        }
+      }
+    }
+    &.browser {
+      .table {
+        &-row {
+          &-cell {
+            padding: 3.5rem;
+            &:first-of-type {
+              background-color: #f7fffd
+            }
+            border-bottom-width: 1px;
+          }
+        }
+      }
+    }
+    &.mobile {
+      display: none;
+      .table {
+        &-row.bottom-border {
+          .table-row-cell {
+            border-bottom-width: 1px;
+            padding-bottom: 3.5rem ;
+          }
+        }
+        &-row {
+          &-cell {
+            padding-left: 3.5rem;
+            padding-right: 3.5rem;
+            padding-top: 3.5rem;
           }
         }
       }
@@ -98,6 +129,26 @@
   }
 }
 
+@media only screen and (max-width: $md-breakpoint) {
+  .supporting {
+    &-triangle {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+    &-table {
+      &.browser {
+        display: none;
+      }
+      &.mobile {
+        display: block;
+      }
+    }
+  }
+
+}
+
+// ---- Introducing d-FIRST ----- //
 .technology {
   padding-top: 7rem;
   .text-highlighted {
@@ -195,6 +246,30 @@
       }
       height: 100vh;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+
+  .technology {
+    &-stack {
+      flex-direction: column;
+    }
+    .brick {
+      &-picture {
+        height: 17.5rem;
+        width: 17.5rem;
+      }
+    }
+  }
+
+  .technology {
+    &-stack {
+      flex-direction: column;
+    }
+  }
+  .privacy {
+    &-buttons {
+      display: flex;
+      flex-direction: column;
     }
   }
 }

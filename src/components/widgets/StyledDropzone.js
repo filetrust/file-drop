@@ -9,7 +9,7 @@ import LoadingIndicator from './LoadingIndicator';
 
 const acceptableExtensions = {};
 
-supporting.forEach((vendor, vIndex) => {
+supporting.browser.forEach((vendor, vIndex) => {
     const vendorName = Object.keys(vendor)[0];
     const vendorTypes = vendor[vendorName];
 

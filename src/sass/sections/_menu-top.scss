@@ -88,20 +88,19 @@ nav {
         }
         &-button {
           position: absolute;
-          top: 4rem;
-          right: 8rem;
+          top: 4.7rem;
+          right: 9rem;
           //noinspection CssUnknownTarget
           background: transparent url('img/menu-icon-close.svg') center center no-repeat;
-          z-index: 110;
+          //z-index: 100;
         }
       }
     }
 
     nav {
       display: block;
-      position: fixed;
+      //position: fixed;
       width: 100%;
-
       z-index: 99;
 
       li {
@@ -127,9 +126,13 @@ nav {
   }
 }
 
-@media only screen and (max-width: $md-breakpoint) {
+@media only screen and (max-width: $max-touch-breakpoint) {
   .app {
     &-menu {
+      &-top {
+        padding-left: 0;
+        padding-right: 0;
+      }
       &-button {
         display: block;
       }
@@ -137,5 +140,11 @@ nav {
         display: none;
       }
     }
+    &-logo {
+    }
   }
+}
+
+@media only screen and (max-width: $xs-breakpoint) {
+
 }

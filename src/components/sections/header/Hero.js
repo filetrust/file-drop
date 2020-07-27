@@ -4,17 +4,16 @@ import { StyledDropzone } from '../../widgets';
 import supporting from '../../../data/supportedFileTypes.json';
 
 
-
 export default function Hero({ handleDrop, loading } = {}) {
     const accept = [];
-    const vendors = [];
+    // const vendors = [];
     const fileTypes = [];
     const extByTypes = {};
 
-    supporting.forEach((vendor, vIndex) => {
+    supporting.browser.forEach((vendor, vIndex) => {
         const vendorName = Object.keys(vendor)[0];
         const vendorTypes = vendor[vendorName];
-        vendors.push(vendorName);
+        // vendors.push(vendorName);
         fileTypes[vIndex] = [];
 
         vendorTypes.forEach((type, tIndex) => {
@@ -50,19 +49,20 @@ export default function Hero({ handleDrop, loading } = {}) {
                     Drag a file into the box. Your safe, regenerated file will be ready
                     to download along with a report detailing how Glasswall made it safe.
                 </ParagraphText>
-                <div className="hero-buttons">
-                    <Button context="hero" href="#footer">HOW IT WORKS</Button>
-                    <Button context="hero">SUPPORTED FILE TYPES</Button>
-                    <Button context="hero">PRIVACY</Button>
-                    <Button context="hero" inverse href="Contact">CONTACT US</Button>
-                </div>
-
             </div>
-            <StyledDropzone onDrop={handleDrop} accept={accept}  loading={loading}>
-                <div className="hero-drop-message">Drop a file here</div>
-                <img src="/img/drag-drop-area.svg" alt="Drop Zone Area" />
-                <Button inverse context="drop">SELECT A FILE</Button>
-            </StyledDropzone>
+            <div className="hero-buttons">
+                <Button context="hero" href="#footer">HOW IT WORKS</Button>
+                <Button context="hero">SUPPORTED FILE TYPES</Button>
+                <Button context="hero">PRIVACY</Button>
+                <Button context="hero" inverse href="Contact">CONTACT US</Button>
+            </div>
+            <div className="hero-dropzone">
+                <StyledDropzone onDrop={handleDrop} accept={accept} loading={loading}>
+                    <div className="hero-drop-message">Drop a file here</div>
+                    <img src="/img/drag-drop-area.svg" alt="Drop Zone Area"/>
+                    <Button inverse context="drop">SELECT A FILE</Button>
+                </StyledDropzone>
+            </div>
         </div>
     </div>
 }

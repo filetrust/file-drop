@@ -29,6 +29,7 @@
     font-weight: 300;
     letter-spacing: 2px;
   }
+
   &-icon {
     width: 9.2rem;
     height: 9.2rem;
@@ -42,18 +43,19 @@
       max-width: 100%;
     }
   }
+
   &-body {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 50%) ;
+    grid-template-rows: repeat(2, auto);
     padding-top: 6.8rem;
     padding-left: 3.6rem;
     padding-right: 4rem;
-    > * {
-      width: 50%;
-      margin: 0 2.5rem;
-      text-align: left;
-      opacity: 0.75;
-    }
+  }
 
+  // contains sanitize Your Files and text
+  &-info {
+    text-align: left;
   }
   .info {
     font-weight: 300;
@@ -72,7 +74,74 @@
       padding-right: 0.3rem;
     }
   }
+
   &-buttons {
+    text-align: left;
     margin-top: 4rem;
+    order: 2;
+  }
+
+  &-drop {
+    &zone {
+      grid-column-start: 2;
+      grid-column-end: span 1;
+      grid-row-start: 1;
+      grid-row-end: span 2;
+      padding: 0 6rem 4rem 6rem;
+    }
+    &-message {
+      font-size: 2.4rem;
+      font-weight: 300;
+    }
+  }
+
+  .drop {
+    &-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      .button {
+        margin: 0;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-touch-breakpoint) {
+
+  .hero {
+    &-body {
+      display: grid;
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: repeat(3, auto);
+    }
+
+    &-info {
+      text-align: center;
+    }
+
+    &-buttons {
+      //order: initial;
+    }
+
+    &-drop {
+      &zone {
+        grid-column-start: initial;
+        grid-column-end: initial;
+        grid-row-start: initial;
+        grid-row-end: initial;
+        padding: 0;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: $xs-breakpoint) {
+  .hero {
+
   }
 }

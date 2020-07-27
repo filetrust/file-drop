@@ -3,7 +3,6 @@ $drop-area-border-radius: 2.5rem;
 .drop {
   &-container {
     min-height: 40rem;
-    //background: #{'rgb(255 255 255 / 7%)'} url('./img/drag-drop-area.svg') center center no-repeat;
     background-color: #{'rgb(255 255 255 / 7%)'};
     outline: none;
     border-radius: $drop-area-border-radius;
@@ -44,28 +43,6 @@ $drop-area-border-radius: 2.5rem;
     }
 
 
-  }
-}
-
-.hero {
-  &-drop {
-    &-message {
-      font-size: 2.4rem;
-      font-weight: 300;
-    }
-  }
-  .drop {
-    &-container {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      .button {
-        margin: 0;
-        z-index: -1;
-      }
-    }
   }
 }
 

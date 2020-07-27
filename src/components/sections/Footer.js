@@ -34,7 +34,7 @@ export default function Footer() {
                 })
 
                 return <div className="app-footer-menu" key={sectionName}>
-                    <div className="app-footer-menu-title"><a href={href}>{sectionName}</a></div>
+                    <div className="app-footer-menu-title">{sectionName}</div>
                     <ul>{subMenu}</ul>
                 </div>
             })}

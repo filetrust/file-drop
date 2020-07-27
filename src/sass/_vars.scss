@@ -11,8 +11,10 @@ $xl-breakpoint: 1366px;
 $lg-breakpoint: 1024px;
 $md-breakpoint: 768px;
 $sm-breakpoint: 576px;
-$xs-breakpoint: 414px;
-$xxs-breakpoint: 320px;
+// TODO remove after debugging
+$xs-breakpoint: 500px;
+//$xs-breakpoint: 414px;
+//$xxs-breakpoint: 320px;
 
 $max-touch-breakpoint: $md-breakpoint;
 
@@ -21,7 +23,7 @@ $lg-breakpoint-rem: rem($lg-breakpoint);
 $md-breakpoint-rem: rem($md-breakpoint);
 $sm-breakpoint-rem: rem($sm-breakpoint);
 $xs-breakpoint-rem: rem($xs-breakpoint);
-$xxs-breakpoint-rem: rem($xxs-breakpoint);
+//$xxs-breakpoint-rem: rem($xxs-breakpoint);
 
 //$xxl-breakpoint-min: $xxl-breakpoint + .1rem;
 $xl-breakpoint-up: $xl-breakpoint + 1px;
@@ -29,15 +31,16 @@ $lg-breakpoint-min: $lg-breakpoint + 1px;
 $md-breakpoint-min: $md-breakpoint + 1px;
 $sm-breakpoint-min: $sm-breakpoint + 1px;
 $xs-breakpoint-min: $xs-breakpoint + 1px;
-$xxs-breakpoint-min: $xxs-breakpoint + 1px;
+//$xxs-breakpoint-min: $xxs-breakpoint + 1px;
 
 //$xxl-container-width: $xxl-breakpoint - 10rem;
 $xl-container-width: 124rem;
 $lg-container-width: $lg-breakpoint-rem - 5.6rem;
 $md-container-width: $md-breakpoint-rem - 4.4rem;
 $sm-container-width: $sm-breakpoint-rem - 3.4rem;
-$xs-container-width: $xs-breakpoint-rem - 2.6rem;
-$xxs-container-width: $xxs-breakpoint-rem - 2rem;
+$xs-container-width: 35.6rem - 4rem;
+//$xs-container-width: $xs-breakpoint-rem - 2.6rem;
+//$xxs-container-width: $xxs-breakpoint-rem - 2rem;
 
 //$xxl-header-height:
 $xl-header-height: 93rem;
