@@ -27,7 +27,7 @@ export default function Footer() {
             {mainMenu.map((section, sectionIndex) => {
                 const sectionName = Object.keys(section)[0];
                 const menu = section[sectionName];
-                const href = links[sectionName];
+                // const href = links[sectionName];
                 const subMenu = menu.map((name) => {
                     const href = links[name];
                     return <li key={`${name}-${sectionIndex}`}><a href={href}>{name}</a></li>

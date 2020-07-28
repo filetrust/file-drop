@@ -41,7 +41,7 @@ export default function Hero({ handleDrop, loading } = {}) {
                 <div className="info-title">Sanitise Your Files</div>
                 <div className="info-subtitle">
                     <span>WITH </span>
-                    <span className="text-highlighted">d-FIRST&trade;</span> TECHNOLOGY
+                    <span className="text-highlighted">d&#x2011;FIRST&trade;</span> TECHNOLOGY
                 </div>
                 <ParagraphText context="info">Validated and deployed by governments and intelligence
                     agencies worldwide, Glasswall's award-winning d&#x2011;FIRST&trade;
@@ -50,7 +50,7 @@ export default function Hero({ handleDrop, loading } = {}) {
                     to download along with a report detailing how Glasswall made it safe.
                 </ParagraphText>
             </div>
-            <div className="hero-buttons">
+            <div className="buttons-container hero-buttons touch-full">
                 <Button context="hero" href="#footer">HOW IT WORKS</Button>
                 <Button context="hero">SUPPORTED FILE TYPES</Button>
                 <Button context="hero">PRIVACY</Button>

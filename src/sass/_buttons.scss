@@ -14,13 +14,19 @@ button {
   color: $sectionButtonTextColour;
   font-size: 1.7rem;
   font-weight: bold;
-  margin-bottom: 2rem;
-  margin-right: 2.1rem;
   padding: 1.7rem 2rem;
   text-transform: uppercase;
   transition: 0.3s;
   &s {
     margin-top: 4rem;
+    &-container {
+      a:not(:last-of-type) .button {
+        margin-right: 2.1rem;
+      }
+      .button {
+        margin-bottom: 2rem;
+      }
+    }
   }
   &__inverse {
     background-color: $sectionButtonTextColour;
@@ -57,20 +63,22 @@ button {
   }
 }
 
-@media only screen and (max-width: $md-breakpoint) {
-  /*
-  .app {
-    .download-container {
-      button {
-        margin: 2rem 1rem;
+@media only screen and (max-width: $max-touch-breakpoint) {
+  .button {
+    &.touch-full {
+      width: 100%;
+    }
+    &s {
+      &-container {
+        &.touch-full {
+          .button {
+            width: 100%;
+          }
+        }
       }
     }
   }
-  */
 
-  .button {
-    margin-right: 0;
-    margin-top: 0;
-    width: 100%;
-  }
 }
+
+

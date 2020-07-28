@@ -11,6 +11,14 @@
   }
 }
 
+.paragraph {
+  &-text {
+    font-size: 1.8rem;
+    line-height: 2.9rem;
+    font-weight: 300;
+  }
+}
+
 
 @media only screen and (max-width: $xl-breakpoint) {
   .container {
@@ -22,11 +30,29 @@
   .container {
     max-width: $lg-container-width;
   }
+  .paragraph {
+    &-text {
+      font-size: 1.7rem;
+      line-height: 2.7rem;
+    }
+  }
 }
 
 @media only screen and (max-width: $md-breakpoint) {
   .container {
     max-width: $md-container-width;
+  }
+  .section {
+    &-title {
+      font-size: 3.2rem;
+      line-height: 3.7rem;
+    }
+  }
+  .paragraph {
+    &-text {
+      font-size: 1.6rem;
+      line-height: 2.3rem;
+    }
   }
 }
 
@@ -34,17 +60,22 @@
   .container {
     max-width: $sm-container-width;
   }
-}
-
-@media only screen and (max-width: $xs-breakpoint) {
-  .container {
-    max-width: $xs-container-width;
-  }
   .section {
     &-title {
       font-size: 3rem;
       line-height: 3.5rem;
     }
   }
+  .paragraph {
+    &-text {
+      //font-size: 1.51rem;
+      line-height: 2.3rem;
+    }
+  }
+}
 
+@media only screen and (max-width: $xs-breakpoint) {
+  .container {
+    max-width: $xs-container-width;
+  }
 }

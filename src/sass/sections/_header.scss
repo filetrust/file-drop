@@ -79,17 +79,14 @@
   &-buttons {
     text-align: left;
     margin-top: 4rem;
+
     // grid layout related
     order: 2;
 
-    a:last-of-type .button {
-      margin-right: 0;
-    }
   }
 
   &-drop {
     &zone {
-      // grid layout related
       grid-column-start: 2;
       grid-column-end: span 1;
       grid-row-start: 1;
@@ -110,7 +107,7 @@
       justify-content: space-between;
       align-items: center;
       .button {
-        margin: 0;
+        //margin: 0;
         z-index: -1;
         width: initial;
       }
@@ -208,6 +205,10 @@
       grid-column-end: span 2;
       grid-row-start: 2;
       grid-row-end: span 1;
+
+      a:not(:last-of-type) .button {
+        margin-right: 1rem;
+      }
     }
   }
 }
@@ -225,7 +226,6 @@
     }
 
     &-buttons {
-      //order: initial;
     }
 
     &-drop {
@@ -241,6 +241,13 @@
 }
 
 @media only screen and (max-width: $md-breakpoint) {
+  .app {
+    &-header {
+      &-container {
+        //min-height: $md-header-min-height;
+      }
+    }
+  }
   .hero {
     &-buttons {
       //text-align: left;
@@ -249,15 +256,23 @@
       grid-column-end: initial;
       grid-row-start: initial;
       grid-row-end: initial;
+      margin-bottom: 4rem;
+    }
+    .info {
+      &-title {
+        text-align: left;
+      }
+      &-subtitle {
+        text-align: left;
+      }
     }
   }
-
 }
 
-@media only screen and (max-width: $xs-breakpoint) {
+@media only screen and (max-width: $sm-breakpoint) {
   .hero {
     &-body {
-      padding: 4rem 2.1rem;
+      padding: 4rem 1.5rem;
     }
     .info {
       &-title {
@@ -286,7 +301,7 @@
       letter-spacing: initial;
     }
     &-dropzone {
-      margin-top: 4rem;
+      margin-top: 2rem;
     }
   }
 }
