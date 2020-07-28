@@ -1,13 +1,39 @@
 import React from 'react'
-import icon from '../../../img/drag-drop-icon.png';
-import { DragAndDrop } from '../../widgets';
 import { Button, ParagraphText } from '../../widgets';
+import { StyledDropzone } from '../../widgets';
+import supporting from '../../../data/supportedFileTypes.json';
 
-export default function Hero({ handleDrop } = {}) {
+
+
+export default function Hero({ handleDrop, loading } = {}) {
+    const accept = [];
+    const vendors = [];
+    const fileTypes = [];
+    const extByTypes = {};
+
+    supporting.forEach((vendor, vIndex) => {
+        const vendorName = Object.keys(vendor)[0];
+        const vendorTypes = vendor[vendorName];
+        vendors.push(vendorName);
+        fileTypes[vIndex] = [];
+
+        vendorTypes.forEach((type, tIndex) => {
+            const typeName = Object.keys(type)[0]
+            const extensions = type[typeName];
+            fileTypes[vIndex].push(typeName);
+            extByTypes[vendorName + '-' + typeName] = extensions;
+
+            extensions.forEach((extension, eIndex) => {
+                accept.push(extension);
+            })
+        })
+    });
+
+
     return <div className='hero'>
         <div className="hero-title">
             <div className="hero-icon">
-                <img src={icon} alt="file drop icon"/>
+                <img src='/img/drag-drop-icon.png' alt="file drop icon"/>
             </div>
             <div className="hero-file-drop">File Drop</div>
         </div>
@@ -32,10 +58,11 @@ export default function Hero({ handleDrop } = {}) {
                 </div>
 
             </div>
-            <DragAndDrop handleDrop={handleDrop}>
+            <StyledDropzone onDrop={handleDrop} accept={accept}  loading={loading}>
                 <div className="hero-drop-message">Drop a file here</div>
-                <button className="hero-drop-button">SELECT A FILE</button>
-            </DragAndDrop>
+                <img src="/img/drag-drop-area.svg" alt="Drop Zone Area" />
+                <Button inverse section="drop">SELECT A FILE</Button>
+            </StyledDropzone>
         </div>
     </div>
 }

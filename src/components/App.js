@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { trackPromise } from 'react-promise-tracker';
+import { trackPromise} from 'react-promise-tracker';
 import { CSSTransition } from "react-transition-group";
 
 import "../App.css";
@@ -10,7 +10,6 @@ import { engineApi } from '../api';
 
 const initialState = {
   showModal: false,
-
   file: "",
   analysisReport: "",
   analysisReportString: "",
@@ -19,6 +18,7 @@ const initialState = {
   loading: false
 };
 
+const pleaseUseASupportedFileType = "Please use a supported file type";
 
 class App extends Component {
   state = initialState;
@@ -39,26 +39,34 @@ class App extends Component {
     event.stopPropagation();
   };
 
-  resetState() {
-    this.setState(initialState);
+  resetState(override = {}) {
+    this.setState({...initialState, ...override});
   }
 
-  handleDrop = file => {
-    this.resetState();
+  handleDrop = ([accepted = {}], [rejected = {}]) => {
+    const self = this;
 
-    if(!validFileSize(file[0])){
-      this.setState({validation: "Please use a file under 6MB"});
+    if (rejected && rejected.errors) {
+      console.error('Rejected! ', rejected.errors)
+      // this.setState({validation: rejected});
       return;
     }
 
+    if(!validFileSize(accepted)){
+      this.setState({validation: "Please use a file under 6MB"});
+      return;
+    }
+    this.resetState({loading: true});
+
     trackPromise(
-        validFileType(file[0]).then(result => {
+        validFileType(accepted)
+        .then(result => {
           if (!result){
-            this.setState({validation: "Please use a supported file type"});
+            // this.setState({validation: pleaseUseASupportedFileType});
+            console.error(pleaseUseASupportedFileType)
             return;
           }
-
-          return engineApi.analyseFile(file[0])
+          return engineApi.analyseFile(accepted)
         })
         .then(result => {
           const XMLParser = require("react-xml-parser");
@@ -67,23 +75,25 @@ class App extends Component {
           this.setState({
             analysisReport: xml,
             analysisReportString: result,
-            file: file[0],
+            file: accepted,
             fileProcessed: true
           });
         })
         .catch(error => {
           console.log(error);
         })
+        .finally(() => {
+          self.setState({loading: false});
+        })
     );
   };
 
   render() {
-    const { showMenu, showModal, fileProcessed } = this.state
+    const { showMenu, showModal, fileProcessed, loading } = this.state
     return (
       <React.Fragment>
         <div className={`app ${showMenu ? "show-menu" : ""}`}>
-
-          <Header toggleMenu={this.toggleMenu} handleDrop={this.handleDrop}/>
+          <Header toggleMenu={this.toggleMenu} handleDrop={this.handleDrop} loading={loading}/>
           <div className='app-body'>
             { fileProcessed ? <ProcessFile state={this.state}/> : null }
             <Technology/>
@@ -93,9 +103,7 @@ class App extends Component {
           <Footer/>
           <div className="app-sub-footer">
             <a href="https://glasswallsolutions.com/privacy-policy/">
-              <span className="footer__legend__link">
-                Read our Privacy Policy -
-								</span>
+              <span className="footer__legend__link">Read our Privacy Policy -</span>
             </a>
             <span className="footer__address">Continental House, Oakridge, West End, Surrey, GU24 9PJ. Tel: +44 (0) 203 814 3890<br /></span>
           </div>

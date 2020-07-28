@@ -1,10 +1,16 @@
 .app {
   &-header {
+    &-triangle {
+      background-color: hsl(162, 19%, 86%); //#d6e3df;
+      clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short);
+    }
     color: white;
     /* Old browsers */
     background: $oldBrowserBgColour;
     /* Modern browsers */
     background: linear-gradient(90deg, rgba(12, 52, 81, 1) 35%, rgba(24, 100, 128, 1) 100%);
+    clip-path: polygon(0 0, 100% 0,
+      100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short - $bevel-triangle-short);
     &-container {
       min-height: $xl-header-height;
       display: flex;
@@ -45,6 +51,7 @@
         text-align: left;
         opacity: 0.75;
       }
+
     }
     .info {
       font-weight: 300;

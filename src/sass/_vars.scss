@@ -14,6 +14,8 @@ $sm-breakpoint: 576px;
 $xs-breakpoint: 414px;
 $xxs-breakpoint: 320px;
 
+$max-touch-breakpoint: $md-breakpoint;
+
 $xl-breakpoint-rem: rem($xl-breakpoint);
 $lg-breakpoint-rem: rem($lg-breakpoint);
 $md-breakpoint-rem: rem($md-breakpoint);
@@ -38,7 +40,7 @@ $xs-container-width: $xs-breakpoint-rem - 2.6rem;
 $xxs-container-width: $xxs-breakpoint-rem - 2rem;
 
 //$xxl-header-height:
-$xl-header-height: 99.9rem;
+$xl-header-height: 93rem;
 $lg-header-height: 67.5rem;
 $md-header-height: 50.6rem;
 $sm-header-height: 38rem;
@@ -52,6 +54,15 @@ $md-file-type-section-height: 45.6rem;
 $sm-file-type-section-height: 34.2rem;
 $xs-file-type-section-height: 24.6rem;
 $xxs-file-type-section-height: 19rem;
+
+// --- Bevel constants --- //
+$bevel-side-short: 90%;
+$bevel-side-long: 100%;
+$bevel-side-difference: $bevel-side-long - $bevel-side-short;
+
+$bevel-triangle-short: 2.5%;
+$bevel-triangle-long: 1%;
+
 
 
 

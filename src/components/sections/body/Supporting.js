@@ -1,38 +1,9 @@
 import React from 'react';
-import { Button, ParagraphText } from '../../widgets';
-import { typeName } from 'enzyme/src/Debug';
-
-const supporting = [
-    {
-        "Microsoft Office (Legacy)": [
-            { "Microsoft Word": [ 'doc', 'dot' ] },
-            { "Microsoft Excel": [ 'xls', 'xlt', 'xlm' ] },
-            { "Microsoft PowerPoint": [ 'ppt', 'pot', 'pps' ] },
-        ],
-    },
-    {
-        "Microsoft Office (2007+)": [
-            { "Microsoft Word": [ 'docx', 'dotz', 'docm', 'dotm' ] },
-            { "Microsoft Excel": [ 'xlsx', 'xltx', 'xlsm', 'xltm' ] },
-            { "Microsoft PowerPoint": [ 'pptx', 'potx', 'ppsx', 'pptm', 'potm', 'ppsm' ] },
-        ],
-    },
-    {
-        "Adobe": [
-            { "Adobe PDF": [ 'pdf' ] },
-        ],
-    },
-    {
-        "Images": [
-            { "JPEG": [ 'jpeg', 'jpg', 'jpe' ] },
-            { "PNG": [ 'png' ] },
-            { "GIF": [ 'gif' ] },
-        ],
-    },
-]
+import { Button, ParagraphText, SectionTitle } from '../../widgets';
+import supporting from '../../../data/supportedFileTypes.json';
 
 function Supporting() {
-    let supports = 0;
+    let totalSupports = 0;
     const vendors = [];
     const fileTypes = [];
     const extByTypes = {};
@@ -50,7 +21,7 @@ function Supporting() {
             extByTypes[vendorName + '-' + typeName] = extensions;
 
             extensions.forEach((extension, eIndex) => {
-                supports++;
+                totalSupports++;
             })
         })
     });
@@ -72,26 +43,29 @@ function Supporting() {
         </div>
     })
 
-    return <section className="supporting">
-        <div className="container">
-            <div className="section-title">Glasswall Supports the Following Files Types</div>
-            <ParagraphText context="supporting">The Glasswall process can be applied the following <span className="text-highlighted">{supports}</span> File types.</ParagraphText>
-            <div className='supporting-table'>
-                <div className="table-placeholder">
-                    <div className='table-header'>
-                        <div className='table-header-cell'>Category</div>
-                        <div className='table-header-cell'>File Type</div>
-                        <div className='table-header-cell'>Extensions</div>
+    return <div className='supporting-triangle'>
+        <section className="supporting">
+            <div className="container">
+                <SectionTitle>Glasswall Supports the Following Files Types</SectionTitle>
+                <ParagraphText context="supporting">The Glasswall process can be applied the following <span
+                    className="text-highlighted">{totalSupports}</span> File types.</ParagraphText>
+                <div className='supporting-table'>
+                    <div className="table-placeholder">
+                        <div className='table-header'>
+                            <div className='table-header-cell'>Category</div>
+                            <div className='table-header-cell'>File Type</div>
+                            <div className='table-header-cell'>Extensions</div>
+                        </div>
+                        {rows}
                     </div>
-                    {rows}
                 </div>
-            </div>
-            <div className="supporting-buttons">
-                <Button inverse>LEARN MORE</Button>
-            </div>
+                <div className="supporting-buttons">
+                    <Button inverse>LEARN MORE</Button>
+                </div>
 
-        </div>
-    </section>
+            </div>
+        </section>
+    </div>
 }
 
 export default Supporting
