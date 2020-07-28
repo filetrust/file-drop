@@ -9,8 +9,6 @@ import FileAttributes from "./FileAttributes";
 function RenderResults({ state }) {
     const { file, analysisReport, analysisReportString, validation } = state;
 
-    // console.dir(state)
-
     if ( validation ) {
         return (
             <div className="validationErrors">
@@ -23,15 +21,15 @@ function RenderResults({ state }) {
         const sanitisations = analysisReport.getElementsByTagName("gw:SanitisationItem");
         const remediations = analysisReport.getElementsByTagName("gw:RemedyItem");
         const issues = analysisReport.getElementsByTagName("gw:IssueItem");
-        const [{value: fileType} = {value: "unknown"}] = analysisReport.getElementsByTagName("gw:FileType");
-        const {name: fileName} = file;
+        const [ { value: fileType } = { value: "unknown" } ] = analysisReport.getElementsByTagName("gw:FileType");
+        const { name: fileName } = file;
         const hasIssues = issues.length;
         if ( sanitisations.length || remediations.length || hasIssues ) {
             return (
                 <div className="analysis">
                     <IssueMessage hasIssues={hasIssues}/>
                     <SectionTitle context='regenerated'>Your Safe, Regenerated File Is Ready</SectionTitle>
-                    <div className="download-container">
+                    <div className="download-container buttons-container touch-full">
                         <DownloadFile file={file} hasIssues={hasIssues}/>
                         <DownloadAnalysisReport report={analysisReportString} filename={fileName}/>
                     </div>
@@ -47,11 +45,13 @@ function RenderResults({ state }) {
             );
         } else {
             return (
-                <section className="is-clean analysis-results">
-                    <SectionTitle context='clean'>File is clean!</SectionTitle>
+            <div className="is-clean analysis">
+                <SectionTitle context='clean'>File is clean!</SectionTitle>
+                <div className="download-container buttons-container touch-full">
                     <DownloadAnalysisReport report={analysisReportString} filename={fileName}/>
-                    <FileAttributes file={file} fileType={fileType}/>
-                </section>
+                </div>
+                <FileAttributes file={file} fileType={fileType}/>
+            </div>
             );
         }
     }

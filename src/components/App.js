@@ -95,7 +95,7 @@ class App extends Component {
         <div className={`app ${showMenu ? "show-menu" : ""}`}>
           <Header toggleMenu={this.toggleMenu} handleDrop={this.handleDrop} loading={loading}/>
           <div className='app-body'>
-            { fileProcessed ? <ProcessFile state={this.state}/> : null }
+            <ProcessFile state={this.state}/>
             <Technology/>
             <Supporting/>
             <Privacy/>
@@ -105,7 +105,6 @@ class App extends Component {
             <a className="footer__legend__link" href="https://glasswallsolutions.com/privacy-policy/">Read our Privacy Policy -</a>
             <span className="footer__address">Continental House, Oakridge, West End, Surrey, GU24 9PJ. Tel: +44 (0) 203 814 3890<br /></span>
           </div>
-          {/*{showMenu ? <div className="app-menu-mask"/> : null}*/}
         </div>
         <CSSTransition in={showModal} timeout={500} classNames="modal" unmountOnExit>
           <Modal onClose={this.toggleModal} containerClick={this.handleContainerClick} key={7} />

@@ -48,14 +48,13 @@
       }
 
       li {
-        //color: $white;
         font-size: 1.4rem;
         line-height: 2rem;
         padding-bottom: 1.6rem;
 
         a {
           transition: all 0.2s;
-
+          width: 100%;
           &:hover {
             color: #1a919a;
           }
@@ -97,6 +96,7 @@
   .app {
     &-footer {
       height: initial;
+      padding-top: 5rem;
       .menu {
         padding: 0;
         ul {
@@ -119,6 +119,7 @@
             //background-repeat: no-repeat;
             //background-position: center;
             background-size: contain;
+            transition: transform .1s ease-in-out,-webkit-transform .1s ease-in-out,-o-transform .1s ease-in-out;
           }
         }
         &.open {

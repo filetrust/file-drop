@@ -1,4 +1,8 @@
+import $ from 'jquery';
 
-
-console.log ('*************');
-debugger;
+$(document).ready(() => {
+    $(".app-footer .menu").click((e) => {
+        const menu = e.target.parentNode;
+        $(menu).toggleClass('open');
+    })
+})

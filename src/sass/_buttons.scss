@@ -26,6 +26,11 @@ button {
       .button {
         margin-bottom: 2rem;
       }
+      > button {
+        &:not(:last-of-type) {
+          margin-right: 2.1rem;
+        }
+      }
     }
   }
   &__inverse {

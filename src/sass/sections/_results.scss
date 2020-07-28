@@ -19,10 +19,30 @@
   }
 }
 
-.analysis-results {
-  padding-bottom: 4rem;
-  .clean-title {
-    margin-bottom: 2.2rem;
+.analysis {
+  &-results {
+    padding-bottom: 4rem;
+    .clean-title {
+      margin-bottom: 2.2rem;
+    }
+  }
+  table {
+    width: 100%;
+    border-collapse: separate;
+    padding: 0.6rem 1rem;
+    line-height: 2.6rem;
+    text-align: left;
+    font-size: 1.6rem;
+  }
+
+  td,
+  th {
+    padding-left: 1.0rem;
+    text-align: left;
+  }
+
+  th {
+    font-weight: normal;
   }
 }
 
@@ -40,27 +60,6 @@
   overflow: hidden;
 }
 
-/*
-table {
-  width: 100%;
-  border-collapse: separate;
-  padding: 0.6rem 1rem;
-  line-height: 2.6rem;
-  text-align: left;
-  font-size: 1.6rem;
-}
-
-td,
-th {
-  padding-left: 1.0rem;
-  text-align: left;
-}
-
-th {
-  font-weight: normal;
-}
-*/
-
 .has-issues {
   color: $warningRed;
 }
@@ -76,14 +75,16 @@ th {
   display: flex;
   justify-content: center;
   padding-top: 1rem;
-  button {
-    margin: 2rem 1rem;
-  }
 }
 
 @media only screen and (max-width: $max-touch-breakpoint) {
   .download-container {
     flex-direction: column;
+    margin-top: 2rem;
+    .button {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
   .analysis {
     &-results {
@@ -93,7 +94,9 @@ th {
       display: none;
     }
     .regenerated-title {
-      padding: 0 8rem;
+      padding: 0;
+      font-size: 2.5rem;
+      line-height: 3rem;
     }
   }
 }

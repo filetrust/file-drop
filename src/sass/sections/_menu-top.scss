@@ -16,7 +16,7 @@ nav {
     &-top {
       display: flex;
       width: 100%;
-      padding: 1.3rem 6rem;
+      padding: 1.3rem 0;
     }
     &-list {
       text-decoration: none;
@@ -100,8 +100,12 @@ nav {
     nav {
       display: block;
       //position: fixed;
-      width: 100%;
+      width: 100vw;
       z-index: 99;
+      height: 100vh;
+      ul {
+        padding-inline-start: 0;
+      }
 
       li {
         display: block;
