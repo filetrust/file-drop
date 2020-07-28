@@ -365,7 +365,6 @@
   }
 }
 
-
 @media only screen and (max-width: $xs-breakpoint) {
   .supporting {
     &-table {
@@ -373,32 +372,10 @@
         &-header {
           &-cell {
             padding-right: 0;
-            //padding-left: 1rem;
             font-size: 2rem;
           }
         }
       }
-      /*
-      &.mobile {
-        ul {
-          line-height: 2.2rem;
-        }
-        .table {
-          &-row.bottom-border {
-            .table-row-cell {
-              padding-bottom: 2rem;
-            }
-          }
-          &-row {
-            &-cell {
-              padding: 2rem 2rem 0 2rem;
-            }
-          }
-        }
-      }
-      */
-
     }
-
   }
 }

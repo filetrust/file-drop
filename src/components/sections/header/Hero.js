@@ -51,7 +51,7 @@ export default function Hero({ handleDrop, loading } = {}) {
                 </ParagraphText>
             </div>
             <div className="buttons-container hero-buttons touch-full">
-                <Button context="hero" href="#footer">HOW IT WORKS</Button>
+                <Button context="hero">HOW IT WORKS</Button>
                 <Button context="hero">SUPPORTED FILE TYPES</Button>
                 <Button context="hero">PRIVACY</Button>
                 <Button context="hero" inverse href="Contact">CONTACT US</Button>
