@@ -8,70 +8,300 @@
     /* Old browsers */
     background: $oldBrowserBgColour;
     /* Modern browsers */
-    background: linear-gradient(90deg, rgba(12, 52, 81, 1) 35%, rgba(24, 100, 128, 1) 100%);
+    background: linear-gradient(90deg, $header-bg-gradient-start 35%, $header-bg-gradient-end 100%);
     clip-path: polygon(0 0, 100% 0,
       100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short - $bevel-triangle-short);
     &-container {
-      min-height: $xl-header-height;
+      min-height: $xxl-header-min-height;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
   }
-  .hero {
+}
+
+.hero {
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+
+  &-icon {
+    width: 9.2rem;
+    height: 9.2rem;
+    //background: transparent url('img/drop-white.svg') center center no-repeat;
+    background-color: $fileDropBgColour;
+    outline: none;
+    margin-right: 2.5rem;
+    border: 1px solid $fileDropBgColour;
+    border-radius: 0.5rem;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &-body {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, auto);
+    padding-top: 6.8rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  // contains sanitize Your Files and text
+  &-info {
+    text-align: left;
+  }
+  .info {
+    font-weight: 300;
     &-title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-size: 5rem;
       font-weight: 300;
-      letter-spacing: 2px;
+      letter-spacing: 0.15rem;
     }
-    &-icon {
-      width: 9.2rem;
-      height: 9.2rem;
-      //background: transparent url('img/drop-white.svg') center center no-repeat;
-      background-color: $fileDropBgColour;
-      outline: none;
-      margin-right: 2.5rem;
-      border: 1px solid $fileDropBgColour;
-      border-radius: 0.5rem;
-      img {
-        max-width: 100%;
-      }
+    &-subtitle {
+      font-size: 2.4rem;
+      font-weight: 300;
+      margin-top: 1.4rem;
     }
-    &-body {
-      display: flex;
-      padding-top: 6.8rem;
-      padding-left: 3.6rem;
-      padding-right: 4rem;
-      > * {
-        width: 50%;
-        margin: 0 2.5rem;
-        text-align: left;
-        opacity: 0.75;
-      }
+    &-paragraph {
+      text-align: left;
+      margin-top: 3rem;
+      padding-right: 6rem;
+    }
+  }
 
+  &-buttons {
+    text-align: left;
+    margin-top: 4rem;
+
+    // grid layout related
+    order: 2;
+
+  }
+
+  &-drop {
+    &zone {
+      grid-column-start: 2;
+      grid-column-end: span 1;
+      grid-row-start: 1;
+      grid-row-end: span 2;
+      padding: 0 6rem;
+    }
+    &-message {
+      font-size: 2.4rem;
+      font-weight: 300;
+    }
+  }
+
+  .drop {
+    &-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      .button {
+        //margin: 0;
+        z-index: -1;
+        width: initial;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $xl-breakpoint) {
+  .app {
+    &-header {
+      &-triangle {
+        clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-xl);
+      }
+      clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short-xl - $bevel-triangle-short);
+      &-container {
+        min-height: $xl-header-min-height;
+      }
+    }
+  }
+  .hero {
+    &-body {
+      padding-left: 0;
+      padding-right: 0;
     }
     .info {
-      font-weight: 300;
-      &-title {
-        font-size: 5rem;
-        font-weight: 300;
-        letter-spacing: 0.15rem;
-      }
-      &-subtitle {
-        font-size: 2.4rem;
-        font-weight: 300;
-        padding-top: 1.4rem;
-      }
-      &-text {
-        margin-top: 3rem;
-        padding-right: 0.3rem;
+      &-paragraph {
+        padding-right: 2rem;
       }
     }
+    &-drop {
+      &zone {
+        padding: 0 2rem;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: $lg-breakpoint) {
+  .app {
+    &-header {
+      &-triangle {
+        clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-lg);
+      }
+      clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short-lg - $bevel-triangle-short);
+      &-container {
+        min-height: $lg-header-min-height;
+      }
+    }
+  }
+  .hero {
+    &-body {
+      padding-top: 3rem;
+    }
+    &-title {
+      font-size: 3.8rem;
+    }
+    &-icon {
+      width: 6.6rem;
+      height: 6.6rem;
+      margin-right: 2.3rem;
+    }
+    .info {
+      &-title {
+        font-size: 3.8rem;
+      }
+      &-subtitle {
+        font-size: 2rem;
+        font-weight: 300;
+        margin-top: 1rem;
+      }
+      &-paragraph {
+        margin-top: 2rem;
+        padding-right: 0;
+      }
+    }
+    &-dropzone {
+      grid-column-start: 2;
+      grid-column-end: span 1;
+      grid-row-start: 1;
+      grid-row-end: span 1;
+      padding-right: 0;
+    }
+    .drop-container {
+      min-height: 30rem;
+    }
+
+    .button {
+      margin-right: 1.3rem;
+    }
     &-buttons {
-      margin-top: 4rem;
+      //text-align: left;
+      margin-top: 6rem;
+      grid-column-start: 1;
+      grid-column-end: span 2;
+      grid-row-start: 2;
+      grid-row-end: span 1;
+
+      a:not(:last-of-type) .button {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-touch-breakpoint) {
+  .hero {
+    &-body {
+      display: grid;
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: repeat(3, auto);
+    }
+
+    &-info {
+      text-align: center;
+    }
+
+    &-buttons {
+    }
+
+    &-drop {
+      &zone {
+        grid-column-start: initial;
+        grid-column-end: initial;
+        grid-row-start: initial;
+        grid-row-end: initial;
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $md-breakpoint) {
+  .app {
+    &-header {
+      &-container {
+        //min-height: $md-header-min-height;
+      }
+    }
+  }
+  .hero {
+    &-buttons {
+      //text-align: left;
+      //margin-top: 6rem;
+      grid-column-start: initial;
+      grid-column-end: initial;
+      grid-row-start: initial;
+      grid-row-end: initial;
+      margin-bottom: 4rem;
+    }
+    .info {
+      &-title {
+        text-align: left;
+      }
+      &-subtitle {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $sm-breakpoint) {
+  .hero {
+    &-body {
+      padding: 4rem 1.5rem;
+    }
+    .info {
+      &-title {
+        font-size: 3.4rem;
+        letter-spacing: initial;
+        margin: 0;
+        line-height: 4.8rem;
+      }
+      &-subtitle {
+        font-size: 1.8rem;
+        margin: 0;
+        text-align: left;
+      }
+      &-paragraph {
+        text-align: left;
+        margin-top: 2rem;
+      }
+    }
+    &-icon {
+      width: 5.6rem;
+      height: 5.6rem;
+      margin-right: 1.6rem;
+    }
+    &-file-drop {
+      font-size: 3rem;
+      letter-spacing: initial;
+    }
+    &-dropzone {
+      margin-top: 2rem;
     }
   }
 }

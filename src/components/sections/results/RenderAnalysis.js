@@ -5,9 +5,9 @@ function RenderAnalysis(props) {
   return (
     <div className="analysis-results">
       <div className="sanitisationTable table-container">
-        <h1 className="table-header">
+        <div className="h1 table-header">
           Active content that has been sanitised (removed)
-        </h1>
+        </div>
         <table>
           <tbody>
             <Items items={props.sanitisations} />
@@ -16,9 +16,9 @@ function RenderAnalysis(props) {
       </div>
 
       <div className="remediationsTable table-container">
-        <h1 className="table-header">
+        <div className="h1 table-header">
           Objects & Structures that have been repaired
-        </h1>
+        </div>
         <table>
           <tbody>
             <Items items={props.remediations} />
@@ -27,9 +27,9 @@ function RenderAnalysis(props) {
       </div>
 
       <div className="issuesTable table-container">
-        <h1 className="table-header">
+        <div className="h1 table-header">
           Objects & Structures that are unable to be repaired
-        </h1>
+        </div>
         <table>
           <tbody>
             <Items items={props.issues} />

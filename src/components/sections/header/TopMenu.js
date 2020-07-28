@@ -5,7 +5,7 @@ import links from '../../../data/links.json';
 
 export default function TopMenu({ toggleMenu, toggleModal } = { }) {
     return (
-        <div className="app-menu-top">
+        <div className="container app-menu-top">
             <div className="app-logo"><a href={links.glasswall} target="blank" ><img src={logo} alt="Logo" /></a></div>
             <nav>
                 <button className="app-menu-button" onClick={toggleMenu}/>

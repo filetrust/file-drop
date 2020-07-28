@@ -1,29 +1,28 @@
-.app {
+nav {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
 
-  nav {
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-    align-items: center;
-  }
+.app {
   &-logo {
     img {
       height: 10rem;
     }
   }
+
   &-menu {
     &-top {
       display: flex;
       width: 100%;
-      padding: 0 6rem;
-      margin-top: 1.3rem;
-      margin-bottom: 1.3rem;
+      padding: 1.3rem 0;
     }
     &-list {
       text-decoration: none;
       text-transform: uppercase;
       transition: all 0.2s;
-      color: $white;
+      //color: $white;
       font-size: 1.5rem;
       letter-spacing: 0.1rem;
       a {
@@ -32,7 +31,7 @@
         }
       }
       li {
-        color: $white;
+        //color: $white;
         display: inline-block;
 
         a {
@@ -44,6 +43,7 @@
     &-button {
       height: 2rem;
       width: 2.5rem;
+      //noinspection CssUnknownTarget
       background: transparent url('img/menu-icon.svg') center center no-repeat;
       display: none;
     }
@@ -54,6 +54,7 @@
         position: absolute;
         right: 0;
         top: 0;
+        //noinspection CssUnknownTarget
         background: transparent url(../src/img/info-icon.svg) center center no-repeat;
       }
     }
@@ -64,19 +65,21 @@
       &-logo {
         display: none;
       }
-      &-header-triangle {
-        display: block;
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        background-image: linear-gradient(to left, #124163, #31536b);
-        z-index: 99;
-        /*
-        &-inner {
-          margin: 0;
-          padding: 0;
+      &-body, &-footer {
+        display: none;
+      }
+      &-header {
+        &-container {
+          display: none;
         }
-        */
+        &-triangle {
+          display: block;
+          position: fixed;
+          width: 100vw;
+          height: 100vh;
+          background-image: linear-gradient(to left, #124163, #31536b);
+          z-index: 99;
+        }
       }
       &-menu {
         &-list {
@@ -85,20 +88,24 @@
         }
         &-button {
           position: absolute;
-          top: 4rem;
-          right: 8rem;
+          top: 4.7rem;
+          right: 9rem;
           //noinspection CssUnknownTarget
           background: transparent url('img/menu-icon-close.svg') center center no-repeat;
+          //z-index: 100;
         }
       }
     }
 
     nav {
       display: block;
-      position: fixed;
-      width: 100%;
-
+      //position: fixed;
+      width: 100vw;
       z-index: 99;
+      height: 100vh;
+      ul {
+        padding-inline-start: 0;
+      }
 
       li {
         display: block;
@@ -110,7 +117,6 @@
         }
       }
     }
-
   }
 }
 
@@ -121,18 +127,46 @@
         height: 8.5rem;
       }
     }
+    &-menu {
+      &-top {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
   }
 }
 
-@media only screen and (max-width: $md-breakpoint) {
+@media only screen and (max-width: $max-touch-breakpoint) {
   .app {
     &-menu {
+      &-top {
+        padding: 0.7rem 0;
+      }
       &-button {
         display: block;
       }
       &-list {
         display: none;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: $xs-breakpoint) {
+  .app {
+    &-logo {
+      img {
+        height: 6.9rem;
+      }
+    }
+    &.show-menu {
+      .app {
+        &-menu-button {
+          top: 3.5rem;
+          right: 2rem;
+        }
+      }
+
     }
   }
 }

@@ -1,0 +1,5 @@
+{
+  "browser": ["Category", "File Type", "Extensions"],
+  "mobile": ["File Type", "Extensions"]
+}
+

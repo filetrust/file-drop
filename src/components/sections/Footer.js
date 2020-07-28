@@ -3,10 +3,10 @@ import logo from '../../logo.svg';
 import mainMenu from '../../data/bottomMenu.json';
 import socialMenu from '../../data/socialMenu.json';
 import links from '../../data/links.json';
-
+import '../../js/footer';
 
 export default function Footer() {
-    return <div className="app-footer">
+    return <div className="app-footer" id="footer">
         <div className="container app-footer-inner">
             <section className="app-footer-left">
                 <div className="logo">
@@ -27,14 +27,16 @@ export default function Footer() {
             {mainMenu.map((section, sectionIndex) => {
                 const sectionName = Object.keys(section)[0];
                 const menu = section[sectionName];
-                const href = links[sectionName];
+                // const href = links[sectionName];
                 const subMenu = menu.map((name) => {
                     const href = links[name];
-                    return <li key={`${name}-${sectionIndex}`}><a href={href}>{name}</a></li>
+                    return <li key={`${name}-${sectionIndex}`}>
+                        <a href={href}><div className="menu-item">{name}</div></a>
+                    </li>
                 })
 
-                return <div className="app-footer-menu" key={sectionName}>
-                    <div className="app-footer-menu-title"><a href={href}>{sectionName}</a></div>
+                return <div className="menu" key={sectionName}>
+                    <div className="menu-title">{sectionName}</div>
                     <ul>{subMenu}</ul>
                 </div>
             })}

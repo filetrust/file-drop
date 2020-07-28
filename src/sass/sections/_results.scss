@@ -1,43 +1,31 @@
-.app {
-  .results {
-    &-enter {
-      opacity: 0.01;
-      transform: translateY(3rem);
-      &.results-enter-active {
-        opacity: 1;
-        transition: all 500ms ease-out;
-        transform: translateY(0);
-      }
-    }
-    &-exit {
+.results {
+  &-enter {
+    opacity: 0.01;
+    transform: translateY(3rem);
+    &.results-enter-active {
       opacity: 1;
+      transition: all 500ms ease-out;
       transform: translateY(0);
-      &.results-exit-active {
-        opacity: 0.01;
-        transition: all 500ms ease-in;
-        transform: translateY(3rem);
-      }
     }
   }
+  &-exit {
+    opacity: 1;
+    transform: translateY(0);
+    &.results-exit-active {
+      opacity: 0.01;
+      transition: all 500ms ease-in;
+      transform: translateY(3rem);
+    }
+  }
+}
 
-  .analysis-results {
+.analysis {
+  &-results {
     padding-bottom: 4rem;
+    .clean-title {
+      margin-bottom: 2.2rem;
+    }
   }
-
-  .is-clean {
-    padding-top: 3rem;
-    padding-bottom: 7rem;
-  }
-
-  .table-container {
-    min-width: 30rem;
-    margin: 0 1rem 2rem 1rem;
-    border: .1rem solid $greyBlue;
-    border-radius: 0.6rem;
-    background-color: $white;
-    overflow: hidden;
-  }
-
   table {
     width: 100%;
     border-collapse: separate;
@@ -56,32 +44,59 @@
   th {
     font-weight: normal;
   }
+}
 
-  .has-issues {
-    color: $warningRed;
-  }
+.is-clean {
+  padding-top: 3rem;
+  padding-bottom: 7rem;
+}
 
-  .is-clean {
+.table-container {
+  min-width: 30rem;
+  margin: 0 1rem 2rem 1rem;
+  border: .1rem solid $greyBlue;
+  border-radius: 0.6rem;
+  background-color: $white;
+  overflow: hidden;
+}
 
-    h1 {
-      color: $frogGreen;
-    }
-  }
+.has-issues {
+  color: $warningRed;
+}
 
-  .download-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 1rem;
-    button {
-      margin: 2rem 1rem;
-    }
+.is-clean {
+
+  .h1 {
+    color: $frogGreen;
   }
 }
 
-@media only screen and (max-width: $md-breakpoint) {
-  .app {
-    .download-container {
-      flex-direction: column;
+.download-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+@media only screen and (max-width: $max-touch-breakpoint) {
+  .download-container {
+    flex-direction: column;
+    margin-top: 2rem;
+    .button {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  .analysis {
+    &-results {
+      display: none;
+    }
+    .file-attributes {
+      display: none;
+    }
+    .regenerated-title {
+      padding: 0;
+      font-size: 2.5rem;
+      line-height: 3rem;
     }
   }
 }

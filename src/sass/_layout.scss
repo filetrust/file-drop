@@ -1,57 +1,81 @@
-.app {
-  .container {
-    max-width: $xl-container-width;
-    margin: 0 auto;
+.container {
+  max-width: $xxl-container-width;
+  margin: 0 auto;
+}
+
+.section {
+  &-title {
+    font-size: 3.6rem;
+    font-weight: 400;
+    color: $sectionTitleTextColour;
   }
-  .section {
-    &-title {
-      font-size: 3.6rem;
-      font-weight: 400;
-      color: $sectionTitleTextColour;
-    }
+}
+
+.paragraph {
+  &-text {
+    font-size: 1.8rem;
+    line-height: 2.9rem;
+    font-weight: 300;
   }
 }
 
 
 @media only screen and (max-width: $xl-breakpoint) {
-  .app {
-    .container {
-      max-width: $xl-container-width;
-    }
+  .container {
+    max-width: $xl-container-width;
   }
 }
+
 @media only screen and (max-width: $lg-breakpoint) {
-  .app {
-    .container {
-      max-width: $lg-container-width;
+  .container {
+    max-width: $lg-container-width;
+  }
+  .paragraph {
+    &-text {
+      font-size: 1.7rem;
+      line-height: 2.7rem;
     }
   }
 }
+
 @media only screen and (max-width: $md-breakpoint) {
-  .app {
-    .container {
-      max-width: $md-container-width;
+  .container {
+    max-width: $md-container-width;
+  }
+  .section {
+    &-title {
+      font-size: 3.2rem;
+      line-height: 3.7rem;
+    }
+  }
+  .paragraph {
+    &-text {
+      font-size: 1.6rem;
+      line-height: 2.3rem;
     }
   }
 }
+
 @media only screen and (max-width: $sm-breakpoint) {
-  .app {
-    .container {
-      max-width: $sm-container-width;
+  .container {
+    max-width: $sm-container-width;
+  }
+  .section {
+    &-title {
+      font-size: 3rem;
+      line-height: 3.5rem;
+    }
+  }
+  .paragraph {
+    &-text {
+      //font-size: 1.51rem;
+      line-height: 2.3rem;
     }
   }
 }
+
 @media only screen and (max-width: $xs-breakpoint) {
-  .app {
-    .container {
-      max-width: $xs-container-width;
-    }
-  }
-}
-@media only screen and (max-width: $xxs-breakpoint) {
-  .app {
-    .container {
-      max-width: $xxs-container-width;
-    }
+  .container {
+    max-width: $xs-container-width;
   }
 }

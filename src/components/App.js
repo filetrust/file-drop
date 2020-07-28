@@ -95,16 +95,14 @@ class App extends Component {
         <div className={`app ${showMenu ? "show-menu" : ""}`}>
           <Header toggleMenu={this.toggleMenu} handleDrop={this.handleDrop} loading={loading}/>
           <div className='app-body'>
-            { fileProcessed ? <ProcessFile state={this.state}/> : null }
+            <ProcessFile state={this.state}/>
             <Technology/>
             <Supporting/>
             <Privacy/>
           </div>
           <Footer/>
           <div className="app-sub-footer">
-            <a href="https://glasswallsolutions.com/privacy-policy/">
-              <span className="footer__legend__link">Read our Privacy Policy -</span>
-            </a>
+            <a className="footer__legend__link" href="https://glasswallsolutions.com/privacy-policy/">Read our Privacy Policy -</a>
             <span className="footer__address">Continental House, Oakridge, West End, Surrey, GU24 9PJ. Tel: +44 (0) 203 814 3890<br /></span>
           </div>
         </div>

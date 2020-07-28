@@ -3,9 +3,9 @@ import { Button, ParagraphText, SectionTitle } from '../../widgets';
 
 function Technology() {
     return (
-        <section className="technology">
+        <section className="technology" id="technology">
             <div className="technology-container container">
-                <SectionTitle>Introducing d-FIRST&trade;</SectionTitle>
+                <SectionTitle>Introducing d&#x2011;FIRST&trade;</SectionTitle>
                 <div className="technology-stack">
                     <div className="brick">
                         <div className="brick-picture"><img src='/img/deepfile-340.png' alt="deep-File Inspection Icon"/></div>
@@ -27,7 +27,7 @@ function Technology() {
                     </div>
                 </div>
                 <div className="technology-buttons">
-                    <Button inverse>LEARN MORE</Button>
+                    <Button inverse href="d-FIRST">LEARN MORE</Button>
                 </div>
             </div>
         </section>

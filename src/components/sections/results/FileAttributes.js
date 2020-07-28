@@ -4,7 +4,7 @@ function FileAttributes({ file, fileType } = {}) {
   const {name, size} = file;
   return(
     <div className="file-attributes table-container">
-      <h1 className="table-header">File Attributes</h1>
+      <div className="h1 table-header">File Attributes</div>
       <table>
         <tbody>
           <tr>
