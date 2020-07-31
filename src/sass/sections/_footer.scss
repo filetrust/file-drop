@@ -5,7 +5,7 @@
     /* Old browsers */
     background: $oldBrowserBgColour;
     /* modern browsers */
-    background: linear-gradient(90deg, rgba(12, 52, 81, 1) 35%, rgba(24, 100, 128, 1) 100%);
+    background: $main-background-gradient;
     &-inner {
       display: flex;
       box-sizing: border-box;
@@ -98,14 +98,11 @@
       height: initial;
       padding-top: 5rem;
       .menu {
-        padding: 0;
         ul {
           display: none;
         }
         &-title {
-          padding: 0;
           padding-top: 1rem;
-          padding-bottom: 1rem;
           display: flex;
           justify-content: space-between;
           &:after {
@@ -139,7 +136,9 @@
       &-left {
         order: 10;
         text-align: center;
-        padding: 0;
+      }
+      .copyright {
+        text-align: center;
       }
     }
   }
@@ -165,10 +164,13 @@
 @media only screen and (max-width: $md-breakpoint) {
   .app-footer {
     &-menu {
-      padding-bottom: 0;
+      padding: 0 0 2.4rem 0;
     }
     &-inner {
-      padding: 0;
+      //padding: 0;
+      max-width: 100%;
+      padding-left: 5rem;
+      padding-right: 5rem;
     }
   }
 }

@@ -7,10 +7,11 @@
 //$xxl-breakpoint: em(192.0rem);
 // tablets and modern smartphones
 // smartphones
-$xl-breakpoint: 1366px;
+$xl-breakpoint: 1240px;
+//$xl-breakpoint: 1366px;
 $lg-breakpoint: 1024px;
 $md-breakpoint: 768px;
-$sm-breakpoint: 576px;
+$sm-breakpoint: 568px;
 $xs-breakpoint: 414px;
 //$xxs-breakpoint: 320px;
 
@@ -32,8 +33,8 @@ $xs-breakpoint-min: $xs-breakpoint + 1px;
 //$xxs-breakpoint-min: $xxs-breakpoint + 1px;
 
 //$xxl-container-width: $xxl-breakpoint - 10rem;
-$xxl-container-width: 124rem;
-$xl-container-width: $lg-breakpoint-rem - 1rem;
+$xxl-container-width: 120rem;
+$xl-container-width: $lg-breakpoint-rem - 4rem;
 $lg-container-width: $md-breakpoint-rem - 2.5rem;
 $md-container-width: $sm-breakpoint-rem - 20rem ;
 $sm-container-width: 31.5rem; //$md-container-width - 10rem ;
@@ -43,7 +44,7 @@ $xs-container-width: 30rem;
 
 $xxl-header-min-height: 82rem;
 $xl-header-min-height: 79rem;
-$lg-header-min-height: 63rem;
+$lg-header-min-height: 62rem;
 $md-header-min-height: 112rem;
 $sm-header-min-height: 38rem;
 $xs-header-min-height: 28.5rem;
@@ -82,7 +83,7 @@ $mediumGrey : hsl(210, 15%, 75%);
 $charcoalGrey : hsl(0, 0%, 39%);
 $blueGrey : hsl(198, 14%, 82%);
 $mediumBlue : hsl(205, 74, 18%);
-$seaBlue : hsl(195, 39%, 47%);
+$seaBlue : #90aec0; //hsl(195, 39%, 47%);
 $skyBlue : hsl(191, 80%, 76%);
 $mediumTurquoise : hsl(196, 67%, 30%);
 $turquoiseHighlight : hsl(183, 76%, 62%);
@@ -97,13 +98,15 @@ $fileDropBgColour: hsl(264, 54%, 37%);
 $sectionTitleTextColour: hsl(215, 100%, 16%); //#002252;
 $sectionSubTitleTextColour: hsl(248, 13%, 36%); //#535068;
 $sectionParagraphTextColour: hsl(163, 11%, 13%); //#191919
-$sectionButtonTextColour: hsl(164, 58%, 47%); //#33bf99
+$sectionButtonTextColour: #1a919a; //#33bf99
+//$sectionButtonTextColour: hsl(164, 58%, 47%); //#33bf99
 
-$header-bg-gradient-start: hsl(212, 92%, 20%);
-//$header-bg-gradient-start: hsl(205, 74%, 18%);
-$header-bg-gradient-end: hsl(196, 68%, 33%);
+$header-bg-gradient-start: #0c3451;//rgba(12,52,81,1);
+$header-bg-gradient-end: #186480; //rgba(24,100,128,1);
+$main-background-gradient: linear-gradient(90deg, $header-bg-gradient-start 35%, $header-bg-gradient-end 100%);
+
 $button-hover-on-deep-blue: darken($header-bg-gradient-end, 5%);// lighten($header-bg-gradient-start, 5%);
-$button-hover-on-inverse:  lighten($sectionButtonTextColour, 6%);
+$button-hover-on-inverse:  #127179;
 $button-bg-hover: lighten($sectionButtonTextColour, 47%);
 
 // --- Main Layout Colours --- //

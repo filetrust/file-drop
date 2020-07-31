@@ -1,14 +1,15 @@
 .app {
   &-header {
     &-triangle {
-      background-color: hsl(162, 19%, 86%); //#d6e3df;
+      background-color: #c5c5c5; // hsl(162, 19%, 86%); //#d6e3df;
       clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short);
     }
     color: white;
     /* Old browsers */
     background: $oldBrowserBgColour;
     /* Modern browsers */
-    background: linear-gradient(90deg, $header-bg-gradient-start 35%, $header-bg-gradient-end 100%);
+  //linear-gradient(90deg, rgba(12,52,81,1) 35%, rgba(24,100,128,1) 100%);
+    background: $main-background-gradient;
     clip-path: polygon(0 0, 100% 0,
       100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short - $bevel-triangle-short);
     &-container {
@@ -93,10 +94,6 @@
       grid-row-end: span 2;
       padding: 0 6rem;
     }
-    &-message {
-      font-size: 2.4rem;
-      font-weight: 300;
-    }
   }
 
   .drop {
@@ -112,6 +109,16 @@
         width: initial;
       }
     }
+    &-message {
+      display: block;
+      font-size: 2.4rem;
+      font-weight: 300;
+      &__reject {
+        display: none;
+        //color: red;
+      }
+    }
+
   }
 }
 
@@ -195,11 +202,7 @@
       min-height: 30rem;
     }
 
-    .button {
-      margin-right: 1.3rem;
-    }
     &-buttons {
-      //text-align: left;
       margin-top: 6rem;
       grid-column-start: 1;
       grid-column-end: span 2;
@@ -207,8 +210,14 @@
       grid-row-end: span 1;
 
       a:not(:last-of-type) .button {
-        margin-right: 1rem;
+        margin-right: 1.2rem;
       }
+      .button {
+        padding-right: 2rem;
+        padding-left: 2rem;
+        //margin-bottom: 0;
+      }
+
     }
   }
 }
@@ -235,6 +244,17 @@
         grid-row-start: initial;
         grid-row-end: initial;
         padding: 0;
+        .drop-border {
+          &.reject {
+            .drop-message {
+              display: none;
+              &__reject {
+                display: block;
+              }
+            }
+
+          }
+        }
       }
     }
   }
@@ -302,6 +322,13 @@
     }
     &-dropzone {
       margin-top: 2rem;
+    }
+    .drop {
+      &-message {
+        &__reject, &__processed {
+          font-size: 1.8rem;
+        }
+      }
     }
   }
 }

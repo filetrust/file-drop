@@ -1,3 +1,21 @@
+.process-file {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
+  color: $charcoalGrey;
+
+  .h1 {
+    font-size: 2.0rem;
+    font-family: 'montserratregular', sans-serif;
+    font-weight: 400;
+    margin: 5rem 1rem 3rem;
+    line-height: 2.4rem;
+
+  }
+}
+
 .results {
   &-enter {
     opacity: 0.01;
@@ -20,12 +38,32 @@
 }
 
 .analysis {
+  padding-top: 3rem;
   &-results {
-    padding-bottom: 4rem;
     .clean-title {
       margin-bottom: 2.2rem;
     }
   }
+  .table-header {
+    display: block;
+    background-color: darken($blueGrey, 10%);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1.8rem;
+    color: $white;
+    padding: 1.2rem 1rem;
+    margin: 0;
+  }
+  &-table {
+    //min-width: 30rem;
+    //margin: 0 1rem 2rem 1rem;
+    margin-bottom: 2rem;
+    border: .1rem solid $greyBlue;
+    border-radius: 0.6rem;
+    background-color: $white;
+    overflow: hidden;
+  }
+
   table {
     width: 100%;
     border-collapse: separate;
@@ -44,59 +82,55 @@
   th {
     font-weight: normal;
   }
-}
 
-.is-clean {
-  padding-top: 3rem;
-  padding-bottom: 7rem;
-}
-
-.table-container {
-  min-width: 30rem;
-  margin: 0 1rem 2rem 1rem;
-  border: .1rem solid $greyBlue;
-  border-radius: 0.6rem;
-  background-color: $white;
-  overflow: hidden;
-}
-
-.has-issues {
-  color: $warningRed;
-}
-
-.is-clean {
-
-  .h1 {
-    color: $frogGreen;
+  .is-clean {
+    padding-top: 3rem;
+    padding-bottom: 7rem;
+    .h1 {
+      color: $frogGreen;
+    }
   }
-}
 
-.download-container {
-  display: flex;
-  justify-content: center;
-  padding-top: 1rem;
+  .has-issues {
+    color: $warningRed;
+  }
+  &-container {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: $max-touch-breakpoint) {
-  .download-container {
-    flex-direction: column;
-    margin-top: 2rem;
-    .button {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-  }
   .analysis {
     &-results {
-      display: none;
+      //display: none;
     }
     .file-attributes {
-      display: none;
+      //display: none;
     }
     .regenerated-title {
       padding: 0;
       font-size: 2.5rem;
       line-height: 3rem;
+    }
+    &-container {
+      flex-direction: column;
+      margin-top: 2rem;
+      .button {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $md-breakpoint) {
+  .analysis {
+    padding-top: 5.5rem;
+    &-table {
+    }
+    .table-header {
+      font-size: 1.6rem;
     }
   }
 }
