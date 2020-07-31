@@ -1,9 +1,9 @@
 import React from "react";
 import links from '../../data/links.json';
 
-function Button({ inverse, section: context, children, href, textAsHrefAlias = true, onClick } = {}) {
+function Button({ inverse, context, children, href, textAsHrefAlias = true, onClick } = {}) {
     const button = <>
-        <button className={`button${inverse ? ' button__inverse' : ''}${context ? ' ' + context + '-button' : ''}`}
+        <button className={`button${inverse ? ' button__inverse' : ''}${context !== '' ? ` ${context}-button` : ''}`}
                 onClick={onClick}>{children}</button>
     </>;
 

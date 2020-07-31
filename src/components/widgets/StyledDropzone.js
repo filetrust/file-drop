@@ -51,11 +51,12 @@ export default function StyledDropzone({ onDrop, children, loading }) {
 
     let classes = useMemo(() => ( [
         "drop-border",
+        // "reject",
         isDragActive ? "active" : "",
         isDragAccept ? "accept" : "",
         isDragReject ? "reject" : "",
         promiseInProgress ? "progress" : "",
-        loading ? "reject" : "",
+        loading ? "loading" : "",
     ] ), [
         isDragActive,
         isDragReject,
@@ -63,9 +64,7 @@ export default function StyledDropzone({ onDrop, children, loading }) {
         promiseInProgress,
         loading,
     ]);
-    if ( classes.includes("reject") ) {
-        classes = classes.filter(( item => item !== "accept" ))
-    }
+    classes = classes.filter(( item => item ))
     const className = classes.join(' ');
 
     return (

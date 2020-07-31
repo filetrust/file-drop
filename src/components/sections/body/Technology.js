@@ -5,7 +5,7 @@ function Technology() {
     return (
         <section className="technology" id="technology">
             <div className="technology-container container">
-                <SectionTitle>Introducing d&#x2011;FIRST&trade;</SectionTitle>
+                <SectionTitle>How it Works - Introducing d&#x2011;FIRST&trade;</SectionTitle>
                 <div className="technology-stack">
                     <div className="brick">
                         <div className="brick-picture"><img src='/img/deepfile-340.png' alt="deep-File Inspection Icon"/></div>

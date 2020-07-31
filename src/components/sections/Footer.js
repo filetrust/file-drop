@@ -3,7 +3,7 @@ import logo from '../../logo.svg';
 import mainMenu from '../../data/bottomMenu.json';
 import socialMenu from '../../data/socialMenu.json';
 import links from '../../data/links.json';
-import '../../js/footer';
+import '../../js/ready';
 
 export default function Footer() {
     return <div className="app-footer" id="footer">
@@ -14,7 +14,7 @@ export default function Footer() {
                         <img src={logo} alt="Logo" height="100"/>
                     </a>
                 </div>
-                <span className="copyright">© Copyright 2020 - Glasswall Solutions Ltd. All Rights Reserved</span>
+                <span className="copyright">&copy; Copyright 2020 - Glasswall Solutions Ltd. All Rights Reserved</span>
                 <div className="social-menu">
                     {socialMenu.map(name =>
                         <a href={links[name]} target="_blank" rel="noopener noreferrer" key={name}>

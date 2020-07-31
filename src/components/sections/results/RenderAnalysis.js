@@ -4,7 +4,7 @@ import Items from "./Items";
 function RenderAnalysis(props) {
   return (
     <div className="analysis-results">
-      <div className="sanitisationTable table-container">
+      <div className="sanitisationTable analysis-table">
         <div className="h1 table-header">
           Active content that has been sanitised (removed)
         </div>
@@ -15,7 +15,7 @@ function RenderAnalysis(props) {
         </table>
       </div>
 
-      <div className="remediationsTable table-container">
+      <div className="remediationsTable analysis-table">
         <div className="h1 table-header">
           Objects & Structures that have been repaired
         </div>
@@ -26,7 +26,7 @@ function RenderAnalysis(props) {
         </table>
       </div>
 
-      <div className="issuesTable table-container">
+      <div className="issuesTable analysis-table">
         <div className="h1 table-header">
           Objects & Structures that are unable to be repaired
         </div>

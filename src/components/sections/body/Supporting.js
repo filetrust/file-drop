@@ -101,7 +101,7 @@ function Supporting() {
     return <div className='supporting-triangle'>
         <section className="supporting" id="supporting">
             <div className="container">
-                <SectionTitle>Glasswall Supports the Following Files Types</SectionTitle>
+                <SectionTitle>Supported File Types</SectionTitle>
                 <ParagraphText context="supporting">The Glasswall process can be applied the following <span
                     className="text-highlighted">{getTotalSupports()}</span> File types.</ParagraphText>
                 {Object.keys(tableFormatting).map( (scheme) => {
@@ -118,10 +118,6 @@ function Supporting() {
                         </div>
                     )
                 })}
-
-                <div className="supporting-buttons">
-                    <Button inverse href="SupportedTypesLearnMore">LEARN MORE</Button>
-                </div>
 
             </div>
         </section>

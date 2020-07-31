@@ -4,7 +4,7 @@ import { StyledDropzone } from '../../widgets';
 import supporting from '../../../data/supportedFileTypes.json';
 
 
-export default function Hero({ handleDrop, loading } = {}) {
+export default function Hero({ handleDrop, loading, fileProcessed } = {}) {
     const accept = [];
     // const vendors = [];
     const fileTypes = [];
@@ -28,6 +28,12 @@ export default function Hero({ handleDrop, loading } = {}) {
         })
     });
 
+    function onViewClick (e) {
+        debugger
+        console.log('On Click')
+
+    }
+
 
     return <div className='hero'>
         <div className="hero-title">
@@ -41,13 +47,10 @@ export default function Hero({ handleDrop, loading } = {}) {
                 <div className="info-title">Sanitise Your Files</div>
                 <div className="info-subtitle">
                     <span>WITH </span>
-                    <span className="text-highlighted">d&#x2011;FIRST&trade;</span> TECHNOLOGY
+                    <span className="text-highlighted">CDR</span> TECHNOLOGY
                 </div>
-                <ParagraphText context="info">Validated and deployed by governments and intelligence
-                    agencies worldwide, Glasswall's award-winning d&#x2011;FIRST&trade;
-                    technology is now available to try in this simple web-interface.
-                    Drag a file into the box. Your safe, regenerated file will be ready
-                    to download along with a report detailing how Glasswall made it safe.
+                <ParagraphText context="info">
+                    Validated and deployed by governments and intelligence agencies worldwide, Glasswall's award-winning Content Disarm & Reconstruction (CDR) technology is now available to try in this simple web-interface. Drag a file into the box. Your safe, regenerated file will be ready to download along with a report detailing how Glasswall made it safe.
                 </ParagraphText>
             </div>
             <div className="buttons-container hero-buttons touch-full">
@@ -58,9 +61,16 @@ export default function Hero({ handleDrop, loading } = {}) {
             </div>
             <div className="hero-dropzone">
                 <StyledDropzone onDrop={handleDrop} accept={accept} loading={loading}>
-                    <div className="hero-drop-message">Drop a file here</div>
-                    <img src="/img/drag-drop-area.svg" alt="Drop Zone Area"/>
-                    <Button inverse context="drop">SELECT A FILE</Button>
+                    {!fileProcessed ? <>
+                        <div className="drop-message">Drop a file here</div>
+                        <div className="drop-message drop-message__reject">Please use a supported file type</div>
+                        <img src="/img/drag-drop-area.svg" alt="Drop Zone Area"/>
+                        <Button inverse context="drop">SELECT A FILE</Button>
+                    </>: <>
+                        <div className="drop-message drop-message__processed">Your file has been processed</div>
+                        <img src="/img/drap-drop-processed.png" alt="Drop Zone Area"/>
+                        <Button inverse context="processed" onClick={onViewClick}>VIEW RESULT</Button>
+                    </>}
                 </StyledDropzone>
             </div>
         </div>

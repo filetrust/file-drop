@@ -89,11 +89,11 @@ class App extends Component {
   };
 
   render() {
-    const { showMenu, showModal, fileProcessed, loading } = this.state
+    const { showMenu, showModal, loading, fileProcessed } = this.state
     return (
       <React.Fragment>
         <div className={`app ${showMenu ? "show-menu" : ""}`}>
-          <Header toggleMenu={this.toggleMenu} handleDrop={this.handleDrop} loading={loading}/>
+          <Header toggleMenu={this.toggleMenu} handleDrop={this.handleDrop} loading={loading} fileProcessed={fileProcessed}/>
           <div className='app-body'>
             <ProcessFile state={this.state}/>
             <Technology/>

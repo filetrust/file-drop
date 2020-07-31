@@ -14,31 +14,38 @@ button {
   color: $sectionButtonTextColour;
   font-size: 1.7rem;
   font-weight: bold;
-  padding: 1.7rem 2rem;
+  padding: 1.2rem 2.5rem;
   text-transform: uppercase;
   transition: 0.3s;
-  &s {
-    margin-top: 4rem;
-    &-container {
-      a:not(:last-of-type) .button {
+  &s-container {
+    a:not(:last-of-type) .button {
+      margin-right: 2.1rem;
+    }
+    .button {
+      margin-bottom: 2rem;
+    }
+    > button {
+      &:not(:last-of-type) {
         margin-right: 2.1rem;
       }
-      .button {
-        margin-bottom: 2rem;
-      }
-      > button {
-        &:not(:last-of-type) {
-          margin-right: 2.1rem;
-        }
-      }
     }
+
   }
   &__inverse {
     background-color: $sectionButtonTextColour;
     color: $white;
+    border: none;
   }
 }
 
+
+@media only screen and (max-width: $max-touch-breakpoint) {
+  .button {
+    &:hover {
+      cursor: default;
+    }
+  }
+}
 
 @media only screen and (min-width: $max-touch-breakpoint) {
   .button {

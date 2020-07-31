@@ -9,17 +9,51 @@
   color: $sectionButtonTextColour;
 }
 
+// ---- Introducing d-FIRST ----- //
+.technology {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  .text-highlighted {
+    font-weight: bold;
+  }
+  &-stack {
+    display: flex;
+    align-items: center;
+  }
+  .brick {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem;
+    padding-top: 0;
+
+    &-picture {
+      height: 17rem;
+      width: 17rem;
+      img {
+        width: 100%;
+      }
+    }
+    &-abstract {
+      font-size: 2rem;
+      margin: 2rem 0;
+      color: $sectionSubTitleTextColour;
+    }
+  }
+}
+
 
 // ----- Supports the Following Files Types ----- //
-
 .supporting {
   &-triangle {
-    background-color: #fafbfb;
+    background-color: #f6f6f6;
+    //background-color: #f6f600;
     clip-path: polygon(0 $bevel-side-difference, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short);
   }
   clip-path: polygon(0 $bevel-side-difference + $bevel-triangle-short, 100% $bevel-triangle-long,
     100% $bevel-side-long - $bevel-triangle-short, 0 $bevel-side-short - $bevel-triangle-long);
-  background-color: #eef3f1;
+  background-color: #f1f1f1;
+  //background-color: #eef3f1;
   padding: 15rem 0 12rem 0;
   &-paragraph {
     margin-top: 3rem;
@@ -120,46 +154,15 @@
   }
 }
 
-// ---- Introducing d-FIRST ----- //
-.technology {
-  padding-top: 7rem;
-  .text-highlighted {
-    font-weight: bold;
-  }
-  &-stack {
-    display: flex;
-    align-items: center;
-  }
-  .brick {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 4rem;
-
-    &-picture {
-      height: 20rem;
-      width: 20rem;
-      img {
-        width: 100%;
-      }
-    }
-    &-abstract {
-      font-size: 2rem;
-      margin: 2rem 0;
-      color: $sectionSubTitleTextColour;
-    }
-  }
-}
-
 .privacy {
   color: $sectionParagraphTextColour;
-  padding-bottom: 7rem;
-  padding-top: 2rem;
+  padding-bottom: 5rem;
+  padding-top: 1rem;
   &-container {
   }
   &-statement {
     margin-top: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
   }
   &-paragraph {
     margin-top: 3rem;
@@ -168,39 +171,12 @@
   }
 }
 
-.process-file {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.6rem;
-  color: $charcoalGrey;
-  padding-top: 5rem;
 
-  .h1 {
-    font-size: 2.0rem;
-    font-family: 'montserratregular', sans-serif;
-    font-weight: 400;
-    margin: 5rem 1rem 3rem;
-    line-height: 2.4rem;
-
-    &.table-header {
-      display: block;
-      background-color: darken($blueGrey, 10%);
-      text-transform: uppercase;
-      letter-spacing: 0.1rem;
-      font-size: 1.8rem;
-      color: $white;
-      padding: 1.2rem 1rem;
-      margin: 0;
-    }
-  }
-}
-
-
+// ----------- MEDIA breackpoints ------------------ //
 @media only screen and (max-width: $xl-breakpoint) {
   .supporting {
-
+    padding-top: 12rem;
+    padding-bottom: 10rem;
     &-triangle {
       clip-path: polygon(0 $bevel-side-difference-xl, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-xl);
     }
@@ -212,13 +188,16 @@
 @media only screen and (max-width: $lg-breakpoint) {
   .technology {
     padding-top: 5rem;
+    padding-bottom: 5rem;
     .brick {
       padding: 1.5rem;
     }
   }
 
   .supporting {
-    padding: 10rem 0 7.5rem 0;
+    padding-top: 10rem;
+    //padding: 10rem 0 7.5rem 0;
+    padding-bottom: 8rem;
     &-triangle {
       clip-path: polygon(0 $bevel-side-difference-lg, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-lg);
     }
@@ -242,7 +221,7 @@
     }
   }
   .privacy {
-    padding-top: 0;
+    padding-top: 3rem;
     padding-bottom: 2rem;
     &-statement {
       margin-top: 1.5rem;
@@ -252,9 +231,7 @@
 
 }
 
-
 @media only screen and (max-width: $max-touch-breakpoint) {
-
   .app {
     &-header {
       &-triangle {
@@ -298,20 +275,14 @@
     &-stack {
       flex-direction: column;
     }
-    .brick {
-      &-picture {
-        height: 17.5rem;
-        width: 17.5rem;
-      }
-    }
     &-stack {
       flex-direction: column;
     }
   }
 
   .supporting {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+    padding-top: 5.5rem;
+    padding-bottom: 2.5rem;
     &-table {
       .table {
         &-header {
@@ -343,7 +314,8 @@
 
   }
   .privacy {
-    padding-top: 3.5rem;
+    padding-top: 5.5rem;
+    padding-bottom: 2.5rem;
     &-buttons {
       display: flex;
       flex-direction: column;
@@ -363,9 +335,7 @@
       line-height: 2.3rem;
     }
   }
-}
 
-@media only screen and (max-width: $xs-breakpoint) {
   .supporting {
     &-table {
       .table {

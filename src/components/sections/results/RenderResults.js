@@ -29,7 +29,7 @@ function RenderResults({ state }) {
                 <div className="analysis">
                     <IssueMessage hasIssues={hasIssues}/>
                     <SectionTitle context='regenerated'>Your Safe, Regenerated File Is Ready</SectionTitle>
-                    <div className="download-container buttons-container touch-full">
+                    <div className="analysis-container buttons-container touch-full">
                         <DownloadFile file={file} hasIssues={hasIssues}/>
                         <DownloadAnalysisReport report={analysisReportString} filename={fileName}/>
                     </div>
