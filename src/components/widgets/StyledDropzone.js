@@ -51,7 +51,7 @@ export default function StyledDropzone({ onDrop, children, loading }) {
 
     let classes = useMemo(() => ( [
         "drop-border",
-        // "reject",
+        "native",
         isDragActive ? "active" : "",
         isDragAccept ? "accept" : "",
         isDragReject ? "reject" : "",

@@ -28,7 +28,7 @@ export default function Hero({ handleDrop, loading, fileProcessed } = {}) {
         })
     });
 
-    function onViewClick (e) {
+    function onViewClick(e) {
         debugger
         console.log('On Click')
 
@@ -60,18 +60,22 @@ export default function Hero({ handleDrop, loading, fileProcessed } = {}) {
                 <Button context="hero" inverse href="Contact">CONTACT US</Button>
             </div>
             <div className="hero-dropzone">
-                <StyledDropzone onDrop={handleDrop} accept={accept} loading={loading}>
-                    {!fileProcessed ? <>
+
+                {!fileProcessed ?
+                    <StyledDropzone onDrop={handleDrop} accept={accept} loading={loading}>
                         <div className="drop-message">Drop a file here</div>
                         <div className="drop-message drop-message__reject">Please use a supported file type</div>
-                        <img src="/img/drag-drop-area.svg" alt="Drop Zone Area"/>
+                        <div className="drop-image drop-image__drop"/>
                         <Button inverse context="drop">SELECT A FILE</Button>
-                    </>: <>
-                        <div className="drop-message drop-message__processed">Your file has been processed</div>
-                        <img src="/img/drap-drop-processed.png" alt="Drop Zone Area"/>
-                        <Button inverse context="processed" onClick={onViewClick}>VIEW RESULT</Button>
-                    </>}
-                </StyledDropzone>
+                    </StyledDropzone>
+                    :
+                    <div className="drop-container">
+                        <div className="drop-border">
+                            <div className="drop-message drop-message__processed">Your file has been processed</div>
+                            <div className="drop-image drop-image__processed"/>
+                            <Button inverse context="processed" onClick={onViewClick}>VIEW RESULT</Button>
+                        </div>
+                    </div>}
             </div>
         </div>
     </div>

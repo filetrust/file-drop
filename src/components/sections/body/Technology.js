@@ -27,7 +27,7 @@ function Technology() {
                     </div>
                 </div>
                 <div className="technology-buttons">
-                    <Button inverse href="d-FIRST">LEARN MORE</Button>
+                    <Button inverse href="d‑FIRST™">LEARN MORE</Button>
                 </div>
             </div>
         </section>

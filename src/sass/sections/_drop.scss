@@ -83,7 +83,7 @@ $drop-area-border-radius: 2.5rem;
 @media only screen and (min-width: $max-touch-breakpoint) {
   .drop {
     &-border {
-      &:hover {
+      &.native:hover {
         cursor: pointer;
         opacity: 0.7;
       }

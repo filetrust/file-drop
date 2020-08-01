@@ -2,11 +2,11 @@ import React from "react";
 
 import RenderAnalysis from "./RenderAnalysis";
 import DownloadFile from "./DownloadFile";
-import { IssueMessage, SectionTitle } from "../../widgets";
+import { Button, IssueMessage, SectionTitle } from "../../widgets";
 import DownloadAnalysisReport from "./DownloadAnalysisReport";
 import FileAttributes from "./FileAttributes";
 
-function RenderResults({ state }) {
+function RenderResults({ state, onAnotherFile }) {
     const { file, analysisReport, analysisReportString, validation } = state;
 
     if ( validation ) {
@@ -41,6 +41,7 @@ function RenderResults({ state }) {
                         sanitisations={sanitisations}
                         issues={issues}
                     />
+                  <Button context="analyze" onClick={onAnotherFile}>Sanitise another file</Button>
                 </div>
             );
         } else {

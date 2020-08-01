@@ -33,6 +33,7 @@ button {
   }
   &__inverse {
     background-color: $sectionButtonTextColour;
+    padding: 1.4rem 2.7rem;
     color: $white;
     border: none;
   }
@@ -90,7 +91,6 @@ button {
       }
     }
   }
-
 }
 
 
