@@ -1,9 +1,11 @@
 import React from "react";
-import links from '../../data/links.json';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faSync } from '@fortawesome/free-solid-svg-icons';
+// import links from '../../data/links.json';
 
-function IconButton({ context, children, href, onClick } = {}) {
+function IconButton({ className, children, href, onClick } = {}) {
     const button = <>
-        <button className={`button-icon${context ? ` ${context}-button` : ''}`}
+        <button className={`button-icon${className ? ` ${className}` : ''}`}
                 onClick={onClick}>{children}</button>
     </>;
 

@@ -166,18 +166,31 @@
   }
 }
 
-@media only screen and (max-width: $lg-breakpoint) {
+@media only screen and (max-width: $xl-breakpoint) {
   .app {
     &-footer {
       &-inner {
-        padding: 2rem;
+        padding: 2rem 0;
       }
       &-left {
         padding: 0;
       }
-      &-menu {
-        padding-left: 1rem;
-        padding-right: 1rem;
+      .menu {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $lg-breakpoint) {
+  .app {
+    &-footer {
+      &-inner {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      &-left {
+        flex-grow: 1.9;
       }
     }
   }

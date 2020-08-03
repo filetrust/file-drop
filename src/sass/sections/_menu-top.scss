@@ -41,6 +41,7 @@ nav {
     &-button {
       height: 2rem;
       width: 2.5rem;
+      padding: 0;
       //noinspection CssUnknownTarget
       background: transparent url('img/menu-icon.svg') center center no-repeat;
       display: none;

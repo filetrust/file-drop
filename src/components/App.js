@@ -101,7 +101,7 @@ class App extends Component {
       <React.Fragment>
         <div className={`app ${showMenu ? "show-menu" : ""}`}>
           <Header toggleMenu={this.toggleMenu} handleDrop={this.handleDrop} loading={loading}
-                  fileProcessed={fileProcessed}/>
+                  fileProcessed={fileProcessed} onAnotherFile={this.onAnotherFile}/>
           <div className='app-body'>
             <ProcessFile state={this.state} onAnotherFile={this.onAnotherFile}/>
             <Technology/>

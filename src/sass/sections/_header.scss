@@ -84,13 +84,27 @@
 
   }
 
-  &-drop {
-    &zone {
-      grid-column-start: 2;
-      grid-column-end: span 1;
-      grid-row-start: 1;
-      grid-row-end: span 2;
-      padding: 0 6rem;
+  &-dropzone {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    padding: 0 6rem;
+  }
+  .drop-border {
+    position: relative;
+    .button-refresh {
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+    }
+    &.reject {
+      .drop-message {
+        display: none;
+        &__reject {
+          display: block;
+        }
+      }
     }
   }
 
@@ -229,6 +243,27 @@
       }
 
     }
+    .drop {
+      &-message {
+        &__processed {
+          margin-top: 2rem;
+          font-size: 2rem;
+        }
+      }
+      &-image {
+        &__processed {
+          height: 10rem;
+          width: 7.54rem;
+        }
+      }
+      &-border {
+        .button-refresh {
+          font-size: 2.5rem;
+          right: 1rem;
+          top: 1rem;
+        }
+      }
+    }
   }
 }
 
@@ -253,7 +288,11 @@
       text-align: center;
     }
 
-    &-buttons {
+    &-image {
+      &__drop {
+        width: 11.3rem;
+        height: 10.3rem;
+      }
     }
 
     &-drop {
@@ -263,17 +302,6 @@
         grid-row-start: initial;
         grid-row-end: initial;
         padding: 0;
-        .drop-border {
-          &.reject {
-            .drop-message {
-              display: none;
-              &__reject {
-                display: block;
-              }
-            }
-
-          }
-        }
       }
     }
   }
