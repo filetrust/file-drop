@@ -44,7 +44,7 @@ $xs-container-width: 30rem;
 
 $xxl-header-min-height: 82rem;
 $xl-header-min-height: 79rem;
-$lg-header-min-height: 62rem;
+$lg-header-min-height: 64rem;
 $md-header-min-height: 112rem;
 $sm-header-min-height: 38rem;
 $xs-header-min-height: 28.5rem;
@@ -78,7 +78,7 @@ $bevel-triangle-long: 1%;
 // --- Palette --- //
 $white : hsl(0,0,100%);
 $black : hsl(0,0,0%);
-$paleGrey : #fafaf9;
+$paleGrey : #f6f6f6;
 $mediumGrey : hsl(210, 15%, 75%);
 $charcoalGrey : hsl(0, 0%, 39%);
 $blueGrey : hsl(198, 14%, 82%);
@@ -98,14 +98,13 @@ $fileDropBgColour: hsl(264, 54%, 37%);
 $sectionTitleTextColour: hsl(215, 100%, 16%); //#002252;
 $sectionSubTitleTextColour: hsl(248, 13%, 36%); //#535068;
 $sectionParagraphTextColour: hsl(163, 11%, 13%); //#191919
-$sectionButtonTextColour: #1a919a; //#33bf99
-//$sectionButtonTextColour: hsl(164, 58%, 47%); //#33bf99
+$sectionButtonTextColour: #1a919a;
 
-$header-bg-gradient-start: #0c3451;//rgba(12,52,81,1);
-$header-bg-gradient-end: #186480; //rgba(24,100,128,1);
+$header-bg-gradient-start: #0c3451;
+$header-bg-gradient-end: #186480;
 $main-background-gradient: linear-gradient(90deg, $header-bg-gradient-start 35%, $header-bg-gradient-end 100%);
 
-$button-hover-on-deep-blue: darken($header-bg-gradient-end, 5%);// lighten($header-bg-gradient-start, 5%);
+$button-hover-on-deep-blue: darken($header-bg-gradient-end, 5%);
 $button-hover-on-inverse:  #127179;
 $button-bg-hover: lighten($sectionButtonTextColour, 47%);
 

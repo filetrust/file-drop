@@ -1,8 +1,11 @@
 import React from "react";
 
-function SectionTitle({ context, children } = {}) {
+function SectionTitle({ context, hasIssues, children } = {}) {
+    const classNames = ['section-title'];
+    context && classNames.push( context + '-title');
+    hasIssues && classNames.push ('has-issues');
     return (
-        <div className={`section-title${context ? ' ' + context + '-title' : ''}`}>{children}</div>
+        <div className={classNames.join(' ')}>{children}</div>
     );
 }
 

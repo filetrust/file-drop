@@ -1,0 +1,48 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  color: $charcoalGrey;
+  background: $white;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+.app {
+  &-link {
+    color: #09d3ac;
+  }
+  text-align: center;
+}
+
+.text-highlighted {
+  color: $sectionButtonTextColour;
+}
+
+// --- Loading Spinner Animation --- //
+
+@keyframes spinner {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(175deg);
+  }
+}
+
+
+// --- Main Styles --- //
+
+.terms-link {
+  position: absolute;
+  bottom: 3rem;
+  opacity: 0.5;
+}
+

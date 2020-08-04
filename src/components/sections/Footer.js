@@ -10,14 +10,14 @@ export default function Footer() {
         <div className="container app-footer-inner">
             <section className="app-footer-left">
                 <div className="logo">
-                    <a href={links.glasswall} target="blank">
+                    <a href={links.glasswall} target='gw-window'>
                         <img src={logo} alt="Logo" height="100"/>
                     </a>
                 </div>
                 <span className="copyright">&copy; Copyright 2020 - Glasswall Solutions Ltd. All Rights Reserved</span>
                 <div className="social-menu">
                     {socialMenu.map(name =>
-                        <a href={links[name]} target="_blank" rel="noopener noreferrer" key={name}>
+                        <a href={links[name]} target='gw-window'rel="noopener noreferrer" key={name}>
                             <div className={`social-icon ${name}`}/>
                         </a>)
                     }
@@ -31,7 +31,7 @@ export default function Footer() {
                 const subMenu = menu.map((name) => {
                     const href = links[name];
                     return <li key={`${name}-${sectionIndex}`}>
-                        <a href={href}><div className="menu-item">{name}</div></a>
+                        <a href={href} target='gw-window'><div className="menu-item">{name}</div></a>
                     </li>
                 })
 

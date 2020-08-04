@@ -3,7 +3,7 @@ import links from '../../data/links.json';
 
 function Button({ inverse, context, children, href, textAsHrefAlias = true, onClick } = {}) {
     const button = <>
-        <button className={`button${inverse ? ' button__inverse' : ''}${context !== '' ? ` ${context}-button` : ''}`}
+        <button className={`button${inverse ? ' button__inverse' : ''}${context ? ` ${context}-button` : ''}`}
                 onClick={onClick}>{children}</button>
     </>;
 
@@ -19,7 +19,7 @@ function Button({ inverse, context, children, href, textAsHrefAlias = true, onCl
     if ( ! hrefOrAliias ) {
         return button;
     } else {
-        return <a href={hrefOrAliias}>{button}</a>;
+        return <a href={hrefOrAliias} target='gw-window'>{button}</a>;
     }
 }
 

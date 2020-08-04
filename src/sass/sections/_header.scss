@@ -8,7 +8,6 @@
     /* Old browsers */
     background: $oldBrowserBgColour;
     /* Modern browsers */
-  //linear-gradient(90deg, rgba(12,52,81,1) 35%, rgba(24,100,128,1) 100%);
     background: $main-background-gradient;
     clip-path: polygon(0 0, 100% 0,
       100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short - $bevel-triangle-short);
@@ -34,7 +33,6 @@
   &-icon {
     width: 9.2rem;
     height: 9.2rem;
-    //background: transparent url('img/drop-white.svg') center center no-repeat;
     background-color: $fileDropBgColour;
     outline: none;
     margin-right: 2.5rem;
@@ -86,15 +84,30 @@
 
   }
 
-  &-drop {
-    &zone {
-      grid-column-start: 2;
-      grid-column-end: span 1;
-      grid-row-start: 1;
-      grid-row-end: span 2;
-      padding: 0 6rem;
+  &-dropzone {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    padding: 0 6rem;
+  }
+  .drop-border {
+    position: relative;
+    .button-refresh {
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+    }
+    &.reject {
+      .drop-message {
+        display: none;
+        &__reject {
+          display: block;
+        }
+      }
     }
   }
+
 
   .drop {
     &-container {
@@ -104,9 +117,8 @@
       justify-content: space-between;
       align-items: center;
       .button {
-        //margin: 0;
-        z-index: -1;
-        width: initial;
+        //z-index: -1;
+        //width: initial;
       }
     }
     &-message {
@@ -115,10 +127,23 @@
       font-weight: 300;
       &__reject {
         display: none;
-        //color: red;
       }
     }
-
+    &-image {
+      &__drop {
+        width: 11.3rem;
+        height: 10.3rem;
+        //noinspection CssUnknownTarget
+        background-image: url(img/drag-drop-area.svg);
+      }
+      &__processed {
+        width: 11.44rem;
+        height: 15rem;
+        //noinspection CssUnknownTarget
+        background-image: url(img/sanitised-file.svg);
+      }
+      background-repeat: no-repeat;
+    }
   }
 }
 
@@ -215,14 +240,44 @@
       .button {
         padding-right: 2rem;
         padding-left: 2rem;
-        //margin-bottom: 0;
       }
 
+    }
+    .drop {
+      &-message {
+        font-size: 2.2rem;
+        &__processed {
+          margin-top: 2rem;
+          font-size: 2rem;
+        }
+      }
+      &-image {
+        &__processed {
+          height: 10rem;
+          width: 7.54rem;
+        }
+      }
+      &-border {
+        .button-refresh {
+          //font-size: 2.2rem;
+          right: 1rem;
+          top: 1rem;
+        }
+      }
     }
   }
 }
 
 @media only screen and (max-width: $max-touch-breakpoint) {
+  .app {
+    &-header {
+      &-triangle {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+
   .hero {
     &-body {
       display: grid;
@@ -234,7 +289,11 @@
       text-align: center;
     }
 
-    &-buttons {
+    &-image {
+      &__drop {
+        width: 11.3rem;
+        height: 10.3rem;
+      }
     }
 
     &-drop {
@@ -244,34 +303,14 @@
         grid-row-start: initial;
         grid-row-end: initial;
         padding: 0;
-        .drop-border {
-          &.reject {
-            .drop-message {
-              display: none;
-              &__reject {
-                display: block;
-              }
-            }
-
-          }
-        }
       }
     }
   }
 }
 
 @media only screen and (max-width: $md-breakpoint) {
-  .app {
-    &-header {
-      &-container {
-        //min-height: $md-header-min-height;
-      }
-    }
-  }
   .hero {
     &-buttons {
-      //text-align: left;
-      //margin-top: 6rem;
       grid-column-start: initial;
       grid-column-end: initial;
       grid-row-start: initial;
@@ -325,6 +364,7 @@
     }
     .drop {
       &-message {
+        font-size: 2rem;
         &__reject, &__processed {
           font-size: 1.8rem;
         }

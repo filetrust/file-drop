@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ParagraphText, SectionTitle } from '../../widgets';
+import { ParagraphText, SectionTitle } from '../../widgets';
 import supporting from '../../../data/supportedFileTypes.json';
 import tableFormatting from '../../../data/supportedTableFormatting.json';
 

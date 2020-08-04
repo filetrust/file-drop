@@ -2,11 +2,13 @@ import React from "react";
 
 import RenderAnalysis from "./RenderAnalysis";
 import DownloadFile from "./DownloadFile";
-import { IssueMessage, SectionTitle } from "../../widgets";
+import { Button, SectionTitle } from "../../widgets";
 import DownloadAnalysisReport from "./DownloadAnalysisReport";
 import FileAttributes from "./FileAttributes";
+import ButtonsContainer from '../../widgets/ButtonsContainer';
+import messages from '../../../data/messages.json';
 
-function RenderResults({ state }) {
+function RenderResults({ state, onAnotherFile }) {
     const { file, analysisReport, analysisReportString, validation } = state;
 
     if ( validation ) {
@@ -23,16 +25,17 @@ function RenderResults({ state }) {
         const issues = analysisReport.getElementsByTagName("gw:IssueItem");
         const [ { value: fileType } = { value: "unknown" } ] = analysisReport.getElementsByTagName("gw:FileType");
         const { name: fileName } = file;
-        const hasIssues = issues.length;
+        const hasIssues = !!issues.length;
         if ( sanitisations.length || remediations.length || hasIssues ) {
+            const code = hasIssues ? "unable-to-protect" : "file-is-ready";
+            const sectionTitle = messages[code];
             return (
                 <div className="analysis">
-                    <IssueMessage hasIssues={hasIssues}/>
-                    <SectionTitle context='regenerated'>Your Safe, Regenerated File Is Ready</SectionTitle>
-                    <div className="analysis-container buttons-container touch-full">
+                    <SectionTitle context='regenerated' hasIssues={hasIssues}>{sectionTitle}</SectionTitle>
+                    <ButtonsContainer context="analysis" touchFull>
                         <DownloadFile file={file} hasIssues={hasIssues}/>
                         <DownloadAnalysisReport report={analysisReportString} filename={fileName}/>
-                    </div>
+                    </ButtonsContainer>
 
                     <FileAttributes file={file} fileType={fileType}/>
 
@@ -41,17 +44,23 @@ function RenderResults({ state }) {
                         sanitisations={sanitisations}
                         issues={issues}
                     />
+                    <ButtonsContainer touchFull>
+                        <Button context="analyze" onClick={onAnotherFile}>Sanitise another file</Button>
+                    </ButtonsContainer>
                 </div>
             );
         } else {
             return (
-            <div className="is-clean analysis">
-                <SectionTitle context='clean'>File is clean!</SectionTitle>
-                <div className="download-container buttons-container touch-full">
-                    <DownloadAnalysisReport report={analysisReportString} filename={fileName}/>
+                <div className="is-clean analysis">
+                    <SectionTitle context='clean'>File is clean!</SectionTitle>
+                    <ButtonsContainer context="download" touchFull>
+                        <DownloadAnalysisReport report={analysisReportString} filename={fileName}/>
+                    </ButtonsContainer>
+                    <FileAttributes file={file} fileType={fileType}/>
+                    <ButtonsContainer touchFull>
+                        <Button context="analyze" onClick={onAnotherFile}>Sanitise another file</Button>
+                    </ButtonsContainer>
                 </div>
-                <FileAttributes file={file} fileType={fileType}/>
-            </div>
             );
         }
     }

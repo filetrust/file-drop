@@ -1,5 +1,4 @@
 .app {
-
   &-footer {
     min-height: 33rem;
     /* Old browsers */
@@ -84,13 +83,38 @@
 
 .copyright {
   display: inline-block;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 2.4rem;
   width: 72%;
   margin-top: 1rem;
   text-align: left;
   color: $white;
 }
+
+.social-icon {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  margin: 2rem 0.8rem 0 0;
+
+  &.twitter {
+    background: transparent url('img/twitter.svg') center center no-repeat;
+  }
+
+  &.linkedin {
+    background: transparent url('img/linkedin.svg') center center no-repeat;
+  }
+
+  &.medium {
+    background: transparent url('img/medium.svg') center center no-repeat;
+  }
+
+  &.youtube {
+    background: transparent url('img/youtube.svg') center center no-repeat;
+  }
+}
+
+
 
 @media only screen and (max-width: $max-touch-breakpoint) {
   .app {
@@ -102,7 +126,7 @@
           display: none;
         }
         &-title {
-          padding-top: 1rem;
+          padding-top: 3rem;
           display: flex;
           justify-content: space-between;
           &:after {
@@ -113,8 +137,6 @@
             content: "";
             //noinspection CssUnknownTarget
             background-image: url(img/expand-icon.svg);
-            //background-repeat: no-repeat;
-            //background-position: center;
             background-size: contain;
             transition: transform .1s ease-in-out,-webkit-transform .1s ease-in-out,-o-transform .1s ease-in-out;
           }
@@ -144,18 +166,31 @@
   }
 }
 
-@media only screen and (max-width: $lg-breakpoint) {
+@media only screen and (max-width: $xl-breakpoint) {
   .app {
     &-footer {
       &-inner {
-        padding: 2rem;
+        padding: 2rem 0;
       }
       &-left {
         padding: 0;
       }
-      &-menu {
-        padding-left: 1rem;
-        padding-right: 1rem;
+      .menu {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $lg-breakpoint) {
+  .app {
+    &-footer {
+      &-inner {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      &-left {
+        flex-grow: 1.9;
       }
     }
   }
@@ -167,7 +202,6 @@
       padding: 0 0 2.4rem 0;
     }
     &-inner {
-      //padding: 0;
       max-width: 100%;
       padding-left: 5rem;
       padding-right: 5rem;

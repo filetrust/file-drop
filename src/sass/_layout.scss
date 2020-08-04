@@ -20,6 +20,10 @@
   }
 }
 
+.button-icon {
+  color: inherit;
+  font-size: 3.3rem;
+}
 
 @media only screen and (max-width: $xl-breakpoint) {
   .container {
@@ -55,6 +59,9 @@
       line-height: 2.3rem;
     }
   }
+  .button-icon {
+    font-size: 2.2rem;
+  }
 }
 
 @media only screen and (max-width: $sm-breakpoint) {
@@ -69,7 +76,6 @@
   }
   .paragraph {
     &-text {
-      //font-size: 1.51rem;
       line-height: 2.3rem;
     }
   }

@@ -16,60 +16,16 @@ body {
 @import 'rem';
 @import 'vars';
 @import 'typography';
-@import 'settings';
+@import 'global';
 
 @import 'layout';
 @import 'buttons';
 @import 'modal';
 
 @import 'sections/menu-top';
-@import 'sections/header';
 @import 'sections/drop';
+@import 'sections/header';
 @import 'sections/body';
 @import 'sections/results';
 @import 'sections/footer';
-
-// --- Loading Spinner Animation --- //
-
-@keyframes spinner {
-  0% {
-    transform: rotateZ(0deg);
-  }
-
-  100% {
-    transform: rotateZ(175deg);
-  }
-}
-
-
-// --- Main Styles --- //
-
-.terms-link {
-  position: absolute;
-  bottom: 3rem;
-  opacity: 0.5;
-}
-
-.social-icon {
-  display: inline-block;
-  width: 3rem;
-  height: 3rem;
-  margin: 2rem 0.8rem 0 0;
-
-  &.twitter {
-    background: transparent url('img/twitter.svg') center center no-repeat;
-  }
-
-  &.linkedin {
-    background: transparent url('img/linkedin.svg') center center no-repeat;
-  }
-
-  &.medium {
-    background: transparent url('img/medium.svg') center center no-repeat;
-  }
-
-  &.youtube {
-    background: transparent url('img/youtube.svg') center center no-repeat;
-  }
-}
 

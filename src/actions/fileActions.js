@@ -6,21 +6,15 @@ const unsupportedTypes = [
     "BufferIssues",
     "InternalIssues",
     "LicenseExpired",
-    "PasswordProtectedOpcFile"
-  ];
-
-const validFileSize = file => {
-    return file.size <= 6000000;
-
-}
+    "PasswordProtectedOpcFile",
+];
 
 async function validFileType(file) {
-    const result = await fileTypeDetectionApi.getFileType(file);
+    let result = await fileTypeDetectionApi.getFileType(file) || {};
     return !unsupportedTypes.includes(result.FileTypeName);
 
 }
 
 export {
-    validFileSize,
-    validFileType
-  };
+    validFileType,
+};
