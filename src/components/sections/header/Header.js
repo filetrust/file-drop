@@ -33,7 +33,7 @@ export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFi
             validFileType(accepted)
             .then(result => {
                 if ( !result ) {
-                    const messageText = messages['unsupported-file-type'];
+                    const messageText = messages['file-invalid-type'];
                     addToast(messageText, {
                         appearance: 'warning',
                         autoDismiss: true,

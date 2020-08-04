@@ -10,10 +10,7 @@ const unsupportedTypes = [
 ];
 
 async function validFileType(file) {
-    let result = await fileTypeDetectionApi.getFileType(file);
-    if ( ! result ) {
-        result = {}
-    }
+    let result = await fileTypeDetectionApi.getFileType(file) || {};
     return !unsupportedTypes.includes(result.FileTypeName);
 
 }

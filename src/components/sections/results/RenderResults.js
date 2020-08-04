@@ -2,10 +2,11 @@ import React from "react";
 
 import RenderAnalysis from "./RenderAnalysis";
 import DownloadFile from "./DownloadFile";
-import { Button, IssueMessage, SectionTitle } from "../../widgets";
+import { Button, SectionTitle } from "../../widgets";
 import DownloadAnalysisReport from "./DownloadAnalysisReport";
 import FileAttributes from "./FileAttributes";
 import ButtonsContainer from '../../widgets/ButtonsContainer';
+import messages from '../../../data/messages.json';
 
 function RenderResults({ state, onAnotherFile }) {
     const { file, analysisReport, analysisReportString, validation } = state;
@@ -24,12 +25,13 @@ function RenderResults({ state, onAnotherFile }) {
         const issues = analysisReport.getElementsByTagName("gw:IssueItem");
         const [ { value: fileType } = { value: "unknown" } ] = analysisReport.getElementsByTagName("gw:FileType");
         const { name: fileName } = file;
-        const hasIssues = issues.length;
+        const hasIssues = !!issues.length;
         if ( sanitisations.length || remediations.length || hasIssues ) {
+            const code = hasIssues ? "unable-to-protect" : "file-is-ready";
+            const sectionTitle = messages[code];
             return (
                 <div className="analysis">
-                    <IssueMessage hasIssues={hasIssues}/>
-                    <SectionTitle context='regenerated'>Your Safe, Regenerated File Is Ready</SectionTitle>
+                    <SectionTitle context='regenerated' hasIssues={hasIssues}>{sectionTitle}</SectionTitle>
                     <ButtonsContainer context="analysis" touchFull>
                         <DownloadFile file={file} hasIssues={hasIssues}/>
                         <DownloadAnalysisReport report={analysisReportString} filename={fileName}/>
