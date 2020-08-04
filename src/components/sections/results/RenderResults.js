@@ -26,7 +26,7 @@ function RenderResults({ state, onAnotherFile }) {
         const hasIssues = issues.length;
         if ( sanitisations.length || remediations.length || hasIssues ) {
             return (
-                <div className="analysis">
+                <div className="analysis" id="analysis">
                     <IssueMessage hasIssues={hasIssues}/>
                     <SectionTitle context='regenerated'>Your Safe, Regenerated File Is Ready</SectionTitle>
                     <div className="analysis-container buttons-container touch-full">

@@ -87,8 +87,8 @@ nav {
         }
         &-button {
           position: absolute;
-          top: 4.7rem;
-          right: 9rem;
+          top: 4rem;
+          right: 5.6rem;
           //noinspection CssUnknownTarget
           background: transparent url('img/menu-icon-close.svg') center center no-repeat;
           //z-index: 100;
@@ -140,6 +140,11 @@ nav {
     &-menu {
       &-top {
         padding: 0.7rem 0;
+        &.container {
+          max-width: 100%;
+          padding-left: 4rem;
+          padding-right: 4rem;
+        }
       }
       &-button {
         display: block;
@@ -151,6 +156,27 @@ nav {
   }
 }
 
+@media only screen and (max-width: $sm-breakpoint) {
+  .app {
+    &-menu {
+      &-top {
+        &.container {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+      }
+    }
+    &.show-menu {
+      .app {
+        &-menu {
+          &-button {
+            right: 3.6rem;
+          }
+        }
+      }
+    }
+  }
+}
 @media only screen and (max-width: $xs-breakpoint) {
   .app {
     &-logo {

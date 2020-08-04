@@ -19,7 +19,7 @@ function Button({ inverse, context, children, href, textAsHrefAlias = true, onCl
     if ( ! hrefOrAliias ) {
         return button;
     } else {
-        return <a href={hrefOrAliias}>{button}</a>;
+        return <a href={hrefOrAliias} target='gw-window'>{button}</a>;
     }
 }
 

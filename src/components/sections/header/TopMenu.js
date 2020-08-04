@@ -6,12 +6,12 @@ import links from '../../../data/links.json';
 export default function TopMenu({ toggleMenu, toggleModal } = { }) {
     return (
         <div className="container app-menu-top">
-            <div className="app-logo"><a href={links.glasswall} target="blank" ><img src={logo} alt="Logo" /></a></div>
+            <div className="app-logo"><a href={links.glasswall} target='gw-window'><img src={logo} alt="Logo" /></a></div>
             <nav>
                 <button className="app-menu-button" onClick={toggleMenu}/>
                 {/*<button className="app-menu-info-button" onClick={toggleModal} style={{ display: "none" }}></button>*/}
                 <ul className="app-menu-list">
-                    {topMenu.map(item => <li key={item}><a href={links[item]}>{item}</a></li>)}
+                    {topMenu.map(item => <li key={item}><a href={links[item]} target='gw-window'>{item}</a></li>)}
                 </ul>
             </nav>
         </div>

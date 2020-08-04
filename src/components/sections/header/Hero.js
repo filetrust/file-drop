@@ -32,13 +32,6 @@ export default function Hero({ handleDrop, loading, fileProcessed,  onAnotherFil
         })
     });
 
-    function onViewClick(e) {
-        debugger
-        console.log('On Click')
-
-    }
-
-
     return <div className='hero'>
         <div className="hero-title">
             <div className="hero-icon">
@@ -78,7 +71,7 @@ export default function Hero({ handleDrop, loading, fileProcessed,  onAnotherFil
                             <IconButton className="button-refresh" onClick={onAnotherFile}><FontAwesomeIcon icon={faSync}/></IconButton>
                             <div className="drop-message drop-message__processed">Your file has been processed</div>
                             <div className="drop-image drop-image__processed"/>
-                            <Button inverse context="processed" onClick={onViewClick}>VIEW RESULT</Button>
+                            <Button inverse context="processed">VIEW RESULT</Button>
                         </div>
                     </div>}
             </div>

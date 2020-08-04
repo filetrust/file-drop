@@ -1,7 +1,7 @@
 {
   "About Us": "https://glasswallsolutions.com/company/",
   "Appliances": "https://glasswallsolutions.com/products/#appliances",
-  "CEO BLog":  "https://glasswallsolutions.com/ceo-blog/",
+  "CEO Blog":  "https://glasswallsolutions.com/ceo-blog/",
   "Cloud": "https://glasswallsolutions.com/products/#cloud",
   "Company": "https://glasswallsolutions.com/company/" ,
   "Contact": "https://glasswallsolutions.com/contact/" ,
@@ -28,5 +28,6 @@
   "Threat Intelligence":  "https://glasswallsolutions.com/threat-intelligence/",
   "twitter": "https://twitter.com/GlasswallGlobal",
   "Visit Store": "https://glasswall-store.com/",
+  "VIEW RESULT": "#analysis",
   "youtube": "https://www.youtube.com/channel/UCfBGg3aM-LqawBCmbToVuCQ"
 }

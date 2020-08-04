@@ -111,9 +111,8 @@ class App extends Component {
           <Footer/>
           <div className="app-sub-footer">
             <a className="footer__legend__link"
-               href="https://glasswallsolutions.com/privacy-policy/">Read our Privacy Policy -</a>
-            <span
-              className="footer__address">Continental House, Oakridge, West End, Surrey, GU24 9PJ. Tel: +44 (0) 203 814 3890<br/></span>
+               href="https://glasswallsolutions.com/privacy-policy/" target='gw-window'>Read our Privacy Policy - </a>
+            <span className="footer__address"> Continental House, Oakridge, West End, Surrey, GU24 9PJ. Tel: +44 (0) 203 814 3890<br/></span>
           </div>
         </div>
         <CSSTransition in={showModal} timeout={500} classNames="modal" unmountOnExit>

@@ -14,7 +14,7 @@ function IconButton({ className, children, href, onClick } = {}) {
     if ( ! hrefOrAliias ) {
         return button;
     } else {
-        return <a href={hrefOrAliias}>{button}</a>;
+        return <a href={hrefOrAliias} target='gw-window'>{button}</a>;
     }
 }
 
