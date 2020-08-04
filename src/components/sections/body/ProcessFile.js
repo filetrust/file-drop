@@ -6,7 +6,7 @@ import { RenderResults } from "../results";
 export default function ProcessFile({ state, onAnotherFile } ) {
     const { fileProcessed } = state;
     return (
-        <section className="process-file">
+        <section className="process-file" id="analysis">
             <div className="container">
 {/*
             <div className="h1" >Drag and drop a file to have it processed by the Glasswall d&#x2011;FIRST&trade; Engine</div>

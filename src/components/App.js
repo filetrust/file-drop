@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { trackPromise } from 'react-promise-tracker';
 import { CSSTransition } from "react-transition-group";
+import $ from 'jquery';
 
 import "../App.css";
 import { Modal } from "./widgets";
@@ -90,6 +91,10 @@ class App extends Component {
 
   onAnotherFile = () => {
     this.resetState();
+
+    $('body').animate({
+      scrollTop: 0
+    }, 1000);
   }
 
   render() {

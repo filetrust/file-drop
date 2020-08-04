@@ -5,6 +5,7 @@ import DownloadFile from "./DownloadFile";
 import { Button, IssueMessage, SectionTitle } from "../../widgets";
 import DownloadAnalysisReport from "./DownloadAnalysisReport";
 import FileAttributes from "./FileAttributes";
+import ButtonsContainer from '../../widgets/ButtonsContainer';
 
 function RenderResults({ state, onAnotherFile }) {
     const { file, analysisReport, analysisReportString, validation } = state;
@@ -26,13 +27,13 @@ function RenderResults({ state, onAnotherFile }) {
         const hasIssues = issues.length;
         if ( sanitisations.length || remediations.length || hasIssues ) {
             return (
-                <div className="analysis" id="analysis">
+                <div className="analysis">
                     <IssueMessage hasIssues={hasIssues}/>
                     <SectionTitle context='regenerated'>Your Safe, Regenerated File Is Ready</SectionTitle>
-                    <div className="analysis-container buttons-container touch-full">
+                    <ButtonsContainer context="analysis" touchFull>
                         <DownloadFile file={file} hasIssues={hasIssues}/>
                         <DownloadAnalysisReport report={analysisReportString} filename={fileName}/>
-                    </div>
+                    </ButtonsContainer>
 
                     <FileAttributes file={file} fileType={fileType}/>
 
@@ -41,18 +42,23 @@ function RenderResults({ state, onAnotherFile }) {
                         sanitisations={sanitisations}
                         issues={issues}
                     />
-                  <Button context="analyze" onClick={onAnotherFile}>Sanitise another file</Button>
+                    <ButtonsContainer touchFull>
+                        <Button context="analyze" onClick={onAnotherFile}>Sanitise another file</Button>
+                    </ButtonsContainer>
                 </div>
             );
         } else {
             return (
-            <div className="is-clean analysis">
-                <SectionTitle context='clean'>File is clean!</SectionTitle>
-                <div className="download-container buttons-container touch-full">
-                    <DownloadAnalysisReport report={analysisReportString} filename={fileName}/>
+                <div className="is-clean analysis">
+                    <SectionTitle context='clean'>File is clean!</SectionTitle>
+                    <ButtonsContainer context="download" touchFull>
+                        <DownloadAnalysisReport report={analysisReportString} filename={fileName}/>
+                    </ButtonsContainer>
+                    <FileAttributes file={file} fileType={fileType}/>
+                    <ButtonsContainer touchFull>
+                        <Button context="analyze" onClick={onAnotherFile}>Sanitise another file</Button>
+                    </ButtonsContainer>
                 </div>
-                <FileAttributes file={file} fileType={fileType}/>
-            </div>
             );
         }
     }

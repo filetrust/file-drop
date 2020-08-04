@@ -1,7 +1,6 @@
 import React from 'react'
 import TopMenu from './TopMenu';
 import Hero from './Hero';
-import { ProcessFile } from '../body';
 
 export default function Header({ toggleMenu, handleDrop, loading, fileProcessed,  onAnotherFile } = {}) {
     return <div className='app-header-triangle'>
