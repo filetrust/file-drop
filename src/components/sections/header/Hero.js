@@ -68,7 +68,9 @@ export default function Hero({ handleDrop, loading, fileProcessed,  onAnotherFil
                     :
                     <div className="drop-container">
                         <div className="drop-border">
-                            <IconButton className="button-refresh" onClick={onAnotherFile}><FontAwesomeIcon icon={faSync}/></IconButton>
+                            <IconButton className="button-refresh" onClick={onAnotherFile}>
+                                <img src="/img/refresh-button.svg" alt="drop refresh icon"/>
+                            </IconButton>
                             <div className="drop-message drop-message__processed">Your file has been processed</div>
                             <div className="drop-image drop-image__processed"/>
                             <Button inverse context="processed">VIEW RESULT</Button>
