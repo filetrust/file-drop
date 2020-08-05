@@ -125,6 +125,7 @@
       display: block;
       font-size: 2.4rem;
       font-weight: 300;
+      line-height: 0.8rem;
       &__reject {
         display: none;
       }
@@ -246,6 +247,7 @@
     .drop {
       &-message {
         font-size: 2.2rem;
+        line-height: 1.5rem;
         &__processed {
           margin-top: 2rem;
           font-size: 2rem;
