@@ -1,7 +1,4 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSync } from '@fortawesome/free-solid-svg-icons';
-
 import { Button, IconButton, ParagraphText } from '../../widgets';
 import { StyledDropzone } from '../../widgets';
 import supporting from '../../../data/supportedFileTypes.json';
