@@ -4,7 +4,7 @@ import Hero from './Hero';
 import { useToasts } from 'react-toast-notifications';
 import { validFileType } from '../../../actions';
 import { trackPromise } from 'react-promise-tracker';
-import { engineApi } from '../../../api';
+import { engineApi, ResponseError } from '../../../api';
 import messages from '../../../data/messages.json';
 
 export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFile, scope } = {}) {
@@ -13,6 +13,7 @@ export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFi
 
     const handleDrop = ([ accepted = {} ], [ rejected = {} ]) => {
         if ( rejected && rejected.errors ) {
+
             const [ { code, message } = { code: 'unknown-error' } ] = rejected.errors;
             let messageText = messages[code];
 
@@ -29,9 +30,14 @@ export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFi
 
         scope.resetState({ loading: true });
 
+        const { name, type } = accepted;
+        console.warn(` ----------- Start of processing ${ name } [${ type }]  ${new Date().toISOString()} -------------`);
+        // console.dir(accepted);
+
         trackPromise(
             validFileType(accepted)
             .then(result => {
+                console.warn(` ----------- File Type is checked at ${new Date().toISOString()} -------------`);
                 if ( !result ) {
                     const messageText = messages['file-invalid-type'];
                     addToast(messageText, {
@@ -42,7 +48,8 @@ export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFi
                 }
                 return engineApi.analyseFile(accepted)
             })
-            .then(result => {
+            .then( (result) => {
+                console.warn(` ----------- File Analysis is done ${new Date().toISOString()} -------------`);
                 const XMLParser = require("react-xml-parser");
                 const xml = new XMLParser().parseFromString(result);
 
@@ -53,15 +60,27 @@ export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFi
                     fileProcessed: true,
                 });
             })
-            .catch(error => {
-                console.error(error);
-/*
-TODO currently it breaks execution with stack trace error. Check how it will be reacted on production mode
-                addToast(error, {
-                    appearance: 'error',
-                    autoDismiss: true,
-                })
-*/
+            .catch( (error) => {
+                // console.log(error);
+                debugger;
+                console.warn(` ----------- Caught of File Drop ${new Date().toISOString()} -------------`);
+                if (error instanceof ResponseError) {
+                    const {response: {
+                        // type: type,
+                        status
+                    }} = error;
+                    const appearance = messages.toasterAppearance[status],
+                        message = messages.httpCodes[status];
+                    addToast(message, {
+                        appearance,
+                        autoDismiss: true,
+                    })
+                } else {
+                    addToast(error.message, {
+                        appearance: 'error',
+                        autoDismiss: true,
+                    })
+                }
             })
             .finally(() => {
                 scope.setState({ loading: false });
@@ -73,7 +92,7 @@ TODO currently it breaks execution with stack trace error. Check how it will be 
         <section className="app-header">
             <TopMenu toggleMenu={toggleMenu}/>
             <div className='container app-header-container'>
-                <Hero handleDrop={handleDrop}  loading={loading} fileProcessed={fileProcessed} onAnotherFile={onAnotherFile}/>
+                <Hero handleDrop={handleDrop} loading={loading} fileProcessed={fileProcessed} onAnotherFile={onAnotherFile}/>
             </div>
         </section>
     </div>

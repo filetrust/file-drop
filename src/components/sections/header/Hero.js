@@ -1,7 +1,4 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSync } from '@fortawesome/free-solid-svg-icons';
-
 import { Button, IconButton, ParagraphText } from '../../widgets';
 import { StyledDropzone } from '../../widgets';
 import supporting from '../../../data/supportedFileTypes.json';
@@ -47,7 +44,7 @@ export default function Hero({ handleDrop, loading, fileProcessed,  onAnotherFil
                     <span className="text-highlighted">CDR</span> TECHNOLOGY
                 </div>
                 <ParagraphText context="info">
-                    Validated and deployed by governments and intelligence agencies worldwide, Glasswall's award-winning Content Disarm & Reconstruction (CDR) technology is now available to try in this simple web-interface. Drag a file into the box. Your safe, regenerated file will be ready to download along with a report detailing how Glasswall made it safe.
+                    Validated and deployed by governments and intelligence agencies worldwide, Glasswall's award-winning Content Disarm & Reconstruction (CDR) technology is now available to try in this simple web-interface. Drag a file into the box. Your regenerated file will be ready to download along with a report detailing how Glasswall made it safe.
                 </ParagraphText>
             </div>
             <ButtonsContainer context="hero" touchFull>
