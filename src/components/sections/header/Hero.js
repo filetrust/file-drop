@@ -44,7 +44,7 @@ export default function Hero({ handleDrop, loading, fileProcessed,  onAnotherFil
                     <span className="text-highlighted">CDR</span> TECHNOLOGY
                 </div>
                 <ParagraphText context="info">
-                    Validated and deployed by governments and intelligence agencies worldwide, Glasswall's award-winning Content Disarm & Reconstruction (CDR) technology is now available to try in this simple web-interface. Drag a file into the box. Your regenerated file will be ready to download along with a report detailing how Glasswall made it safe. <span className="info-paragraph-disclaimer">We do not read or store your files or capture any of your personal information</span>.
+                    Validated and deployed by governments and intelligence agencies worldwide, Glasswall's award-winning Content Disarm & Reconstruction (CDR) technology is now available to try in this simple web-interface. Drag a file into the box. Your regenerated file will be ready to download along with a report detailing how Glasswall made it safe.
                 </ParagraphText>
             </div>
             <ButtonsContainer context="hero" touchFull>

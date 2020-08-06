@@ -4,6 +4,9 @@
     "unable-to-protect": "Unable to protect file due to structural issues",
     "file-is-ready": "Your Safe, Regenerated File Is Ready",
     "httpCodes": {
-        "422": "File Analysing failure"
+        "422": "Please use a supported file type"
+    },
+    "toasterAppearance": {
+        "422": "warning"
     }
 }

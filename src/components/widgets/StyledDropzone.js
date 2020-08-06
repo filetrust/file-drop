@@ -2,10 +2,11 @@ import React, { useMemo } from 'react';
 import { usePromiseTracker } from "react-promise-tracker";
 import { useDropzone } from 'react-dropzone';
 
+import LoadingIndicator from './LoadingIndicator';
+
+/*
 import mimeTypes from '../../data/mimeTypes.json';
 import supporting from '../../data/supportedFileTypes.json';
-
-import LoadingIndicator from './LoadingIndicator';
 
 const acceptableExtensions = {};
 
@@ -31,6 +32,7 @@ Object.values(acceptableExtensions).forEach((mimeTypesByExt) => {
     })
 })
 const accept = Object.keys(uniqueMimeTypes).join(',');
+*/
 
 export default function StyledDropzone({ onDrop, children, loading }) {
     const {
@@ -40,6 +42,7 @@ export default function StyledDropzone({ onDrop, children, loading }) {
         isDragAccept,
         isDragReject,
     } = useDropzone({
+        // accept,
         onDrop,
         noClick: loading,
         noDrag: loading,

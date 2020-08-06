@@ -1,4 +1,5 @@
-import messages from '../data/messages.json';
+import ResponseError from './ResponseError';
+
 const analysisSuffix = '/api/Analyse/base64';
 const rebuildSuffix = '/api/Rebuild/base64';
 
@@ -85,11 +86,8 @@ const callFileProtect = (url, data) => {
 }
 
 function harvestErrorMessage(response) {
-    const { type, status, statusText } = response;
-    const message = statusText || [ status, type ].reduce((prev, key) => {
-        return messages.httpCodes[prev] || messages.httpCodes[key];
-    }) || type || status;
-    return new Error(`Unexpected error happens${message ? `: "${message}"` : ''}, please call support`);
+    return new ResponseError(`Unexpected API call failure`, response);
+    // return new ResponseError(`Unexpected error happens${message ? `: "${message}"` : ''}, please call support`);
 }
 
 

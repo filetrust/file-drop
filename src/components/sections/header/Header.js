@@ -4,7 +4,7 @@ import Hero from './Hero';
 import { useToasts } from 'react-toast-notifications';
 import { validFileType } from '../../../actions';
 import { trackPromise } from 'react-promise-tracker';
-import { engineApi } from '../../../api';
+import { engineApi, ResponseError } from '../../../api';
 import messages from '../../../data/messages.json';
 
 export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFile, scope } = {}) {
@@ -28,20 +28,11 @@ export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFi
             return;
         }
 
-        const e = {
-            lastModified: 1596710691749,
-            lastModifiedDate: "Thu Aug 06 2020 12:44:51 GMT+0200 (Central European Summer Time)",
-            name: "EmbeddedIssue_PNG_8150079.pptx",
-            path: "EmbeddedIssue_PNG_8150079.pptx",
-            size: 1902707,
-            type: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-            webkitRelativePath: ""
-        }
         scope.resetState({ loading: true });
 
-
-        console.warn(` ----------- Start of processing ${ accepted }  ${new Date().toISOString()} -------------`);
-        console.dir(accepted);
+        const { name, type } = accepted;
+        console.warn(` ----------- Start of processing ${ name } [${ type }]  ${new Date().toISOString()} -------------`);
+        // console.dir(accepted);
 
         trackPromise(
             validFileType(accepted)
@@ -57,7 +48,7 @@ export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFi
                 }
                 return engineApi.analyseFile(accepted)
             })
-            .then(result => {
+            .then( (result) => {
                 console.warn(` ----------- File Analysis is done ${new Date().toISOString()} -------------`);
                 const XMLParser = require("react-xml-parser");
                 const xml = new XMLParser().parseFromString(result);
@@ -69,13 +60,27 @@ export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFi
                     fileProcessed: true,
                 });
             })
-            .catch(error => {
+            .catch( (error) => {
                 // console.log(error);
+                debugger;
                 console.warn(` ----------- Caught of File Drop ${new Date().toISOString()} -------------`);
-                addToast(error.message, {
-                    appearance: 'error',
-                    autoDismiss: true,
-                })
+                if (error instanceof ResponseError) {
+                    const {response: {
+                        // type: type,
+                        status
+                    }} = error;
+                    const appearance = messages.toasterAppearance[status],
+                        message = messages.httpCodes[status];
+                    addToast(message, {
+                        appearance,
+                        autoDismiss: true,
+                    })
+                } else {
+                    addToast(error.message, {
+                        appearance: 'error',
+                        autoDismiss: true,
+                    })
+                }
             })
             .finally(() => {
                 scope.setState({ loading: false });
