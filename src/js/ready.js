@@ -9,8 +9,6 @@ $(document).ready(() => {
     $(".processed-button").click((e) => {
         e.preventDefault();
         e.stopPropagation();
-        debugger;
-
     }, )
 
     $(document).on('click', 'a[href^="#"]', function(e) {

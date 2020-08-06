@@ -40,7 +40,6 @@ export default function StyledDropzone({ onDrop, children, loading }) {
         isDragAccept,
         isDragReject,
     } = useDropzone({
-        accept: accept,
         onDrop,
         noClick: loading,
         noDrag: loading,

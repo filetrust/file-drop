@@ -15,7 +15,8 @@ class DownloadFile extends React.Component {
                 a.click();
             })
             .catch((error) => {
-                console.log(error)
+                // debugger;
+                console.log(error.message)
             }))
     }
 

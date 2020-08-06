@@ -6,6 +6,7 @@ import $ from 'jquery';
 import "../App.css";
 import { Modal } from "./widgets";
 import { Header, Footer, ProcessFile, Privacy, Technology, Supporting } from './sections';
+import FeedbackToast from './widgets/FeedbackToast';
 
 const initialState = {
     showModal: false,
@@ -15,6 +16,7 @@ const initialState = {
     validation: "",
     fileProcessed: false,
     loading: false,
+    feedback: {},
 };
 
 
@@ -44,17 +46,19 @@ class App extends Component {
     onAnotherFile = () => {
         this.resetState();
 
-    $('body').animate({
-      scrollTop: 0
-    }, 1000);
+        $('body').animate({
+            scrollTop: 0,
+        }, 1000);
     }
 
     render() {
-        const { showMenu, showModal, loading, fileProcessed } = this.state
+        const { showMenu, showModal, loading, fileProcessed, feedback } = this.state;
+        const { feedbackMessage, ...toastOptions } = feedback;
 
         return (
             <React.Fragment>
                 <ToastProvider>
+                    {feedbackMessage ? <FeedbackToast message={feedbackMessage} options={toastOptions}/> : null}
                     <div className={`app ${showMenu ? "show-menu" : ""}`}>
                         <Header toggleMenu={this.toggleMenu} handleDrop={this.handleDrop} loading={loading}
                                 fileProcessed={fileProcessed} onAnotherFile={this.onAnotherFile}
@@ -69,7 +73,7 @@ class App extends Component {
                         <div className="app-sub-footer">
                             <a className="footer__legend__link"
                                href="https://glasswallsolutions.com/privacy-policy/">Read our Privacy Policy - </a>
-                            <span className="footer__address">Continental House, Oakridge, West End, Surrey, GU24 9PJ. Tel: +44 (0) 203 814 3890<br/></span>
+                            <span className="footer__address"> Continental House, Oakridge, West End, Surrey, GU24 9PJ. Tel: +44 (0) 203 814 3890<br/></span>
                         </div>
                     </div>
                 </ToastProvider>
