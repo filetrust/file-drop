@@ -8,7 +8,7 @@ import FileAttributes from "./FileAttributes";
 import ButtonsContainer from '../../widgets/ButtonsContainer';
 import messages from '../../../data/messages.json';
 
-function RenderResults({ state, onAnotherFile }) {
+function RenderResults({ state = {}, onAnotherFile }) {
     const { file, analysisReport, analysisReportString, validation } = state;
 
     if ( validation ) {

@@ -3,7 +3,7 @@ import { CSSTransition } from "react-transition-group";
 
 import { RenderResults } from "../results";
 
-export default function ProcessFile({ state, onAnotherFile } ) {
+export default function ProcessFile({ state = {}, onAnotherFile } ) {
     const { fileProcessed } = state;
     return (
         <section className="process-file" id="analysis">

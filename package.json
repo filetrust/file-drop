@@ -69,7 +69,7 @@
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && node scripts/build.js",
     "start-js": "node scripts/start.js",
-    "test": "node scripts/test.js",
+    "test": "node scripts/test.js --env=jsdom",
     "build-stage": "npm run build-css && node scripts/build-stage.js",
     "build-qa": "npm run build-css && node scripts/build-qa.js"
   },
@@ -139,8 +139,6 @@
       "node"
     ],
     "watchPlugins": [
-      "jest-watch-typeahead/filename",
-      "jest-watch-typeahead/testname"
     ]
   },
   "babel": {
