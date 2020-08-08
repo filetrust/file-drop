@@ -9,8 +9,7 @@
     background: $oldBrowserBgColour;
     /* Modern browsers */
     background: $main-background-gradient;
-    clip-path: polygon(0 0, 100% 0,
-      100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short - $bevel-triangle-short);
+    clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short - $bevel-triangle-short);
     &-container {
       min-height: $xxl-header-min-height;
       display: flex;
@@ -91,43 +90,63 @@
     grid-row-end: span 2;
     padding: 0 6rem;
   }
-  .drop-border {
-    position: relative;
-    .button-refresh {
-      position: absolute;
-      right: 2rem;
-      top: 2rem;
-    }
-    &.reject {
-      .drop-message {
-        display: none;
-        &__reject {
-          display: block;
-        }
-      }
-    }
-  }
-
 
   .drop {
     &-container {
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       align-items: center;
-      .button {
-        //z-index: -1;
-        //width: initial;
+    }
+    &-border {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      .button-refresh {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+      }
+      &.reject {
+        .drop-message {
+          display: none;
+          &__reject {
+            display: block;
+          }
+        }
+      }
+      .drop-button {
+        margin: 0;
+        margin-bottom: 4.2rem;
+      }
+      &.loading {
+        .drop-button {
+          display: none;
+        }
       }
     }
+
     &-message {
       display: block;
       font-size: 2.4rem;
       font-weight: 300;
       line-height: 0.8rem;
+      margin-top: 4.2rem;
       &__reject {
         display: none;
+      }
+    }
+    &-results {
+      .drop {
+        &-message {
+          margin-top: 5.2rem;
+        }
+        &-button {
+          margin-bottom: 5.2rem;
+        }
       }
     }
     &-image {
@@ -142,6 +161,7 @@
         height: 15rem;
         //noinspection CssUnknownTarget
         background-image: url(img/sanitised-file.svg);
+        margin-top: 0.2rem;
       }
       background-repeat: no-repeat;
     }
@@ -261,9 +281,29 @@
       }
       &-border {
         .button-refresh {
-          //font-size: 2.2rem;
           right: 1rem;
           top: 1rem;
+        }
+        .drop-button {
+          margin-bottom: 2.2rem;
+        }
+      }
+      &-message {
+        margin-top: 2.2rem;
+      }
+      &-results {
+        .drop {
+          &-message {
+            margin-top: 3.7rem;
+          }
+          &-button {
+            margin-bottom: 1.7rem;
+          }
+        }
+      }
+      &-image {
+        &__processed {
+          margin-top: 0.1rem;
         }
       }
     }
@@ -327,6 +367,26 @@
         text-align: left;
       }
     }
+    .drop {
+      &-border {
+        .drop-button {
+          margin-bottom: 1.7rem;
+        }
+      }
+      &-message {
+        margin-top: 1.7rem;
+      }
+      &-results {
+        .drop {
+          &-message {
+            margin-top: 3.4rem;
+          }
+          &-button {
+            margin-bottom: 1.4rem;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -365,10 +425,23 @@
       margin-top: 2rem;
     }
     .drop {
+      &-border {
+        .drop-button {
+          margin-bottom: 1.6rem;
+        }
+      }
       &-message {
+        margin-top: 1.7rem;
         font-size: 2rem;
         &__reject, &__processed {
           font-size: 1.8rem;
+        }
+      }
+      &-results {
+        .drop {
+          &-button {
+            margin-bottom: 1.4rem;
+          }
         }
       }
     }
