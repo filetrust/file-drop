@@ -61,8 +61,6 @@ export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFi
                 });
             })
             .catch( (error) => {
-                // console.log(error);
-                debugger;
                 console.warn(` ----------- Caught of File Drop ${new Date().toISOString()} -------------`);
                 if (error instanceof ResponseError) {
                     const {response: {

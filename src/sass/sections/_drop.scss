@@ -17,18 +17,9 @@ $drop-area-border-radius: 2.5rem;
     border-color: #c7c7c7;
     position: relative;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
     outline: none;
-    transition: border .24s ease-in-out;
+    transition: border 0.5s ease-in-out;
     flex: 1;
-    .drop-button {
-      margin: 0;
-      z-index: -1;
-
-    }
 
     &.active {
       border-color: #2196f3

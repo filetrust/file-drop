@@ -19,7 +19,7 @@ describe("RenderResults", () => {
   });
 
   it("displays validation errors if validation exists", () => {
-    const wrapper = shallow(<RenderResults validation={validation} />);
+    const wrapper = shallow(<RenderResults state={{ validation: validation }} />);
     expect(
       wrapper.contains(
         <div className="validationErrors">
@@ -30,7 +30,7 @@ describe("RenderResults", () => {
   });
 
   it("doesn't display validation errors if no validation exists", () => {
-    const wrapper = shallow(<RenderResults validation= {null} />);
+    const wrapper = shallow(<RenderResults state={{ validation: null }}  />);
     expect(
       wrapper.contains(
         <div className="validationErrors">
