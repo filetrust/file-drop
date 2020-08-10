@@ -45,6 +45,18 @@ button {
     &:hover {
       cursor: default;
     }
+    &s-container {
+    &.touch-full {
+      a:not(:last-of-type) .button {
+        margin-right: 0;
+      }
+      > button {
+        &:not(:last-of-type) {
+          margin-right: 0;
+        }
+      }
+    }
+    }
   }
 }
 
@@ -80,12 +92,14 @@ button {
   .button {
     &.touch-full {
       width: 100%;
+      margin-right: 0;
     }
     &s {
       &-container {
         &.touch-full {
           .button {
             width: 100%;
+            margin-right: 0;
           }
         }
       }
