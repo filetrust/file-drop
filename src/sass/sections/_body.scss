@@ -301,6 +301,38 @@
   }
 }
 
+@media only screen and (max-width: $sm-breakpoint) {
+  .supporting {
+    &-table {
+      .table {
+        &-header {
+          &-cell {
+            padding-right: 1rem;
+            padding-left: 1rem;
+          }
+          font-size: 1.9rem;
+        }
+      }
+      &.mobile {
+        ul {
+          //line-height: 2.2rem;
+        }
+        .table {
+          &-row.bottom-border {
+            .table-row-cell {
+              padding-bottom: 1rem;
+            }
+          }
+          &-row {
+            &-cell {
+              padding: 1rem 1rem 0 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @media only screen and (max-width: $xs-breakpoint) {
   .hero {
     &-body {
