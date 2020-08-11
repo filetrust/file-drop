@@ -9,7 +9,7 @@ export default function Footer() {
     return <div className="app-footer" id="footer">
         <div className="container app-footer-inner">
             <section className="app-footer-left">
-                <div className="logo">
+                <div className="app-logo">
                     <a href={links.glasswall} target='gw-window'>
                         <img src={logo} alt="Logo" height="100"/>
                     </a>
