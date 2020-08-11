@@ -239,7 +239,6 @@
 }
 
 @media only screen and (max-width: $md-breakpoint) {
-
   .hero {
     &-body {
       padding-bottom: 0;
@@ -251,7 +250,8 @@
     }
   }
   .technology {
-    padding-bottom: 5rem;
+    padding-bottom: 8rem;
+    padding-top: 5.5rem;
     &-stack {
       flex-direction: column;
     }
@@ -263,6 +263,8 @@
   .supporting {
     padding-top: 5.5rem;
     &-table {
+      padding-top: 3rem;
+      padding-bottom: 0;
       .table {
         &-header {
           &-cell {

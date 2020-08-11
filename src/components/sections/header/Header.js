@@ -64,11 +64,25 @@ export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFi
                 console.warn(` ----------- Caught of File Drop ${new Date().toISOString()} -------------`);
                 if (error instanceof ResponseError) {
                     const {response: {
-                        // type: type,
+                        type,
                         status
                     }} = error;
-                    const appearance = messages.toasterAppearance[status],
+                    let appearance = messages.toasterAppearance[status],
                         message = messages.httpCodes[status];
+                    if ( type ) {
+                        if ( !appearance ) {
+                            appearance = messages.toasterAppearance[type]
+                        }
+                        if ( !message ) {
+                            message = messages.httpCodes[type]
+                        }
+                    }
+                    if ( !appearance ) {
+                        appearance = 'error'
+                    }
+                    if ( !message ) {
+                        message = error.message;
+                    }
                     addToast(message, {
                         appearance,
                         autoDismiss: true,
