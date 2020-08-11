@@ -10,11 +10,12 @@ button {
 }
 
 .button {
+  font-family: 'Nunito Sans', sans-serif;
   border: 2px solid $sectionButtonTextColour;
   color: $sectionButtonTextColour;
   font-size: 1.7rem;
   font-weight: bold;
-  padding: 1.2rem 2.5rem;
+  padding: 1.2rem 2.4rem;
   text-transform: uppercase;
   transition: 0.3s;
   &s-container {

@@ -268,6 +268,9 @@
           &-cell {
             padding-right: 2rem;
             padding-left: 2rem;
+            &:first-of-type {
+              min-width: 16rem;
+            }
           }
         }
       }
@@ -320,12 +323,12 @@
         .table {
           &-row.bottom-border {
             .table-row-cell {
-              padding-bottom: 1rem;
+              padding-bottom: 1.5rem;
             }
           }
           &-row {
             &-cell {
-              padding: 1rem 1rem 0 1rem;
+              padding: 1.5rem 1rem 0 1.5rem;
             }
           }
         }
@@ -353,7 +356,15 @@
           &-cell {
             padding-right: 0;
             font-size: 2rem;
+            &:first-of-type {
+              min-width: 13rem;
+            }
           }
+        }
+      }
+      ul {
+        li {
+          padding-left: 2rem;
         }
       }
     }
