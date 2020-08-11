@@ -1,4 +1,6 @@
 import React from 'react';
+import {useClipPath} from '../../BrowserCompatibility';
+
 import { ParagraphText, SectionTitle } from '../../widgets';
 import supporting from '../../../data/supportedFileTypes.json';
 import tableFormatting from '../../../data/supportedTableFormatting.json';
@@ -97,9 +99,8 @@ function Supporting() {
 
         return rows;
     }
-
-    return <div className='supporting-triangle'>
-        <section className="supporting" id="supporting">
+    return <div className={`supporting-triangle${useClipPath? ' clip-path': ''}`}>
+        <section className={`supporting${useClipPath? ' clip-path': ''}`} id="supporting">
             <div className="container">
                 <SectionTitle>Supported File Types</SectionTitle>
                 <ParagraphText context="supporting">The Glasswall process can be applied the following <span

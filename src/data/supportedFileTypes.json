@@ -36,7 +36,7 @@
         "Excel": ["xls", "xlt", "xlm", "xlsx", "xltx", "xlsm", "xltm"]
       },
       {
-        "PowerPoint": ["ppt", "pot", "pps", "pptx", "potx", "ppsx", "pptm", "potm", "ppsm"]
+        "Power Point": ["ppt", "pot", "pps", "pptx", "potx", "ppsx", "pptm", "potm", "ppsm"]
       }
     ],
     [

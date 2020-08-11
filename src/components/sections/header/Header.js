@@ -1,4 +1,6 @@
 import React from 'react'
+import {useClipPath} from '../../BrowserCompatibility';
+
 import TopMenu from './TopMenu';
 import Hero from './Hero';
 import { useToasts } from 'react-toast-notifications';
@@ -30,14 +32,14 @@ export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFi
 
         scope.resetState({ loading: true });
 
-        const { name, type } = accepted;
-        console.warn(` ----------- Start of processing ${ name } [${ type }]  ${new Date().toISOString()} -------------`);
+        // const { name, type } = accepted;
+        // console.warn(` ----------- Start of processing ${ name } [${ type }]  ${new Date().toISOString()} -------------`);
         // console.dir(accepted);
 
         trackPromise(
             validFileType(accepted)
             .then(result => {
-                console.warn(` ----------- File Type is checked at ${new Date().toISOString()} -------------`);
+                // console.warn(` ----------- File Type is checked at ${new Date().toISOString()} -------------`);
                 if ( !result ) {
                     const messageText = messages['file-invalid-type'];
                     addToast(messageText, {
@@ -49,7 +51,7 @@ export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFi
                 return engineApi.analyseFile(accepted)
             })
             .then( (result) => {
-                console.warn(` ----------- File Analysis is done ${new Date().toISOString()} -------------`);
+                // console.warn(` ----------- File Analysis is done ${new Date().toISOString()} -------------`);
                 const XMLParser = require("react-xml-parser");
                 const xml = new XMLParser().parseFromString(result);
 
@@ -61,7 +63,7 @@ export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFi
                 });
             })
             .catch( (error) => {
-                console.warn(` ----------- Caught of File Drop ${new Date().toISOString()} -------------`);
+                // console.warn(` ----------- Caught of File Drop ${new Date().toISOString()} -------------`);
                 if (error instanceof ResponseError) {
                     const {response: {
                         type,
@@ -100,10 +102,10 @@ export default function Header({ toggleMenu, loading, fileProcessed, onAnotherFi
         );
     };
 
-    return <div className='app-header-triangle'>
-        <section className="app-header">
+    return <div className={`app-header-triangle${useClipPath? ' clip-path': ''}`}>
+        <section className={`app-header${useClipPath? ' clip-path': ''}`}>
             <TopMenu toggleMenu={toggleMenu}/>
-            <div className='container app-header-container'>
+            <div className={`container app-header-container${useClipPath? ' clip-path': ''}`}>
                 <Hero handleDrop={handleDrop} loading={loading} fileProcessed={fileProcessed} onAnotherFile={onAnotherFile}/>
             </div>
         </section>

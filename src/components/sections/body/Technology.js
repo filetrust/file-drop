@@ -1,9 +1,11 @@
 import React from 'react';
+
+import {useClipPath} from '../../BrowserCompatibility';
 import { Button, ParagraphText, SectionTitle } from '../../widgets';
 
 function Technology() {
     return (
-        <section className="technology" id="technology">
+        <section className={`technology${useClipPath? ' clip-path': ''}`} id="technology">
             <div className="technology-container container">
                 <SectionTitle>How it Works - Introducing d&#x2011;FIRST&trade;</SectionTitle>
                 <div className="technology-stack">

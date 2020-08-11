@@ -10,11 +10,12 @@ button {
 }
 
 .button {
+  font-family: 'Nunito Sans', sans-serif;
   border: 2px solid $sectionButtonTextColour;
   color: $sectionButtonTextColour;
   font-size: 1.7rem;
-  font-weight: bold;
-  padding: 1.2rem 2.5rem;
+  font-weight: 800;
+  padding: 1.05rem 2.5rem;
   text-transform: uppercase;
   transition: 0.3s;
   &s-container {
@@ -33,7 +34,7 @@ button {
   }
   &__inverse {
     background-color: $sectionButtonTextColour;
-    padding: 1.4rem 2.7rem;
+    padding: 1.25rem 2.75rem;
     color: $white;
     border: none;
   }

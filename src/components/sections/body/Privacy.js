@@ -1,10 +1,12 @@
 import React from 'react';
+
+import {useClipPath} from '../../BrowserCompatibility';
 import { Button, ParagraphText, SectionTitle } from '../../widgets';
 import ButtonsContainer from '../../widgets/ButtonsContainer';
 
 function Privacy() {
     return (
-        <section className="privacy" id="privacy">
+        <section className={`privacy${useClipPath? ' clip-path': ''}`} id="privacy">
             <div className="container">
                 <SectionTitle>We Don't Store Your Files</SectionTitle>
                 <div className="privacy-statement">

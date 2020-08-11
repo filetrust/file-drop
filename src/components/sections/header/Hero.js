@@ -1,9 +1,9 @@
 import React from 'react'
+
 import { Button, IconButton, ParagraphText } from '../../widgets';
 import { StyledDropzone } from '../../widgets';
 import supporting from '../../../data/supportedFileTypes.json';
 import ButtonsContainer from '../../widgets/ButtonsContainer';
-
 
 export default function Hero({ handleDrop, loading, fileProcessed,  onAnotherFile } = {}) {
     const accept = [];
