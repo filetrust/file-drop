@@ -2,19 +2,26 @@
   &-header {
     &-triangle {
       background-color: #c5c5c5; // hsl(162, 19%, 86%); //#d6e3df;
-      clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short);
+      &.clip-path {
+        clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short);
+      }
     }
     color: white;
     /* Old browsers */
     background: $oldBrowserBgColour;
     /* Modern browsers */
     background: $main-background-gradient;
-    clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short - $bevel-triangle-short);
+    &.clip-path {
+      clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short - $bevel-triangle-short);
+    }
     &-container {
-      min-height: $xxl-header-min-height;
+      min-height: $xxl-header-min-height - 6rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+      &.clip-path {
+        min-height: $xxl-header-min-height;
+      }
     }
   }
 }
@@ -172,11 +179,18 @@
   .app {
     &-header {
       &-triangle {
-        clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-xl);
+        &.clip-path {
+          clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-xl);
+        }
       }
-      clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short-xl - $bevel-triangle-short);
+      &.clip-path {
+        clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short-xl - $bevel-triangle-short);
+      }
       &-container {
-        min-height: $xl-header-min-height;
+        min-height: $xl-header-min-height - 3rem;
+        &.clip-path {
+          min-height: $xl-header-min-height;
+        }
       }
     }
   }
@@ -203,9 +217,13 @@
   .app {
     &-header {
       &-triangle {
-        clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-lg);
+        &.clip-path {
+          clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-lg);
+        }
       }
-      clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short-lg - $bevel-triangle-short);
+      &.clip-path {
+        clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short-lg - $bevel-triangle-short);
+      }
       &-container {
         min-height: $lg-header-min-height;
       }

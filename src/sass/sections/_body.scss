@@ -1,7 +1,11 @@
 // ---- Introducing d-FIRST ----- //
 .technology {
-  padding-top: 4rem;
-  padding-bottom: 2rem;
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+  &.clip-path {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
   .text-highlighted {
     font-weight: bold;
   }
@@ -38,13 +42,20 @@
     //background-color: #f6f6f6;
     background-color: $paleGrey;
 
-    clip-path: polygon(0 $bevel-side-difference, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short);
+    &.clip-path {
+      clip-path: polygon(0 $bevel-side-difference, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short);
+    }
   }
-  clip-path: polygon(0 $bevel-side-difference + $bevel-triangle-short, 100% $bevel-triangle-long,
-    100% $bevel-side-long - $bevel-triangle-short, 0 $bevel-side-short - $bevel-triangle-long);
+  &.clip-path {
+    clip-path: polygon(0 $bevel-side-difference + $bevel-triangle-short, 100% $bevel-triangle-long,
+      100% $bevel-side-long - $bevel-triangle-short, 0 $bevel-side-short - $bevel-triangle-long);
+  }
   background-color: #f1f1f1;
   //background-color: #eef3f1;
-  padding: 14rem 0 12rem 0;
+  padding: 6rem 0 4rem 0;
+  &.clip-path {
+    padding: 14rem 0 12rem 0;
+  }
   &-paragraph {
     margin-top: 3rem;
   }
@@ -146,9 +157,10 @@
 
 .privacy {
   color: $sectionParagraphTextColour;
-  padding-top: 1rem;
+  padding-top: 7rem;
   padding-bottom: 8rem;
-  &-container {
+  &.clip-path {
+    padding-top: 1rem;
   }
   &-statement {
     margin-top: 3rem;
@@ -165,12 +177,19 @@
 // ----------- MEDIA breackpoints ------------------ //
 @media only screen and (max-width: $xl-breakpoint) {
   .supporting {
-    padding-top: 12rem;
-    padding-bottom: 10rem;
     &-triangle {
-      clip-path: polygon(0 $bevel-side-difference-xl, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-xl);
+      &.clip-path {
+        clip-path: polygon(0 $bevel-side-difference-xl, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-xl);
+      }
     }
-    clip-path: polygon(0 $bevel-side-difference-xl + $bevel-triangle-short, 100% $bevel-triangle-long, 100% $bevel-side-long - $bevel-triangle-short, 0 $bevel-side-short-xl - $bevel-triangle-long);
+    &.clip-path {
+      padding-top: 12rem;
+      padding-bottom: 10rem;
+      clip-path: polygon(0 $bevel-side-difference-xl + $bevel-triangle-short, 100% $bevel-triangle-long, 100% $bevel-side-long - $bevel-triangle-short, 0 $bevel-side-short-xl - $bevel-triangle-long);
+    }
+  }
+  .technology {
+    padding-top: 7.5rem;
   }
 }
 
