@@ -47,22 +47,17 @@ button {
       cursor: default;
     }
     &s-container {
-    &.touch-full {
-      a:not(:last-of-type) .button {
-        margin-right: 0;
-      }
-      > button {
-        &:not(:last-of-type) {
+      &.touch-full {
+        a:not(:last-of-type) .button {
           margin-right: 0;
+        }
+        > button {
+          &:not(:last-of-type) {
+            margin-right: 0;
+          }
         }
       }
     }
-    }
-  }
-}
-
-@media only screen and (min-width: $max-touch-breakpoint) {
-  .button {
     &:hover {
       background-color: $button-bg-hover;
     }
@@ -87,9 +82,6 @@ button {
       }
     }
   }
-}
-
-@media only screen and (max-width: $max-touch-breakpoint) {
   .button {
     &.touch-full {
       width: 100%;
@@ -107,5 +99,4 @@ button {
     }
   }
 }
-
 
