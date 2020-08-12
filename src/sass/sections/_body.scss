@@ -1,0 +1,411 @@
+// ---- Introducing d-FIRST ----- //
+.technology {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  &.clip-path {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+  .text-highlighted {
+    font-weight: bold;
+  }
+  &-stack {
+    display: flex;
+    align-items: center;
+  }
+  .brick {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem;
+    padding-top: 0;
+
+    &-picture {
+      height: 17rem;
+      width: 17rem;
+      img {
+        width: 100%;
+      }
+    }
+    &-abstract {
+      font-size: 2rem;
+      margin: 2rem 0;
+      color: $sectionSubTitleTextColour;
+    }
+  }
+}
+
+
+// ----- Supports the Following Files Types ----- //
+.supporting {
+  &-triangle {
+    //background-color: #f6f6f6;
+    background-color: $paleGrey;
+
+    &.clip-path {
+      clip-path: polygon(0 $bevel-side-difference, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short);
+    }
+  }
+  &.clip-path {
+    clip-path: polygon(0 $bevel-side-difference + $bevel-triangle-short, 100% $bevel-triangle-long,
+      100% $bevel-side-long - $bevel-triangle-short, 0 $bevel-side-short - $bevel-triangle-long);
+  }
+  background-color: #f1f1f1;
+  //background-color: #eef3f1;
+  padding: 6rem 0 4rem 0;
+  &.clip-path {
+    padding: 14rem 0 12rem 0;
+  }
+  &-paragraph {
+    margin-top: 3rem;
+  }
+  &-table {
+    padding: 5rem 0;
+    text-align: left;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      line-height: 3.2rem;
+      li {
+        position: relative;
+        padding-left: 2.7rem;
+        &:before {
+          content: '';
+          width: 1.5rem;
+          height: 1.3rem;
+          position: absolute;
+          //noinspection CssUnknownTarget
+          background-image: url('img/li-check.svg');
+          background-size: cover;
+          background-position: center;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    .table {
+      &-placeholder {
+        width: 100%;
+        display: table;
+        font-size: 1.8rem;
+        background-color: $white;
+      }
+      &-header, &-row {
+        display: table-row;
+        &-cell {
+          display: table-cell;
+          border-color: #cccccc;
+          border-style: solid;
+          border-width: 0 0 0 1px;
+          &:not(:last-of-type) {
+            border-right-width: 0;
+          }
+          &:last-of-type {
+            border-right-width: 1px;
+          }
+        }
+      }
+      &-header {
+        font-size: 2.4rem;
+        background-color: $sectionTitleTextColour;
+        color: $white;
+        &-cell {
+          padding: 1rem 3.5rem;
+        }
+      }
+      &-row {
+        &-cell {
+        }
+      }
+    }
+    &.browser {
+      .table {
+        &-row {
+          &-cell {
+            padding: 3.5rem;
+            &:first-of-type {
+              background-color: #f7fffd
+            }
+            border-bottom-width: 1px;
+          }
+        }
+      }
+    }
+    &.mobile {
+      display: none;
+      .table {
+        &-row.bottom-border {
+          .table-row-cell {
+            border-bottom-width: 1px;
+            padding-bottom: 3.5rem;
+          }
+        }
+        &-row {
+          &-cell {
+            padding-top: 3.5rem;
+            padding-right: 3.5rem;
+            padding-left: 3.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.privacy {
+  color: $sectionParagraphTextColour;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  &.clip-path {
+    padding-top: 1rem;
+  }
+  &-statement {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+  }
+  &-paragraph {
+    margin-top: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+
+// ----------- MEDIA breackpoints ------------------ //
+@media only screen and (max-width: $xl-breakpoint) {
+  .supporting {
+    &-triangle {
+      &.clip-path {
+        clip-path: polygon(0 $bevel-side-difference-xl, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-xl);
+      }
+    }
+    &.clip-path {
+      padding-top: 12rem;
+      padding-bottom: 10rem;
+      clip-path: polygon(0 $bevel-side-difference-xl + $bevel-triangle-short, 100% $bevel-triangle-long, 100% $bevel-side-long - $bevel-triangle-short, 0 $bevel-side-short-xl - $bevel-triangle-long);
+    }
+  }
+  .technology {
+    padding-top: 7.5rem;
+  }
+}
+
+
+@media only screen and (max-width: $lg-breakpoint) {
+  .technology {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    .brick {
+      padding: 1.5rem;
+    }
+  }
+
+  .supporting {
+    padding-top: 10rem;
+    padding-bottom: 8rem;
+    &-triangle {
+      &.clip-path {
+        clip-path: polygon(0 $bevel-side-difference-lg, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-lg);
+      }
+    }
+    &.clip-path {
+      clip-path: polygon(0 $bevel-side-difference-lg + $bevel-triangle-short, 100% $bevel-triangle-long, 100% $bevel-side-long - $bevel-triangle-short, 0 $bevel-side-short-lg - $bevel-triangle-long);
+    }
+    &-paragraph {
+      margin-top: 2rem;
+    }
+    &-table {
+      padding: 3rem 0;
+      .table {
+        &-placeholder {
+          font-size: 1.5rem;
+        }
+      }
+      &.browser, &.mobile {
+        .table-row-cell {
+          padding: 2rem;
+        }
+      }
+
+    }
+  }
+  .privacy {
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+    &-statement {
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+}
+
+@media only screen and (max-width: $max-touch-breakpoint) {
+  .supporting {
+    &-triangle {
+      &.clip-path {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+    &.clip-path {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    &-table {
+      &.browser {
+        display: none;
+      }
+      &.mobile {
+        display: block;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $md-breakpoint) {
+  .hero {
+    &-body {
+      padding-bottom: 0;
+    }
+    .info {
+      &-paragraph {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+  .technology {
+    padding-top: 5.5rem;
+    padding-bottom: 8rem;
+    &.clip-path {
+      padding-top: 5.5rem;
+      padding-bottom: 8rem;
+    }
+    &-stack {
+      flex-direction: column;
+    }
+    &-stack {
+      flex-direction: column;
+    }
+  }
+
+  .supporting {
+    padding-top: 5.5rem;
+    &.clip-path {
+      padding-top: 5.5rem;
+      padding-bottom: 8rem;
+    }
+    &-table {
+      padding-top: 3rem;
+      padding-bottom: 0;
+      .table {
+        &-header {
+          &-cell {
+            padding-right: 2rem;
+            padding-left: 2rem;
+            &:first-of-type {
+              min-width: 16rem;
+            }
+          }
+        }
+      }
+      &.mobile {
+        ul {
+          line-height: 2.2rem;
+        }
+        .table {
+          &-row.bottom-border {
+            .table-row-cell {
+              padding-bottom: 2rem;
+            }
+          }
+          &-row {
+            &-cell {
+              padding: 2rem 2rem 0 2rem;
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+  .privacy {
+    padding-top: 5.5rem;
+    &.clip-path {
+      padding-top: 5.5rem;
+    }
+    &-buttons {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media only screen and (max-width: $sm-breakpoint) {
+  .supporting {
+    &-table {
+      .table {
+        &-header {
+          &-cell {
+            padding-right: 1rem;
+            padding-left: 1rem;
+          }
+          font-size: 1.9rem;
+        }
+      }
+      &.mobile {
+        ul {
+          //line-height: 2.2rem;
+        }
+        .table {
+          &-row.bottom-border {
+            .table-row-cell {
+              padding-bottom: 1.5rem;
+            }
+          }
+          &-row {
+            &-cell {
+              padding: 1.5rem 1rem 0 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: $xs-breakpoint) {
+  .hero {
+    &-body {
+      padding-top: 2rem;
+    }
+  }
+  .paragraph {
+    &-text {
+      font-size: 1.5rem;
+      line-height: 2.3rem;
+    }
+  }
+
+  .supporting {
+    &-table {
+      .table {
+        &-header {
+          &-cell {
+            padding-right: 0;
+            font-size: 2rem;
+            &:first-of-type {
+              min-width: 13rem;
+            }
+          }
+        }
+      }
+      ul {
+        li {
+          padding-left: 2rem;
+        }
+      }
+    }
+  }
+}

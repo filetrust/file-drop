@@ -1,86 +1,102 @@
 // --- Button Icons --- //
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
 
-@mixin button($image) {
-    background-image: url('../img/'+ $image);
-    background-size: 3.2rem 3.2rem;
-    background-position: left center;
-    background-repeat: no-repeat;
+.button {
+  font-family: 'Nunito Sans', sans-serif;
+  border: 2px solid $sectionButtonTextColour;
+  color: $sectionButtonTextColour;
+  font-size: 1.7rem;
+  font-weight: 800;
+  padding: 1.05rem 2.5rem;
+  text-transform: uppercase;
+  transition: 0.3s;
+  &s-container {
+    a:not(:last-of-type) .button {
+      margin-right: 2.1rem;
+    }
+    .button {
+      margin-bottom: 2rem;
+    }
+    > button {
+      &:not(:last-of-type) {
+        margin-right: 2.1rem;
+      }
+    }
+
   }
-  
-  button {
-    position: relative;
-    overflow: hidden;
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-    user-select: none;
-    outline: none;
-  }
-  
-  .button {
-    display: block;
-    min-width: 9rem;
-    height: $buttonHeight;
-    padding: 0 2rem;
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    line-height: $buttonHeight;
+  &__inverse {
+    background-color: $sectionButtonTextColour;
+    padding: 1.25rem 2.75rem;
     color: $white;
-    border-radius: 3px;
-    transition: all 0.3s;
+    border: none;
+  }
+}
 
-  
+
+@media only screen and (max-width: $max-touch-breakpoint) {
+  .button {
     &:hover {
-      box-shadow: $boxShadow1;
+      cursor: default;
     }
-  
-    &.center {
-      margin: 3rem auto;
+    &s-container {
+      &.touch-full {
+        a:not(:last-of-type) .button {
+          margin-right: 0;
+        }
+        > button {
+          &:not(:last-of-type) {
+            margin-right: 0;
+          }
+        }
+      }
     }
-  
-    &:disabled {
-      opacity: 0.6;
-      pointer-events: none;
+    &:hover {
+      background-color: $button-bg-hover;
     }
-  }
-
-  .button-icon {
-    background-image: url('img/download-icon-white.svg');
-    background-size: 3.2rem 3.2rem;
-    background-position: left center;
-    background-repeat: no-repeat;
-    min-width: 0;
-    padding: 0 1.4rem 0 3.4rem;
-    text-align: left;
-  }
-  
-  
-  .button-filled {
-    background-color: $buttonBGColour;
-
-  }
-
-  .download-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 1rem;
-
-    button {
-      margin: 2rem 1rem;
-    }
-  }
-
-
-  @media only screen and (max-width: 640px) {
-    
-    .download-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-  
-      button {
-        margin: 2rem 1rem;
+    &__inverse {
+      &:hover {
+        background-color: $button-hover-on-inverse;
       }
     }
   }
-  
+
+  .app {
+    &-header {
+      .button {
+        &:hover {
+          background-color: $button-hover-on-deep-blue;
+        }
+        &__inverse {
+          &:hover {
+            background-color: $button-hover-on-inverse;
+          }
+        }
+      }
+    }
+  }
+  .button {
+    &.touch-full {
+      width: 100%;
+      margin-right: 0;
+    }
+    &s {
+      &-container {
+        &.touch-full {
+          .button {
+            width: 100%;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+

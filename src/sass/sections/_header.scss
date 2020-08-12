@@ -1,0 +1,476 @@
+.app {
+  &-header {
+    &-triangle {
+      background-color: #c5c5c5; // hsl(162, 19%, 86%); //#d6e3df;
+      &.clip-path {
+        clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short);
+      }
+    }
+    color: white;
+    /* Old browsers */
+    background: $oldBrowserBgColour;
+    /* Modern browsers */
+    background: $main-background-gradient;
+    &.clip-path {
+      clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short - $bevel-triangle-short);
+    }
+    &-container {
+      min-height: $xxl-header-min-height - 6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &.clip-path {
+        min-height: $xxl-header-min-height;
+      }
+    }
+  }
+}
+
+.hero {
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+
+  &-icon {
+    width: 9.2rem;
+    height: 9.2rem;
+    background-color: $fileDropBgColour;
+    outline: none;
+    margin-right: 2.5rem;
+    border: 1px solid $fileDropBgColour;
+    border-radius: 0.5rem;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &-body {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, auto);
+    padding-top: 6.8rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  // contains sanitize Your Files and text
+  &-info {
+    text-align: left;
+  }
+  .info {
+    font-weight: 300;
+    &-title {
+      font-size: 5rem;
+      font-weight: 300;
+      letter-spacing: 0.15rem;
+    }
+    &-subtitle {
+      font-size: 2.4rem;
+      font-weight: 300;
+      margin-top: 1.4rem;
+    }
+    &-paragraph {
+      text-align: left;
+      margin-top: 3rem;
+      padding-right: 6rem;
+    }
+  }
+
+  &-buttons {
+    text-align: left;
+    margin-top: 4rem;
+
+    // grid layout related
+    order: 2;
+
+  }
+
+  &-dropzone {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    padding: 0 6rem;
+  }
+
+  .drop {
+    &-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &-border {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      .button-refresh {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+      }
+      &.reject {
+        .drop-message {
+          display: none;
+          &__reject {
+            display: block;
+          }
+        }
+      }
+      .drop-button {
+        margin: 0;
+        margin-bottom: 4.2rem;
+      }
+      &.loading {
+        .drop-button {
+          display: none;
+        }
+      }
+    }
+
+    &-message {
+      display: block;
+      font-size: 2.4rem;
+      font-weight: 300;
+      line-height: 0.8rem;
+      margin-top: 4.2rem;
+      &__reject {
+        display: none;
+      }
+    }
+    &-results {
+      .drop {
+        &-message {
+          margin-top: 5.2rem;
+        }
+        &-button {
+          margin-bottom: 5.2rem;
+        }
+      }
+    }
+    &-image {
+      &__drop {
+        width: 11.3rem;
+        height: 10.3rem;
+        //noinspection CssUnknownTarget
+        background-image: url(img/drag-drop-area.svg);
+      }
+      &__processed {
+        width: 11.44rem;
+        height: 15rem;
+        //noinspection CssUnknownTarget
+        background-image: url(img/sanitised-file.svg);
+        margin-top: 0.2rem;
+      }
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media only screen and (max-width: $xl-breakpoint) {
+  .app {
+    &-header {
+      &-triangle {
+        &.clip-path {
+          clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-xl);
+        }
+      }
+      &.clip-path {
+        clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short-xl - $bevel-triangle-short);
+      }
+      &-container {
+        min-height: $xl-header-min-height - 3rem;
+        &.clip-path {
+          min-height: $xl-header-min-height;
+        }
+      }
+    }
+  }
+  .hero {
+    &-body {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .info {
+      &-paragraph {
+        padding-right: 2rem;
+      }
+    }
+    &-drop {
+      &zone {
+        padding: 0 2rem;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: $lg-breakpoint) {
+  .app {
+    &-header {
+      &-triangle {
+        &.clip-path {
+          clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-lg);
+        }
+      }
+      &.clip-path {
+        clip-path: polygon(0 0, 100% 0, 100% $bevel-side-long - $bevel-triangle-long, 0 $bevel-side-short-lg - $bevel-triangle-short);
+      }
+      &-container {
+        min-height: $lg-header-min-height;
+      }
+    }
+  }
+  .hero {
+    &-body {
+      padding-top: 3rem;
+    }
+    &-title {
+      font-size: 3.8rem;
+    }
+    &-icon {
+      width: 6.6rem;
+      height: 6.6rem;
+      margin-right: 2.3rem;
+    }
+    .info {
+      &-title {
+        font-size: 3.8rem;
+      }
+      &-subtitle {
+        font-size: 2rem;
+        font-weight: 300;
+        margin-top: 1rem;
+      }
+      &-paragraph {
+        margin-top: 2rem;
+        padding-right: 0;
+      }
+    }
+    &-dropzone {
+      grid-column-start: 2;
+      grid-column-end: span 1;
+      grid-row-start: 1;
+      grid-row-end: span 1;
+      padding-right: 0;
+    }
+    .drop-container {
+      min-height: 30rem;
+    }
+
+    &-buttons {
+      margin-top: 6rem;
+      grid-column-start: 1;
+      grid-column-end: span 2;
+      grid-row-start: 2;
+      grid-row-end: span 1;
+
+      a:not(:last-of-type) .button {
+        margin-right: 1.2rem;
+      }
+      .button {
+        padding-right: 2rem;
+        padding-left: 2rem;
+      }
+
+    }
+    .drop {
+      &-message {
+        font-size: 2.2rem;
+        line-height: 1.5rem;
+        &__processed {
+          margin-top: 2rem;
+          font-size: 2rem;
+        }
+      }
+      &-image {
+        &__processed {
+          height: 10rem;
+          width: 7.54rem;
+        }
+      }
+      &-border {
+        .button-refresh {
+          right: 1rem;
+          top: 1rem;
+        }
+        .drop-button {
+          margin-bottom: 2.2rem;
+        }
+      }
+      &-message {
+        margin-top: 2.2rem;
+      }
+      &-results {
+        .drop {
+          &-message {
+            margin-top: 3.7rem;
+          }
+          &-button {
+            margin-bottom: 1.7rem;
+          }
+        }
+      }
+      &-image {
+        &__processed {
+          margin-top: 0.1rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-touch-breakpoint) {
+  .app {
+    &-header {
+      &-triangle {
+        &.clip-path {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+      }
+      &.clip-path {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+  }
+
+  .hero {
+    &-body {
+      display: grid;
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: repeat(3, auto);
+    }
+
+    &-info {
+      text-align: center;
+    }
+
+    &-image {
+      &__drop {
+        width: 11.3rem;
+        height: 10.3rem;
+      }
+    }
+
+    &-drop {
+      &zone {
+        grid-column-start: initial;
+        grid-column-end: initial;
+        grid-row-start: initial;
+        grid-row-end: initial;
+        padding: 0;
+      }
+    }
+    &-buttons {
+      a:not(:last-of-type) .button {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $md-breakpoint) {
+  .hero {
+    &-buttons {
+      grid-column-start: initial;
+      grid-column-end: initial;
+      grid-row-start: initial;
+      grid-row-end: initial;
+      margin-bottom: 6rem;
+    }
+    .info {
+      &-title {
+        text-align: left;
+      }
+      &-subtitle {
+        text-align: left;
+      }
+    }
+    .drop {
+      &-border {
+        .drop-button {
+          margin-bottom: 1.7rem;
+        }
+      }
+      &-message {
+        margin-top: 1.7rem;
+      }
+      &-results {
+        .drop {
+          &-message {
+            margin-top: 3.4rem;
+          }
+          &-button {
+            margin-bottom: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $sm-breakpoint) {
+  .hero {
+    &-body {
+      padding: 4rem 1.5rem;
+    }
+    .info {
+      &-title {
+        font-size: 3.4rem;
+        letter-spacing: initial;
+        margin: 0;
+        line-height: 4.8rem;
+      }
+      &-subtitle {
+        font-size: 1.8rem;
+        margin: 0;
+        text-align: left;
+      }
+      &-paragraph {
+        text-align: left;
+        margin-top: 2rem;
+      }
+    }
+    &-icon {
+      width: 5.6rem;
+      height: 5.6rem;
+      margin-right: 1.6rem;
+    }
+    &-file-drop {
+      font-size: 3rem;
+      letter-spacing: initial;
+    }
+    &-dropzone {
+      margin-top: 2rem;
+    }
+    .drop {
+      &-border {
+        .drop-button {
+          margin-bottom: 1.6rem;
+        }
+      }
+      &-message {
+        margin-top: 1.7rem;
+        font-size: 2rem;
+        &__reject, &__processed {
+          font-size: 1.8rem;
+        }
+      }
+      &-results {
+        .drop {
+          &-button {
+            margin-bottom: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import {fileTypeDetectionApi} from "../api/fileTypeDetectionApi";
+import { fileTypeDetectionApi } from "../api";
 
 const unsupportedTypes = [
     "Unknown",
@@ -6,27 +6,15 @@ const unsupportedTypes = [
     "BufferIssues",
     "InternalIssues",
     "LicenseExpired",
-    "PasswordProtectedOpcFile"
-  ];
-
-const validFileSize = file => {
-    if (file.size > 6000000) {
-        return false;
-    }
-    return true;
-}
+    "PasswordProtectedOpcFile",
+];
 
 async function validFileType(file) {
-    var result = await fileTypeDetectionApi.getFileType(file);
-    
-    if(unsupportedTypes.includes(result.FileTypeName)) {
-        return false;
-    }
-    return true;
+    let result = await fileTypeDetectionApi.getFileType(file) || {};
+    return !unsupportedTypes.includes(result.FileTypeName);
+
 }
 
-export const fileActions = {
-    validFileSize,
-    validFileType
-  };
-  
+export {
+    validFileType,
+};

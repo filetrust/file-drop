@@ -1,0 +1,139 @@
+.process-file {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
+  color: $charcoalGrey;
+
+  .h1 {
+    font-size: 2.0rem;
+    font-family: 'montserratregular', sans-serif;
+    font-weight: 400;
+    margin: 5rem 1rem 3rem;
+    line-height: 2.4rem;
+
+  }
+}
+
+.results {
+  &-enter {
+    opacity: 0.01;
+    transform: translateY(3rem);
+    &.results-enter-active {
+      opacity: 1;
+      transition: all 500ms ease-out;
+      transform: translateY(0);
+    }
+  }
+  &-exit {
+    opacity: 1;
+    transform: translateY(0);
+    &.results-exit-active {
+      opacity: 0.01;
+      transition: all 500ms ease-in;
+      transform: translateY(3rem);
+    }
+  }
+}
+
+.analysis {
+  padding-top: 5rem;
+  &-results {
+    .clean-title {
+      margin-bottom: 2.2rem;
+    }
+  }
+  .table-header {
+    display: block;
+    background-color: darken($blueGrey, 10%);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1.8rem;
+    color: $white;
+    padding: 1.2rem 1rem;
+    margin: 0;
+  }
+  &-table {
+    margin-bottom: 2rem;
+    border: .1rem solid $greyBlue;
+    border-radius: 0.6rem;
+    background-color: $white;
+    overflow: hidden;
+    &.file-attributes {
+      margin-top: 2rem;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    padding: 0.6rem 1rem;
+    line-height: 2.6rem;
+    text-align: left;
+    font-size: 1.6rem;
+  }
+
+  td,
+  th {
+    padding-left: 1.0rem;
+    text-align: left;
+  }
+
+  th {
+    font-weight: normal;
+  }
+
+  .is-clean {
+    padding-top: 3rem;
+    padding-bottom: 7rem;
+    .h1 {
+      color: $frogGreen;
+    }
+  }
+
+  .has-issues {
+    color: $warningRed;
+  }
+  &-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: $max-touch-breakpoint) {
+  .analysis {
+    .regenerated-title {
+      padding: 0;
+      font-size: 3rem;
+    }
+    &-container {
+      flex-direction: column;
+      margin-top: 2rem;
+      .button {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $md-breakpoint) {
+  .analysis {
+    padding-top: 5.5rem;
+    &-table {
+    }
+    .table-header {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media only screen and (max-width: $sm-breakpoint) {
+  .analysis {
+    .regenerated-title {
+      font-size: 2.7rem;
+      line-height: 3.4rem;
+    }
+  }
+}

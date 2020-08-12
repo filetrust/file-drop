@@ -1,7 +1,7 @@
 import React from "react";
 import Enzyme, {shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import RenderAnalysis from "../components/RenderAnalysis";
+import RenderAnalysis from "../components/sections/results/RenderAnalysis";
 
 Enzyme.configure({adapter: new Adapter()});
 

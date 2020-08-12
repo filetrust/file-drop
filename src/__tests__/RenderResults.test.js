@@ -1,7 +1,7 @@
 import React from "react";
 import Enzyme, {shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import RenderResults from "../components/RenderResults";
+import RenderResults from "../components/sections/results/RenderResults";
 
 Enzyme.configure({adapter: new Adapter()});
 
@@ -19,7 +19,7 @@ describe("RenderResults", () => {
   });
 
   it("displays validation errors if validation exists", () => {
-    const wrapper = shallow(<RenderResults validation={validation} />);
+    const wrapper = shallow(<RenderResults state={{ validation: validation }} />);
     expect(
       wrapper.contains(
         <div className="validationErrors">
@@ -30,7 +30,7 @@ describe("RenderResults", () => {
   });
 
   it("doesn't display validation errors if no validation exists", () => {
-    const wrapper = shallow(<RenderResults validation= {null} />);
+    const wrapper = shallow(<RenderResults state={{ validation: null }}  />);
     expect(
       wrapper.contains(
         <div className="validationErrors">
