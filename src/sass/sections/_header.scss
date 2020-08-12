@@ -332,9 +332,13 @@
   .app {
     &-header {
       &-triangle {
+        &.clip-path {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+      }
+      &.clip-path {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
       }
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
   }
 
@@ -380,7 +384,7 @@
       grid-column-end: initial;
       grid-row-start: initial;
       grid-row-end: initial;
-      margin-bottom: 4rem;
+      margin-bottom: 6rem;
     }
     .info {
       &-title {

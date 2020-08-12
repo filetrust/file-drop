@@ -1,5 +1,5 @@
 import {isEdge} from 'react-device-detect';
 
-const useClipPath = !isEdge;
+const useClipPath = isEdge;
 
 export { useClipPath };

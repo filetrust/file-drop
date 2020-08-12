@@ -1,6 +1,6 @@
 // ---- Introducing d-FIRST ----- //
 .technology {
-  padding-top: 10rem;
+  padding-top: 8rem;
   padding-bottom: 8rem;
   &.clip-path {
     padding-top: 4rem;
@@ -157,8 +157,8 @@
 
 .privacy {
   color: $sectionParagraphTextColour;
-  padding-top: 7rem;
-  padding-bottom: 8rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
   &.clip-path {
     padding-top: 1rem;
   }
@@ -207,9 +207,13 @@
     padding-top: 10rem;
     padding-bottom: 8rem;
     &-triangle {
-      clip-path: polygon(0 $bevel-side-difference-lg, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-lg);
+      &.clip-path {
+        clip-path: polygon(0 $bevel-side-difference-lg, 100% 0, 100% $bevel-side-long, 0 $bevel-side-short-lg);
+      }
     }
-    clip-path: polygon(0 $bevel-side-difference-lg + $bevel-triangle-short, 100% $bevel-triangle-long, 100% $bevel-side-long - $bevel-triangle-short, 0 $bevel-side-short-lg - $bevel-triangle-long);
+    &.clip-path {
+      clip-path: polygon(0 $bevel-side-difference-lg + $bevel-triangle-short, 100% $bevel-triangle-long, 100% $bevel-side-long - $bevel-triangle-short, 0 $bevel-side-short-lg - $bevel-triangle-long);
+    }
     &-paragraph {
       margin-top: 2rem;
     }
@@ -242,10 +246,13 @@
 @media only screen and (max-width: $max-touch-breakpoint) {
   .supporting {
     &-triangle {
+      &.clip-path {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+    &.clip-path {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
     &-table {
       &.browser {
         display: none;
@@ -258,7 +265,6 @@
 }
 
 @media only screen and (max-width: $md-breakpoint) {
-
   .hero {
     &-body {
       padding-bottom: 0;
@@ -270,7 +276,12 @@
     }
   }
   .technology {
-    padding-bottom: 5rem;
+    padding-top: 5.5rem;
+    padding-bottom: 8rem;
+    &.clip-path {
+      padding-top: 5.5rem;
+      padding-bottom: 8rem;
+    }
     &-stack {
       flex-direction: column;
     }
@@ -281,7 +292,13 @@
 
   .supporting {
     padding-top: 5.5rem;
+    &.clip-path {
+      padding-top: 5.5rem;
+      padding-bottom: 8rem;
+    }
     &-table {
+      padding-top: 3rem;
+      padding-bottom: 0;
       .table {
         &-header {
           &-cell {
@@ -316,6 +333,9 @@
   }
   .privacy {
     padding-top: 5.5rem;
+    &.clip-path {
+      padding-top: 5.5rem;
+    }
     &-buttons {
       display: flex;
       flex-direction: column;

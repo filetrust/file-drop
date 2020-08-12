@@ -4,9 +4,11 @@
     "unable-to-protect": "Unable to protect file due to structural issues",
     "file-is-ready": "Your Safe, Regenerated File Is Ready",
     "httpCodes": {
-        "422": "Please use a supported file type"
+        "422": "Please use a supported file type",
+        "400": "Wrong file format"
     },
     "toasterAppearance": {
-        "422": "warning"
+        "422": "warning",
+        "400": "warning"
     }
 }
